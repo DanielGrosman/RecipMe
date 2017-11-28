@@ -9,6 +9,14 @@
 #import "RecipeDetailViewController.h"
 
 @interface RecipeDetailViewController ()
+@property (weak, nonatomic) IBOutlet UIImageView *savedDetailImageView;
+@property (weak, nonatomic) IBOutlet UILabel *savedDetailName;
+@property (weak, nonatomic) IBOutlet UILabel *savedDetailIngredients;
+@property (weak, nonatomic) IBOutlet UILabel *savedDetailCalories;
+@property (weak, nonatomic) IBOutlet UILabel *savedDetailFat;
+@property (weak, nonatomic) IBOutlet UILabel *savedDetailProtein;
+@property (weak, nonatomic) IBOutlet UILabel *savedDetailSugar;
+@property (weak, nonatomic) IBOutlet UILabel *savedDetailCarbs;
 
 @end
 
@@ -16,22 +24,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.savedDetailIngredients.text = @"turkey,butter,salt,pepper,rosemary,thyme,onions,garlic";
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
