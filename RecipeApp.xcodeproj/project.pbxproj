@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2DF8F5931FCCB04B0023FBAF /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DF8F5921FCCB04B0023FBAF /* SearchViewController.m */; };
+		2DF8F5961FCCC1700023FBAF /* RecipeResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DF8F5951FCCC1700023FBAF /* RecipeResultsViewController.m */; };
+		2DF8F5991FCCD0EA0023FBAF /* SearchingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DF8F5981FCCD0EA0023FBAF /* SearchingViewController.m */; };
 		C0708A1E1FCC825E003DD748 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C0708A1D1FCC825E003DD748 /* AppDelegate.m */; };
 		C0708A211FCC825E003DD748 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0708A201FCC825E003DD748 /* ViewController.m */; };
 		C0708A241FCC825E003DD748 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0708A221FCC825E003DD748 /* Main.storyboard */; };
@@ -17,6 +20,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2DF8F5911FCCB04B0023FBAF /* SearchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
+		2DF8F5921FCCB04B0023FBAF /* SearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
+		2DF8F5941FCCC1700023FBAF /* RecipeResultsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecipeResultsViewController.h; sourceTree = "<group>"; };
+		2DF8F5951FCCC1700023FBAF /* RecipeResultsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecipeResultsViewController.m; sourceTree = "<group>"; };
+		2DF8F5971FCCD0EA0023FBAF /* SearchingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchingViewController.h; sourceTree = "<group>"; };
+		2DF8F5981FCCD0EA0023FBAF /* SearchingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchingViewController.m; sourceTree = "<group>"; };
 		C0708A191FCC825E003DD748 /* RecipeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecipeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0708A1C1FCC825E003DD748 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C0708A1D1FCC825E003DD748 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -64,7 +73,13 @@
 				C0708A1D1FCC825E003DD748 /* AppDelegate.m */,
 				C0708A1F1FCC825E003DD748 /* ViewController.h */,
 				C0708A201FCC825E003DD748 /* ViewController.m */,
+				2DF8F5911FCCB04B0023FBAF /* SearchViewController.h */,
+				2DF8F5921FCCB04B0023FBAF /* SearchViewController.m */,
+				2DF8F5941FCCC1700023FBAF /* RecipeResultsViewController.h */,
+				2DF8F5951FCCC1700023FBAF /* RecipeResultsViewController.m */,
 				C0708A221FCC825E003DD748 /* Main.storyboard */,
+				2DF8F5971FCCD0EA0023FBAF /* SearchingViewController.h */,
+				2DF8F5981FCCD0EA0023FBAF /* SearchingViewController.m */,
 				C0708A281FCC825E003DD748 /* Assets.xcassets */,
 				C0708A2A1FCC825E003DD748 /* LaunchScreen.storyboard */,
 				C0708A2D1FCC825E003DD748 /* Info.plist */,
@@ -145,8 +160,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2DF8F5991FCCD0EA0023FBAF /* SearchingViewController.m in Sources */,
 				C0708A271FCC825E003DD748 /* RecipeApp.xcdatamodeld in Sources */,
+				2DF8F5961FCCC1700023FBAF /* RecipeResultsViewController.m in Sources */,
 				C0708A211FCC825E003DD748 /* ViewController.m in Sources */,
+				2DF8F5931FCCB04B0023FBAF /* SearchViewController.m in Sources */,
 				C0708A2F1FCC825E003DD748 /* main.m in Sources */,
 				C0708A1E1FCC825E003DD748 /* AppDelegate.m in Sources */,
 			);
