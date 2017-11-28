@@ -12,6 +12,7 @@
 		2DF8F5CA1FCDE90B0023FBAF /* RecipeListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DF8F5C91FCDE90B0023FBAF /* RecipeListViewController.m */; };
 		2DF8F5CD1FCDEE810023FBAF /* RecipeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DF8F5CC1FCDEE810023FBAF /* RecipeViewController.m */; };
 		2DF8F5D01FCDEF270023FBAF /* RecipeDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DF8F5CF1FCDEF270023FBAF /* RecipeDetailViewController.m */; };
+		2DF8F5DA1FCDFD090023FBAF /* Recipe+customInitializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DF8F5D91FCDFD090023FBAF /* Recipe+customInitializer.m */; };
 		C0708A1E1FCC825E003DD748 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C0708A1D1FCC825E003DD748 /* AppDelegate.m */; };
 		C0708A211FCC825E003DD748 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0708A201FCC825E003DD748 /* ViewController.m */; };
 		C0708A241FCC825E003DD748 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0708A221FCC825E003DD748 /* Main.storyboard */; };
@@ -33,6 +34,8 @@
 		2DF8F5CC1FCDEE810023FBAF /* RecipeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecipeViewController.m; sourceTree = "<group>"; };
 		2DF8F5CE1FCDEF270023FBAF /* RecipeDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecipeDetailViewController.h; sourceTree = "<group>"; };
 		2DF8F5CF1FCDEF270023FBAF /* RecipeDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecipeDetailViewController.m; sourceTree = "<group>"; };
+		2DF8F5D81FCDFD090023FBAF /* Recipe+customInitializer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Recipe+customInitializer.h"; sourceTree = "<group>"; };
+		2DF8F5D91FCDFD090023FBAF /* Recipe+customInitializer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Recipe+customInitializer.m"; sourceTree = "<group>"; };
 		C0708A191FCC825E003DD748 /* RecipeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecipeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0708A1C1FCC825E003DD748 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C0708A1D1FCC825E003DD748 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -78,6 +81,8 @@
 		C0708A1B1FCC825E003DD748 /* RecipeApp */ = {
 			isa = PBXGroup;
 			children = (
+				2DF8F5D81FCDFD090023FBAF /* Recipe+customInitializer.h */,
+				2DF8F5D91FCDFD090023FBAF /* Recipe+customInitializer.m */,
 				C0708A1C1FCC825E003DD748 /* AppDelegate.h */,
 				C0708A1D1FCC825E003DD748 /* AppDelegate.m */,
 				C0708A1F1FCC825E003DD748 /* ViewController.h */,
@@ -185,6 +190,7 @@
 				C0708A1E1FCC825E003DD748 /* AppDelegate.m in Sources */,
 				C0FDB8261FCDC5ED0025F442 /* YummlyAPI.m in Sources */,
 				2DF8F5D01FCDEF270023FBAF /* RecipeDetailViewController.m in Sources */,
+				2DF8F5DA1FCDFD090023FBAF /* Recipe+customInitializer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
