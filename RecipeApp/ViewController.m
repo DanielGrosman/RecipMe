@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic)UISearchController *searchController;
 @property (nonatomic, strong) SearchViewController *searchViewController;
+@property (nonatomic,strong) UINavigationController *navController;
 @property (nonatomic, strong)UISearchContainerViewController *searchContainer;
 @end
 
@@ -29,19 +30,16 @@
 - (void)setupSearchController {
     
 //    SearchViewController *searchViewController = (SearchViewController *) navController.topViewController;
-     self.searchViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"SearchViewController"];
+      self.navController  = [self.storyboard instantiateViewControllerWithIdentifier:@"NavViewController"];
+    self.searchViewController = [self.navController viewControllers][0];
+    
     self.searchController = [[UISearchController alloc] initWithSearchResultsController:self.searchViewController];
-    self.searchContainer = [[UISearchContainerViewController alloc]initWithSearchController:self.searchController];
     
-    UINavigationController *nav = [self.storyboard instantiateViewControllerWithIdentifier:@"NavViewController"];
+    self.searchContainer = [[SearchingViewController alloc]initWithSearchController:self.searchController];
     
-    [nav addChildViewController:self.searchContainer];
-
+//    self.searchController.searchResultsUpdater = self.searchViewController;
+    self.searchController.searchResultsUpdater = self.searchContainer;
 //    self.searchController.hidesNavigationBarDuringPresentation = NO;
-
-    self.searchController.searchResultsUpdater = self.searchViewController;
-//    self.searchController.searchResultsUpdater = (ViewController*) self.searchContainer;
-    
     self.searchController.dimsBackgroundDuringPresentation = NO;
     self.searchController.searchBar.delegate = self.searchViewController;
     self.definesPresentationContext = YES;

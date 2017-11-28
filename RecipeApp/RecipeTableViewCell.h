@@ -1,5 +1,5 @@
 //
-//  SearchingViewController.h
+//  RecipeTableViewCell.h
 //  RecipeApp
 //
 //  Created by Javier Xing on 2017-11-27.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SearchingViewController : UISearchContainerViewController <UISearchResultsUpdating>
+@interface RecipeTableViewCell : UITableViewCell
 
 @end
