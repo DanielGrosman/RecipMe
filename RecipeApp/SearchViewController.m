@@ -8,8 +8,10 @@
 
 #import "SearchViewController.h"
 #import "RecipeResultsViewController.h"
+#import "RecipeTableViewCell.h"
 
-@interface SearchViewController () 
+@interface SearchViewController () <UITableViewDelegate, UITableViewDataSource>
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
@@ -21,16 +23,6 @@
     
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-- (IBAction)buttonTapped:(UIButton *)sender {
-//        [self performSegueWithIdentifier:@"showRecipes" sender:self];
-//     RecipeResultsViewController *rrvc = [self.storyboard instantiateViewControllerWithIdentifier:@"recipeResultsViewController"];
-//    [self.navigationController pushViewController:rrvc animated:YES];
-}
-
 - (void)updateSearchResultsForSearchController:(UISearchController *)searchController {
     searchController.searchResultsController.view.hidden = NO;
     //    NSString *searchText = searchController.searchBar.text;
@@ -40,8 +32,24 @@
 }
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
-
+//                [self performSegueWithIdentifier:@"showRecipes" sender:self];
+//             RecipeResultsViewController *rrvc = [self.storyboard instantiateViewControllerWithIdentifier:@"recipeResultsViewController"];
+//            [self.navigationController pushViewController:rrvc animated:YES];
 }
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 10;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    RecipeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"recipeCell" forIndexPath:indexPath];
+    
+    return cell;
+    
+}
+
+
+
 
 
 

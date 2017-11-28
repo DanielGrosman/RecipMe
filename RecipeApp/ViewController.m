@@ -8,14 +8,13 @@
 
 #import "ViewController.h"
 #import "SearchViewController.h"
-#import "SearchingViewController.h"
 
 @interface ViewController () <UITableViewDelegate, UITableViewDataSource, UISearchControllerDelegate>
 //@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic)UISearchController *searchController;
 @property (nonatomic, strong) SearchViewController *searchViewController;
-@property (nonatomic, strong)UISearchContainerViewController *searchContainer;
+//@property (nonatomic, strong)UISearchContainerViewController *searchContainer;
 @end
 
 @implementation ViewController
@@ -29,19 +28,14 @@
 - (void)setupSearchController {
     
 //    SearchViewController *searchViewController = (SearchViewController *) navController.topViewController;
-     self.searchViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"SearchViewController"];
+     UINavigationController *navController  = [self.storyboard instantiateViewControllerWithIdentifier:@"NavViewController"];
+    self.searchViewController = [navController viewControllers][0];
+    
     self.searchController = [[UISearchController alloc] initWithSearchResultsController:self.searchViewController];
-    self.searchContainer = [[UISearchContainerViewController alloc]initWithSearchController:self.searchController];
+//    self.searchContainer = [[UISearchContainerViewController alloc]initWithSearchController:self.searchController];
     
-    UINavigationController *nav = [self.storyboard instantiateViewControllerWithIdentifier:@"NavViewController"];
-    
-    [nav addChildViewController:self.searchContainer];
-
-//    self.searchController.hidesNavigationBarDuringPresentation = NO;
-
     self.searchController.searchResultsUpdater = self.searchViewController;
-//    self.searchController.searchResultsUpdater = (ViewController*) self.searchContainer;
-    
+//    self.searchController.hidesNavigationBarDuringPresentation = NO;
     self.searchController.dimsBackgroundDuringPresentation = NO;
     self.searchController.searchBar.delegate = self.searchViewController;
     self.definesPresentationContext = YES;
