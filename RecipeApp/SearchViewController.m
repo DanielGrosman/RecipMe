@@ -7,11 +7,12 @@
 //
 
 #import "SearchViewController.h"
-#import "RecipeResultsViewController.h"
+#import "RecipeListViewController.h"
 #import "RecipeTableViewCell.h"
 
 @interface SearchViewController () <UITableViewDelegate, UITableViewDataSource>
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
+//@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 
 @end
 
@@ -20,6 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.searchBar.delegate = self;
     
 }
 
@@ -32,9 +34,8 @@
 }
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
-//                [self performSegueWithIdentifier:@"showRecipes" sender:self];
-//             RecipeResultsViewController *rrvc = [self.storyboard instantiateViewControllerWithIdentifier:@"recipeResultsViewController"];
-//            [self.navigationController pushViewController:rrvc animated:YES];
+    [self performSegueWithIdentifier:@"showRecipesList" sender:self];
+    [self.storyboard instantiateViewControllerWithIdentifier:@"recipeResultsViewController"];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
