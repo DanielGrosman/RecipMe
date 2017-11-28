@@ -18,6 +18,7 @@
 		C0708A291FCC825E003DD748 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0708A281FCC825E003DD748 /* Assets.xcassets */; };
 		C0708A2C1FCC825E003DD748 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0708A2A1FCC825E003DD748 /* LaunchScreen.storyboard */; };
 		C0708A2F1FCC825E003DD748 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C0708A2E1FCC825E003DD748 /* main.m */; };
+		C0FDB8261FCDC5ED0025F442 /* YummlyAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = C0FDB8251FCDC5ED0025F442 /* YummlyAPI.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,8 @@
 		C0708A2B1FCC825E003DD748 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C0708A2D1FCC825E003DD748 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C0708A2E1FCC825E003DD748 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C0FDB8241FCDC5ED0025F442 /* YummlyAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YummlyAPI.h; sourceTree = "<group>"; };
+		C0FDB8251FCDC5ED0025F442 /* YummlyAPI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YummlyAPI.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +87,8 @@
 				2DF8F59B1FCCE7D20023FBAF /* RecipeTableViewCell.m */,
 				2DF8F5941FCCC1700023FBAF /* RecipeResultsViewController.h */,
 				2DF8F5951FCCC1700023FBAF /* RecipeResultsViewController.m */,
+				C0FDB8241FCDC5ED0025F442 /* YummlyAPI.h */,
+				C0FDB8251FCDC5ED0025F442 /* YummlyAPI.m */,
 				C0708A221FCC825E003DD748 /* Main.storyboard */,
 				C0708A281FCC825E003DD748 /* Assets.xcassets */,
 				C0708A2A1FCC825E003DD748 /* LaunchScreen.storyboard */,
@@ -173,6 +178,7 @@
 				2DF8F59C1FCCE7D20023FBAF /* RecipeTableViewCell.m in Sources */,
 				C0708A1E1FCC825E003DD748 /* AppDelegate.m in Sources */,
 				2DF8F59F1FCCF1E20023FBAF /* SearchingViewController.m in Sources */,
+				C0FDB8261FCDC5ED0025F442 /* YummlyAPI.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
