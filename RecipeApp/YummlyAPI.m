@@ -34,7 +34,9 @@
             abort();
         }
         NSMutableArray *recipes = [[NSMutableArray alloc] init];
-        for (NSDictionary *recipeInfo in result) {
+        for (NSDictionary *recipeInfo in result[@"matches"]) {
+//            Recipe *recipe = [[Recipe alloc] initWithContext: andInfo: recipeInfo]
+//
 //            [recipes addObject:[[Recipe alloc] initWithInfo:recipeInfo]];
         }
         done([NSArray arrayWithArray:recipes]);

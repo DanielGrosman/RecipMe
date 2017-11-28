@@ -10,9 +10,10 @@
 #import "RecipeListViewController.h"
 #import "RecipeTableViewCell.h"
 
-@interface SearchViewController () <UITableViewDelegate, UITableViewDataSource>
+@interface SearchViewController ()
 //@property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+@property (weak, nonatomic) IBOutlet UIImageView *searchImage;
 
 @end
 
@@ -22,6 +23,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.searchBar.delegate = self;
+    self.searchImage.image = [UIImage imageNamed:@"search"];
     
 }
 
@@ -36,17 +38,6 @@
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
     [self performSegueWithIdentifier:@"showRecipesList" sender:self];
     [self.storyboard instantiateViewControllerWithIdentifier:@"recipeResultsViewController"];
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 10;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    RecipeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"recipeCell" forIndexPath:indexPath];
-    
-    return cell;
-    
 }
 
 

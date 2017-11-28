@@ -8,6 +8,8 @@
 
 #import "ViewController.h"
 #import "SearchViewController.h"
+#import "RecipeTableViewCell.h"
+#import "YummlyAPI.h"
 
 @interface ViewController () <UITableViewDelegate, UITableViewDataSource, UISearchControllerDelegate>
 //@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
@@ -22,29 +24,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-//    [self setupSearchController];
 }
-
-//- (void)setupSearchController {
-//
-////    SearchViewController *searchViewController = (SearchViewController *) navController.topViewController;
-//      self.navController  = [self.storyboard instantiateViewControllerWithIdentifier:@"NavViewController"];
-//    self.searchViewController = [self.navController viewControllers][0];
-//
-//    self.searchController = [[UISearchController alloc] initWithSearchResultsController:self.searchViewController];
-//
-////    self.searchController.searchResultsUpdater = self.searchViewController;
-//    self.searchController.searchResultsUpdater = self.searchViewController;
-////    self.searchController.hidesNavigationBarDuringPresentation = NO;
-//    self.searchController.dimsBackgroundDuringPresentation = NO;
-//    self.searchController.searchBar.delegate = self.searchViewController;
-//    self.definesPresentationContext = YES;
-//
-//    // adds search bar to tableView header area
-//    self.tableView.tableHeaderView = self.searchController.searchBar;
-//
-//}
 
 
 
@@ -56,7 +36,9 @@
 // Cell gets various attributes set automatically based on table (separators) and data source (accessory views, editing controls)
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    RecipeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"savedRecipeCell" forIndexPath:indexPath];
+    
+    cell.savedRecipeName.text = @"TEST";
     
     return cell;
 
