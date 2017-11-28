@@ -84,7 +84,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
-                                    <segue destination="0si-4w-qlP" kind="presentation" id="Nnf-zU-o1X"/>
+                                    <segue destination="0si-4w-qlP" kind="show" id="Nnf-zU-o1X"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -110,6 +110,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gdm-0h-zf0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3335" y="881"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="6kj-lq-G7V">
+            <objects>
+                <viewController id="sHt-Fl-CWJ" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hMF-Up-ooM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="FbP-7g-9bn"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MK5-RN-YtJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3912" y="-588"/>
         </scene>
         <!--Ingredients Search-->
         <scene sceneID="yS3-Yx-OSY">

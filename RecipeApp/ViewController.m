@@ -8,13 +8,15 @@
 
 #import "ViewController.h"
 #import "SearchViewController.h"
+#import "SearchingViewController.h"
 
 @interface ViewController () <UITableViewDelegate, UITableViewDataSource, UISearchControllerDelegate>
 //@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic)UISearchController *searchController;
 @property (nonatomic, strong) SearchViewController *searchViewController;
-//@property (nonatomic, strong)UISearchContainerViewController *searchContainer;
+@property (nonatomic,strong) UINavigationController *navController;
+@property (nonatomic, strong)UISearchContainerViewController *searchContainer;
 @end
 
 @implementation ViewController
@@ -28,13 +30,15 @@
 - (void)setupSearchController {
     
 //    SearchViewController *searchViewController = (SearchViewController *) navController.topViewController;
-     UINavigationController *navController  = [self.storyboard instantiateViewControllerWithIdentifier:@"NavViewController"];
-    self.searchViewController = [navController viewControllers][0];
+      self.navController  = [self.storyboard instantiateViewControllerWithIdentifier:@"NavViewController"];
+    self.searchViewController = [self.navController viewControllers][0];
     
     self.searchController = [[UISearchController alloc] initWithSearchResultsController:self.searchViewController];
-//    self.searchContainer = [[UISearchContainerViewController alloc]initWithSearchController:self.searchController];
     
-    self.searchController.searchResultsUpdater = self.searchViewController;
+    self.searchContainer = [[SearchingViewController alloc]initWithSearchController:self.searchController];
+    
+//    self.searchController.searchResultsUpdater = self.searchViewController;
+    self.searchController.searchResultsUpdater = self.searchContainer;
 //    self.searchController.hidesNavigationBarDuringPresentation = NO;
     self.searchController.dimsBackgroundDuringPresentation = NO;
     self.searchController.searchBar.delegate = self.searchViewController;
