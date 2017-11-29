@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Recipe+CoreDataProperties.h"
 
 @interface RecipeViewController : UIViewController
+
+@property (nonatomic, strong) Recipe *selectedRecipe;
 
 @end

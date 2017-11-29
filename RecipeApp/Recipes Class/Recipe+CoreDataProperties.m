@@ -18,7 +18,7 @@
 @dynamic calories;
 @dynamic carbohydrate;
 @dynamic fat;
-@dynamic id;
+@dynamic recipeID;
 @dynamic ingredients;
 @dynamic largePictureURL;
 @dynamic protein;
