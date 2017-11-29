@@ -24,7 +24,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.savedDetailIngredients.text = @"turkey,butter,salt,pepper,rosemary,thyme,onions,garlic";
 }
 
 

@@ -35,9 +35,10 @@
 //    [self.tableView reloadData];
 }
 
-- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+    [self.delegate fetchData:self.searchBar.text];
     [self performSegueWithIdentifier:@"showRecipesList" sender:self];
-    [self.storyboard instantiateViewControllerWithIdentifier:@"recipeResultsViewController"];
+//    [self.storyboard instantiateViewControllerWithIdentifier:@"recipeResultsViewController"];
 }
 
 

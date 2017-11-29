@@ -13,6 +13,6 @@
 
 - (instancetype)initWithContext:(NSManagedObjectContext *)moc info:(NSDictionary*)dict;
 
--(void)setRecipeDetails:(NSDictionary*)info;
+- (void)setRecipeDetails:(NSDictionary*)info;
 
 @end
