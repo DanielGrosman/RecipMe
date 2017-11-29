@@ -15,7 +15,7 @@
 + (void)searchFor:(NSString*)searchString complete:(void (^)(NSArray *results))done {
     //    AppDelegate *appDelegate =((AppDelegate*)[[UIApplication sharedApplication] delegate]);
     //    NSManagedObjectContext *context = appDelegate.persistentContainer.viewContext;
-    NSString *urlString = [NSString stringWithFormat:@"http://api.yummly.com/v1/api/recipes?_app_id=d579354b&_app_key=cb9c178cd81196a30301abbb8d758481&maxResult=50&start=50&q=%@", searchString];
+    NSString *urlString = [NSString stringWithFormat:@"http://api.yummly.com/v1/api/recipes?_app_id=d579354b&_app_key=cb9c178cd81196a30301abbb8d758481&maxResult=25&start=25&q=%@", searchString];
     NSURL *url = [NSURL URLWithString:urlString];
 //    NSURL* url = [NSURL URLWithString:[NSString stringWithFormat:@"http://api.yummly.com/v1/api/recipes?_app_id=d579354b&_app_key=cb9c178cd81196a30301abbb8d758481&maxResult=50&start=50&q=%@", searchString]];
 //    NSLog(@"%@",url);

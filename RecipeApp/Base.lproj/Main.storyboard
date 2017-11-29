@@ -377,8 +377,20 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="settings" translatesAutoresizingMaskIntoConstraints="NO" id="8J0-2Y-02p">
+                                <rect key="frame" x="87" y="96" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="Cy4-2J-SIp"/>
+                                    <constraint firstAttribute="width" constant="200" id="EuS-Zd-kgV"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="8J0-2Y-02p" firstAttribute="leading" secondItem="5IH-AE-eWp" secondAttribute="leading" constant="87" id="5yR-YA-FAZ"/>
+                            <constraint firstItem="5IH-AE-eWp" firstAttribute="trailing" secondItem="8J0-2Y-02p" secondAttribute="trailing" constant="88" id="TXp-pF-LBZ"/>
+                            <constraint firstItem="8J0-2Y-02p" firstAttribute="top" secondItem="5IH-AE-eWp" secondAttribute="top" constant="32" id="ueq-Fg-rs2"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="5IH-AE-eWp"/>
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="VB5-Ak-TKk">
@@ -397,7 +409,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="31g-IA-dSy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4646" y="-558"/>
+            <point key="canvasLocation" x="4645.6000000000004" y="-558.17091454272872"/>
         </scene>
         <!--Ingredients Search-->
         <scene sceneID="yS3-Yx-OSY">
@@ -439,7 +451,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Ingredients Search" id="WAr-QZ-amg">
                         <barButtonItem key="backBarButtonItem" title="Ingredients" id="yYt-6e-Az1"/>
-                        <barButtonItem key="rightBarButtonItem" image="filters" width="12" id="wLd-2l-ZGb">
+                        <barButtonItem key="rightBarButtonItem" image="filters" width="6" id="wLd-2l-ZGb">
                             <connections>
                                 <segue destination="FCA-A8-em1" kind="presentation" id="V2M-H2-nl0"/>
                             </connections>
@@ -830,6 +842,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="sxB-Yh-Wqr" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="l8h-hY-QE4">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -863,8 +876,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="filters" width="50" height="50"/>
+        <image name="filters" width="28" height="28"/>
         <image name="folder" width="30" height="30"/>
+        <image name="settings" width="512" height="512"/>
         <image name="smallsearch" width="30" height="30"/>
     </resources>
 </document>
