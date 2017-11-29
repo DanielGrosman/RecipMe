@@ -30,7 +30,9 @@
 }
 
 -(void)fetchData:(NSString *)searchString {
-    [YummlyAPI searchFor:searchString complete:^(NSArray *results) {
+    NSString *newSearchString = [searchString stringByAppendingString:self.filterString];
+    
+    [YummlyAPI searchFor:newSearchString complete:^(NSArray *results) {
         [[NSOperationQueue mainQueue] addOperationWithBlock:^{
             self.recipes = results;
             [self.tableView reloadData];

@@ -326,7 +326,7 @@
         <!--Settings-->
         <scene sceneID="1zr-BA-u4v">
             <objects>
-                <viewController id="nB2-GJ-BL2" customClass="SettingsViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SettingsViewController" id="nB2-GJ-BL2" customClass="SettingsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uN3-R4-xrg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -399,6 +399,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="lactoSwitch" destination="kYJ-aI-CDQ" id="win-gX-8iC"/>
+                        <outlet property="pescatarianSwitch" destination="C9w-O1-M61" id="RbU-pY-5CH"/>
+                        <outlet property="veganSwitch" destination="QmV-au-aTA" id="EOt-AR-ygQ"/>
                         <outlet property="vegetarianSwitch" destination="Y6P-Yx-wJi" id="RJm-8G-baY"/>
                     </connections>
                 </viewController>
