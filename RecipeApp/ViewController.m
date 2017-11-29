@@ -12,6 +12,7 @@
 #import "Recipe+customInitializer.h"
 #import "AppDelegate.h"
 #import "SavedRecipesTableViewCell.h"
+#import "RecipeDetailViewController.h"
 
 @interface ViewController () <UITableViewDelegate, UITableViewDataSource>
 //@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
@@ -52,11 +53,20 @@
     
     cell.savedRecipeName.text = currentRecipe.recipeName;
     
-    NSURL *smallImageURL = [NSURL URLWithString:currentRecipe.smallPictureURL];
-    NSData *smallImageData = [NSData dataWithContentsOfURL:smallImageURL];
-    UIImage *smallImage = [UIImage imageWithData:smallImageData];
-    cell.savedRecipeImageView.image = smallImage;
+//    NSURL *smallImageURL = [NSURL URLWithString:currentRecipe.smallPictureURL];
+//    NSData *smallImageData = [NSData dataWithContentsOfURL:smallImageURL];
+//    UIImage *smallImage = [UIImage imageWithData:smallImageData];
+//    cell.savedRecipeImageView.image = smallImage;
+    NSArray *docDirectory = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *imageFilePath = [docDirectory firstObject];
+    imageFilePath = [imageFilePath stringByAppendingString:currentRecipe.smallImagePath];
     
+    if ([[NSFileManager defaultManager] fileExistsAtPath:imageFilePath]) {
+        NSData *imageData = [NSData dataWithContentsOfFile:imageFilePath];
+        UIImage *smallImage = [UIImage imageWithData:imageData];
+        cell.savedRecipeImageView.image = smallImage;
+    }
+
     cell.savedRecipeRating.text = [NSString stringWithFormat:@"Rating: %2.0f",currentRecipe.rating];
     
     if ([currentRecipe.totalTime isEqualToString:@"<null>"]) {
@@ -70,6 +80,16 @@
     }
     
     return cell;
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if ([segue.identifier isEqualToString:@"savedRecipeDetails"]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        Recipe *recipe = self.savedRecipies[indexPath.row];
+        
+        RecipeDetailViewController *controller = [segue destinationViewController];
+        [controller setRecipe:recipe];
+    }
 }
 
 

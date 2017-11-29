@@ -21,12 +21,13 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) float fat;
 @property (nullable, nonatomic, copy) NSString *recipeID;
 @property (nullable, nonatomic, copy) NSString *ingredients;
-@property (nullable, nonatomic, copy) NSString *largePictureURL;
+@property (nullable, nonatomic, copy) NSString *largeImagePath;
 @property (nonatomic) float protein;
 @property (nonatomic) float rating;
 @property (nullable, nonatomic, copy) NSString *recipeName;
 @property (nullable, nonatomic, copy) NSString *recipeURL;
 @property (nullable, nonatomic, copy) NSString *smallPictureURL;
+@property (nullable, nonatomic, copy) NSString *smallImagePath;
 @property (nonatomic) float sugar;
 @property (nonatomic) NSString *totalTime;
 

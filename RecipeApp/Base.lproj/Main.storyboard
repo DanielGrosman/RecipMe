@@ -76,7 +76,7 @@
                                             <outlet property="savedRecipeName" destination="d5S-gp-I2q" id="Y65-jt-0Sd"/>
                                             <outlet property="savedRecipeRating" destination="hu9-Ol-aSd" id="mnV-0k-OZf"/>
                                             <outlet property="savedRecipeTime" destination="EDf-cx-7bw" id="0fs-QN-nfl"/>
-                                            <segue destination="GEv-Ff-NDq" kind="show" id="5fn-Ae-iOx"/>
+                                            <segue destination="GEv-Ff-NDq" kind="show" identifier="savedRecipeDetails" id="5fn-Ae-iOx"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -239,7 +239,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.076411661500000005" green="0.55580546149999999" blue="1" alpha="0.45983714790000002" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="LkA-2d-7kg" firstAttribute="trailing" secondItem="nGx-HJ-4bG" secondAttribute="trailing" id="43k-kN-f3V"/>
                             <constraint firstItem="x2f-D4-1H8" firstAttribute="firstBaseline" secondItem="786-xN-ri8" secondAttribute="firstBaseline" id="4fG-fE-XRT"/>
