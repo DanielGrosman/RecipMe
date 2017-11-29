@@ -34,22 +34,27 @@
             //            Calories
             if ([nutrientInfo[@"attribute"] isEqualToString:@"ENERC_KCAL"]) {
                 _calories = [nutrientInfo[@"value"] floatValue];
+                NSLog(@"%@",nutrientInfo[@"value"]);
             }
             //            Protein
             if ([nutrientInfo[@"attribute"] isEqualToString:@"PROCNT"]) {
                 _protein = [nutrientInfo[@"value"] floatValue];
+                NSLog(@"%@",nutrientInfo[@"value"]);
             }
             //            Sugar
             if ([nutrientInfo[@"attribute"] isEqualToString:@"SUGAR"]) {
                 _sugar = [nutrientInfo[@"value"] floatValue];
+                NSLog(@"%@",nutrientInfo[@"value"]);
             }
             //            Fat
             if ([nutrientInfo[@"attribute"] isEqualToString:@"FAT"]) {
                 _fat = [nutrientInfo[@"value"] floatValue];
+                NSLog(@"%@",nutrientInfo[@"value"]);
             }
             //            Carbohydrate
             if ([nutrientInfo[@"attribute"] isEqualToString:@"CHOCDF"]) {
                 _carbs = [nutrientInfo[@"value"] floatValue];
+                NSLog(@"%@",nutrientInfo[@"value"]);
             }
         }
     }

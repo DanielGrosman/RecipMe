@@ -84,7 +84,7 @@
         UINavigationController *navController = [segue destinationViewController];
         RecipeViewController *detailVC = (RecipeViewController*)[navController viewControllers].firstObject;
 
-        [YummlyAPI getRecipeDetailsFor:recipe complete:^(Recipe *recipe) {
+        [YummlyAPI getRecipeDetailsFor:recipe complete:^(SearchResultRecipe*recipe) {
             [[NSOperationQueue mainQueue]addOperationWithBlock:^{
                 [detailVC setSelectedRecipe:recipe];
                 [detailVC setupRecipe];
