@@ -29,6 +29,7 @@
 
 
 -(void)setRecipeDetails:(NSDictionary*)info{
+    
 
     NSArray *nutritionEst = info[@"nutritionEstimates"];
     if (nutritionEst.count >0) {
@@ -63,8 +64,10 @@
         self.carbohydrate = NAN;
     }
     
+    
     self.recipeURL = info[@"source"][@"sourceRecipeUrl"];
     self.largePictureURL = info[@"images"][0][@"hostedLargeUrl"];
+    NSLog(@"%@",info[@"images"][0][@"hostedLargeUrl"]);
 }
 
 

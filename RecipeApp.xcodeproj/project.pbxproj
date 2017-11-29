@@ -14,6 +14,7 @@
 		2DF8F5D01FCDEF270023FBAF /* RecipeDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DF8F5CF1FCDEF270023FBAF /* RecipeDetailViewController.m */; };
 		2DF8F5DA1FCDFD090023FBAF /* Recipe+customInitializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DF8F5D91FCDFD090023FBAF /* Recipe+customInitializer.m */; };
 		2DF8F5E01FCE45DF0023FBAF /* SavedRecipesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DF8F5DF1FCE45DF0023FBAF /* SavedRecipesTableViewCell.m */; };
+		2DF8F5E61FCF18F50023FBAF /* YummlyAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DF8F5E51FCF18F50023FBAF /* YummlyAPI.m */; };
 		C0708A1E1FCC825E003DD748 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C0708A1D1FCC825E003DD748 /* AppDelegate.m */; };
 		C0708A211FCC825E003DD748 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0708A201FCC825E003DD748 /* ViewController.m */; };
 		C0708A241FCC825E003DD748 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0708A221FCC825E003DD748 /* Main.storyboard */; };
@@ -21,7 +22,8 @@
 		C0708A291FCC825E003DD748 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0708A281FCC825E003DD748 /* Assets.xcassets */; };
 		C0708A2C1FCC825E003DD748 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0708A2A1FCC825E003DD748 /* LaunchScreen.storyboard */; };
 		C0708A2F1FCC825E003DD748 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C0708A2E1FCC825E003DD748 /* main.m */; };
-		C0FDB8261FCDC5ED0025F442 /* YummlyAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = C0FDB8251FCDC5ED0025F442 /* YummlyAPI.m */; };
+		C0F78BE61FCEFBA5009BA146 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0F78BE51FCEFBA5009BA146 /* SettingsViewController.m */; };
+		C0F78BE91FCEFF8F009BA146 /* SearchResultRecipe.m in Sources */ = {isa = PBXBuildFile; fileRef = C0F78BE81FCEFF8F009BA146 /* SearchResultRecipe.m */; };
 		C0FDB82E1FCE32300025F442 /* Recipe+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = C0FDB82C1FCE32300025F442 /* Recipe+CoreDataClass.m */; };
 		C0FDB82F1FCE32300025F442 /* Recipe+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = C0FDB82D1FCE32300025F442 /* Recipe+CoreDataProperties.m */; };
 /* End PBXBuildFile section */
@@ -41,6 +43,8 @@
 		2DF8F5D91FCDFD090023FBAF /* Recipe+customInitializer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Recipe+customInitializer.m"; sourceTree = "<group>"; };
 		2DF8F5DE1FCE45DF0023FBAF /* SavedRecipesTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SavedRecipesTableViewCell.h; sourceTree = "<group>"; };
 		2DF8F5DF1FCE45DF0023FBAF /* SavedRecipesTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SavedRecipesTableViewCell.m; sourceTree = "<group>"; };
+		2DF8F5E41FCF18F50023FBAF /* YummlyAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YummlyAPI.h; sourceTree = "<group>"; };
+		2DF8F5E51FCF18F50023FBAF /* YummlyAPI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YummlyAPI.m; sourceTree = "<group>"; };
 		C0708A191FCC825E003DD748 /* RecipeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecipeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0708A1C1FCC825E003DD748 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C0708A1D1FCC825E003DD748 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -52,8 +56,10 @@
 		C0708A2B1FCC825E003DD748 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C0708A2D1FCC825E003DD748 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C0708A2E1FCC825E003DD748 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		C0FDB8241FCDC5ED0025F442 /* YummlyAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YummlyAPI.h; sourceTree = "<group>"; };
-		C0FDB8251FCDC5ED0025F442 /* YummlyAPI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YummlyAPI.m; sourceTree = "<group>"; };
+		C0F78BE41FCEFBA5009BA146 /* SettingsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		C0F78BE51FCEFBA5009BA146 /* SettingsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		C0F78BE71FCEFF8F009BA146 /* SearchResultRecipe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchResultRecipe.h; sourceTree = "<group>"; };
+		C0F78BE81FCEFF8F009BA146 /* SearchResultRecipe.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchResultRecipe.m; sourceTree = "<group>"; };
 		C0FDB82A1FCE32300025F442 /* Recipe+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Recipe+CoreDataProperties.h"; sourceTree = "<group>"; };
 		C0FDB82B1FCE32300025F442 /* Recipe+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Recipe+CoreDataClass.h"; sourceTree = "<group>"; };
 		C0FDB82C1FCE32300025F442 /* Recipe+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Recipe+CoreDataClass.m"; sourceTree = "<group>"; };
@@ -82,15 +88,6 @@
 			path = "Custom Cells";
 			sourceTree = "<group>";
 		};
-		2DF8F5E21FCE84AB0023FBAF /* API Class */ = {
-			isa = PBXGroup;
-			children = (
-				C0FDB8241FCDC5ED0025F442 /* YummlyAPI.h */,
-				C0FDB8251FCDC5ED0025F442 /* YummlyAPI.m */,
-			);
-			path = "API Class";
-			sourceTree = "<group>";
-		};
 		2DF8F5E31FCE84C60023FBAF /* Recipes Class */ = {
 			isa = PBXGroup;
 			children = (
@@ -102,6 +99,15 @@
 				2DF8F5D91FCDFD090023FBAF /* Recipe+customInitializer.m */,
 			);
 			path = "Recipes Class";
+			sourceTree = "<group>";
+		};
+		2DF8F5E71FCF1AE80023FBAF /* YummlyAPI */ = {
+			isa = PBXGroup;
+			children = (
+				2DF8F5E41FCF18F50023FBAF /* YummlyAPI.h */,
+				2DF8F5E51FCF18F50023FBAF /* YummlyAPI.m */,
+			);
+			path = YummlyAPI;
 			sourceTree = "<group>";
 		};
 		C0708A101FCC825E003DD748 = {
@@ -135,8 +141,12 @@
 				2DF8F5CC1FCDEE810023FBAF /* RecipeViewController.m */,
 				2DF8F5CE1FCDEF270023FBAF /* RecipeDetailViewController.h */,
 				2DF8F5CF1FCDEF270023FBAF /* RecipeDetailViewController.m */,
+				C0F78BE41FCEFBA5009BA146 /* SettingsViewController.h */,
+				C0F78BE51FCEFBA5009BA146 /* SettingsViewController.m */,
+				C0F78BE71FCEFF8F009BA146 /* SearchResultRecipe.h */,
+				C0F78BE81FCEFF8F009BA146 /* SearchResultRecipe.m */,
+				2DF8F5E71FCF1AE80023FBAF /* YummlyAPI */,
 				2DF8F5E31FCE84C60023FBAF /* Recipes Class */,
-				2DF8F5E21FCE84AB0023FBAF /* API Class */,
 				2DF8F5E11FCE848C0023FBAF /* Custom Cells */,
 				C0708A221FCC825E003DD748 /* Main.storyboard */,
 				C0708A281FCC825E003DD748 /* Assets.xcassets */,
@@ -229,8 +239,10 @@
 				2DF8F5E01FCE45DF0023FBAF /* SavedRecipesTableViewCell.m in Sources */,
 				2DF8F59C1FCCE7D20023FBAF /* RecipeTableViewCell.m in Sources */,
 				C0708A1E1FCC825E003DD748 /* AppDelegate.m in Sources */,
-				C0FDB8261FCDC5ED0025F442 /* YummlyAPI.m in Sources */,
 				C0FDB82E1FCE32300025F442 /* Recipe+CoreDataClass.m in Sources */,
+				C0F78BE91FCEFF8F009BA146 /* SearchResultRecipe.m in Sources */,
+				C0F78BE61FCEFBA5009BA146 /* SettingsViewController.m in Sources */,
+				2DF8F5E61FCF18F50023FBAF /* YummlyAPI.m in Sources */,
 				2DF8F5D01FCDEF270023FBAF /* RecipeDetailViewController.m in Sources */,
 				2DF8F5DA1FCDFD090023FBAF /* Recipe+customInitializer.m in Sources */,
 			);

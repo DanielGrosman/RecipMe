@@ -8,10 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "Recipe+CoreDataProperties.h"
+#import "SearchResultRecipe.h"
 
 @interface RecipeViewController : UIViewController
 
-@property (nonatomic, strong) Recipe *selectedRecipe;
+@property (nonatomic, strong) SearchResultRecipe *selectedRecipe;
 
 -(void)setupRecipe;
 

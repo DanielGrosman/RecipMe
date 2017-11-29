@@ -13,10 +13,11 @@
 #import "YummlyAPI.h"
 #import "SearchViewController.h"
 #import "Recipe+CoreDataProperties.h"
+#import "SearchResultRecipe.h"
 
 @interface RecipeListViewController () <UITableViewDataSource, UITableViewDelegate>
 
-@property (nonatomic,strong) NSArray<Recipe*>* recipes;
+@property (nonatomic,strong) NSArray<SearchResultRecipe*>* recipes;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
@@ -30,7 +31,6 @@
 
 -(void)fetchData:(NSString *)searchString {
     [YummlyAPI searchFor:searchString complete:^(NSArray *results) {
-//        self.recipes = results;
         [[NSOperationQueue mainQueue] addOperationWithBlock:^{
             self.recipes = results;
             [self.tableView reloadData];
@@ -50,7 +50,7 @@
     
     RecipeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"searchResultCell" forIndexPath:indexPath];
     
-    Recipe *currentRecipe = self.recipes[indexPath.row];
+    SearchResultRecipe *currentRecipe = self.recipes[indexPath.row];
     
     cell.searchRecipeName.text = currentRecipe.recipeName;
 
@@ -78,15 +78,17 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if ([segue.identifier isEqualToString:@"presentRecipe"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        Recipe *recipe = self.recipes[indexPath.row];
+        SearchResultRecipe *recipe = self.recipes[indexPath.row];
         UINavigationController *navController = [segue destinationViewController];
         RecipeViewController *detailVC = (RecipeViewController*)[navController viewControllers].firstObject;
+
         [YummlyAPI getRecipeDetailsFor:recipe complete:^(Recipe *recipe) {
             [[NSOperationQueue mainQueue]addOperationWithBlock:^{
                 [detailVC setSelectedRecipe:recipe];
                 [detailVC setupRecipe];
             }];
         }];
+
         [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
     }
     
