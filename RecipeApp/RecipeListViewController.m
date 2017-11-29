@@ -53,14 +53,13 @@
     
     cell.searchRecipeName.text = currentRecipe.recipeName;
     NSLog(@"%@", currentRecipe.recipeName);
-    NSLog(@"%@",cell.savedRecipeName.text);
+    NSLog(@"%@",cell.searchRecipeName.text);
     NSURL *smallImageURL = [NSURL URLWithString:currentRecipe.smallPictureURL];
     NSData *smallImageData = [NSData dataWithContentsOfURL:smallImageURL];
     UIImage *smallImage = [UIImage imageWithData:smallImageData];
-    cell.backgroundColor = [UIColor blueColor];
-    cell.savedRecipeImageView.image = smallImage;
-    cell.savedRecipeRating.text = [NSString stringWithFormat:@"%f",currentRecipe.rating];
-    cell.savedRecipeTime.text =  [NSString stringWithFormat:@"%d",currentRecipe.totalTime];
+    cell.searchRecipeImageView.image = smallImage;
+    cell.searchRecipeRating.text = [NSString stringWithFormat:@"%f",currentRecipe.rating];
+    cell.searchRecipeTime.text =  [NSString stringWithFormat:@"%d",currentRecipe.totalTime];
     
     return cell;
     
