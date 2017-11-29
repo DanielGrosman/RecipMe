@@ -15,7 +15,6 @@
 
 @interface RecipeListViewController () <UITableViewDataSource, UITableViewDelegate, FetchDataDelegate>
 
-@property (nonatomic,strong) NSString *searchItem;
 @property (nonatomic,strong) NSArray<Recipe*>* recipes;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
@@ -35,7 +34,6 @@
 }
 
 -(void)fetchData:(NSString *)searchString {
-    self.searchItem = searchString;
     [YummlyAPI searchFor:searchString complete:^(NSArray *results) {
         self.recipes = results;
         [[NSOperationQueue mainQueue] addOperationWithBlock:^{
