@@ -8,7 +8,6 @@
 
 #import "YummlyAPI.h"
 #import "Recipe+customInitializer.h"
-#import "SearchResultRecipe.h"
 #import "AppDelegate.h"
 
 @implementation YummlyAPI
@@ -49,8 +48,8 @@
 
 
 
-+(void)getRecipeDetailsFor:(Recipe*)recipe complete:(void (^)(Recipe *))done{
-    //    AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
++(void)getRecipeDetailsFor:(SearchResultRecipe*)recipe complete:(void (^)(SearchResultRecipe *recipe))done{
+//        AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
     
     NSURL* url = [NSURL URLWithString:[NSString stringWithFormat:@"http://api.yummly.com/v1/api/recipe/%@?_app_id=d579354b&_app_key=cb9c178cd81196a30301abbb8d758481", recipe.recipeID]];
     NSURLSessionTask *task = [[NSURLSession sharedSession] dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
