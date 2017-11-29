@@ -44,7 +44,9 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if([[segue identifier] isEqualToString:@"showRecipesList"]){
         RecipeListViewController *controller = (RecipeListViewController *)[segue destinationViewController];
-        [controller setRecipeForIngredient:self.searchBar.text];
+        NSArray *stringsEnteredArray = [self.searchBar.text componentsSeparatedByString:@" "];
+        NSString *recipesEntered = [stringsEnteredArray componentsJoinedByString:@"+"];
+        [controller setRecipeForIngredient: recipesEntered];
     }
 }
 

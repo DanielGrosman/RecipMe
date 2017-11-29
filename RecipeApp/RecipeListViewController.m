@@ -59,9 +59,16 @@
     cell.searchRecipeImageView.image = smallImage;
 
     cell.searchRecipeRating.text = [NSString stringWithFormat:@"Rating: %2.0f",currentRecipe.rating];
-    int seconds = currentRecipe.totalTime;
-    int timeInMinutes = seconds/60;
-    cell.searchRecipeTime.text =  [NSString stringWithFormat:@"%d Minutes",timeInMinutes];
+
+    if ([currentRecipe.totalTime isEqualToString:@"<null>"]) {
+        cell.searchRecipeTime.text = @"";
+    }
+    else{
+        int timeinSeconds = [currentRecipe.totalTime intValue];
+        int timeInMinutes = timeinSeconds/60;
+        NSString *timeString = [NSString stringWithFormat:@"%d",timeInMinutes];
+        cell.searchRecipeTime.text =  [NSString stringWithFormat:@"%@ Minutes",timeString];
+    }
     
     return cell;
     

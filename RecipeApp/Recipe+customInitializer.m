@@ -15,15 +15,14 @@
 {
     self = [super initWithContext:moc];
     if (self) {
-        
         self.rating = [dict[@"rating"] floatValue];
         self.recipeName = dict[@"recipeName"];
         self.smallPictureURL = dict[@"smallImageUrls"][0];
         NSArray *ingredients = (NSArray*)dict[@"ingredients"];
         self.ingredients = [ingredients componentsJoinedByString:@", "];
         self.id = dict[@"id"];
-        self.totalTime = (int) dict[@"totalTimeInSeconds"];
-        
+        NSString *timeString = [NSString stringWithFormat:@"%@",dict[@"totalTimeInSeconds"]];
+        self.totalTime = timeString;
     }
     return self;
 }

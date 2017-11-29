@@ -417,35 +417,36 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Turkey Sandwich" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JiB-QD-gqT">
-                                                    <rect key="frame" x="93" y="13" width="184" height="18"/>
+                                                    <rect key="frame" x="93" y="13" width="267" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rating: 4.44" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zma-lQ-hlK">
-                                                    <rect key="frame" x="93" y="38.5" width="182" height="16"/>
+                                                    <rect key="frame" x="93" y="39" width="105" height="16"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30 Minutes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aN2-e3-hyk">
-                                                    <rect key="frame" x="292" y="38" width="68" height="16"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <rect key="frame" x="252" y="38" width="108" height="16"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="Zma-lQ-hlK" firstAttribute="top" secondItem="JiB-QD-gqT" secondAttribute="bottom" constant="7" id="8y2-UO-Rmz"/>
+                                                <constraint firstItem="JiB-QD-gqT" firstAttribute="trailing" secondItem="bM7-tL-ajV" secondAttribute="trailingMargin" id="06D-aN-XiI"/>
+                                                <constraint firstItem="Zma-lQ-hlK" firstAttribute="top" secondItem="JiB-QD-gqT" secondAttribute="bottom" constant="8" id="8y2-UO-Rmz"/>
                                                 <constraint firstAttribute="bottom" secondItem="2cq-tE-iaD" secondAttribute="bottom" constant="1.5" id="A5l-qt-N8a"/>
                                                 <constraint firstItem="JiB-QD-gqT" firstAttribute="leading" secondItem="2cq-tE-iaD" secondAttribute="trailing" constant="8" id="Auv-8T-Uy2"/>
                                                 <constraint firstItem="Zma-lQ-hlK" firstAttribute="leading" secondItem="2cq-tE-iaD" secondAttribute="trailing" constant="8" id="FMu-kA-idb"/>
                                                 <constraint firstItem="aN2-e3-hyk" firstAttribute="bottom" secondItem="bM7-tL-ajV" secondAttribute="bottomMargin" id="FNN-UK-oT8"/>
+                                                <constraint firstItem="aN2-e3-hyk" firstAttribute="leading" secondItem="Zma-lQ-hlK" secondAttribute="trailing" constant="54" id="PAh-p0-8vH"/>
                                                 <constraint firstItem="JiB-QD-gqT" firstAttribute="top" secondItem="bM7-tL-ajV" secondAttribute="topMargin" constant="2" id="Tah-4g-EXN"/>
-                                                <constraint firstAttribute="trailing" secondItem="Zma-lQ-hlK" secondAttribute="trailing" constant="100" id="Xht-cf-FSL"/>
+                                                <constraint firstAttribute="trailing" secondItem="Zma-lQ-hlK" secondAttribute="trailing" constant="177" id="Xht-cf-FSL"/>
                                                 <constraint firstItem="2cq-tE-iaD" firstAttribute="leading" secondItem="bM7-tL-ajV" secondAttribute="leading" constant="10" id="c45-QZ-n2n"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="aN2-e3-hyk" secondAttribute="trailing" id="eIP-k3-enI"/>
-                                                <constraint firstItem="aN2-e3-hyk" firstAttribute="leading" secondItem="JiB-QD-gqT" secondAttribute="trailing" constant="15" id="jLE-8u-i5Y"/>
                                                 <constraint firstItem="2cq-tE-iaD" firstAttribute="top" secondItem="bM7-tL-ajV" secondAttribute="top" constant="2" id="oEw-Mi-NKf"/>
                                                 <constraint firstItem="aN2-e3-hyk" firstAttribute="top" secondItem="bM7-tL-ajV" secondAttribute="topMargin" constant="27" id="onF-RP-de3"/>
                                             </constraints>

@@ -28,7 +28,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, copy) NSString *recipeURL;
 @property (nullable, nonatomic, copy) NSString *smallPictureURL;
 @property (nonatomic) float sugar;
-@property (nonatomic) int16_t totalTime;
+@property (nonatomic) NSString *totalTime;
 
 @end
 
