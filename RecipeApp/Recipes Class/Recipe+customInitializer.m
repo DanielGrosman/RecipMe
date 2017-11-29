@@ -20,7 +20,7 @@
         self.smallPictureURL = dict[@"smallImageUrls"][0];
         NSArray *ingredients = (NSArray*)dict[@"ingredients"];
         self.ingredients = [ingredients componentsJoinedByString:@", "];
-        self.id = dict[@"id"];
+        self.recipeID = dict[@"id"];
         NSString *timeString = [NSString stringWithFormat:@"%@",dict[@"totalTimeInSeconds"]];
         self.totalTime = timeString;
     }
@@ -29,6 +29,7 @@
 
 
 -(void)setRecipeDetails:(NSDictionary*)info{
+    
 
     NSArray *nutritionEst = info[@"nutritionEstimates"];
     if (nutritionEst.count >0) {
@@ -63,8 +64,10 @@
         self.carbohydrate = NAN;
     }
     
+    
     self.recipeURL = info[@"source"][@"sourceRecipeUrl"];
     self.largePictureURL = info[@"images"][0][@"hostedLargeUrl"];
+    NSLog(@"%@",info[@"images"][0][@"hostedLargeUrl"]);
 }
 
 

@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) float calories;
 @property (nonatomic) float carbohydrate;
 @property (nonatomic) float fat;
-@property (nullable, nonatomic, copy) NSString *id;
+@property (nullable, nonatomic, copy) NSString *recipeID;
 @property (nullable, nonatomic, copy) NSString *ingredients;
 @property (nullable, nonatomic, copy) NSString *largePictureURL;
 @property (nonatomic) float protein;
