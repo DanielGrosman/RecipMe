@@ -755,7 +755,11 @@
                                 <action selector="cancelButtonTapped:" destination="myi-Vs-eww" id="hDg-Ja-dKO"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="save" id="lNG-yI-EDo"/>
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="save" id="lNG-yI-EDo">
+                            <connections>
+                                <action selector="saveButtonTapped:" destination="myi-Vs-eww" id="i6q-BA-EwQ"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="recipeDetailCalories" destination="G8s-ut-xr0" id="7T3-7m-p7F"/>
