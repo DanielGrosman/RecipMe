@@ -81,8 +81,12 @@
         Recipe *recipe = self.recipes[indexPath.row];
         UINavigationController *navController = [segue destinationViewController];
         RecipeViewController *detailVC = (RecipeViewController*)[navController viewControllers].firstObject;
-        [YummlyAPI getRecipeDetailsFor:recipe];
-        [detailVC setSelectedRecipe:recipe];
+        [YummlyAPI getRecipeDetailsFor:recipe complete:^(Recipe *recipe) {
+            [[NSOperationQueue mainQueue]addOperationWithBlock:^{
+                [detailVC setSelectedRecipe:recipe];
+                [detailVC setupRecipe];
+            }];
+        }];
         [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
     }
     

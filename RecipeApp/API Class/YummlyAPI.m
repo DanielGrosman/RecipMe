@@ -9,6 +9,7 @@
 #import "YummlyAPI.h"
 #import "Recipe+customInitializer.h"
 #import "AppDelegate.h"
+#import "Recipe+CoreDataProperties.h"
 
 
 @implementation YummlyAPI
@@ -48,7 +49,7 @@
     [task resume];
 }
 
-+(void)getRecipeDetailsFor:(Recipe*)recipe{
++(void)getRecipeDetailsFor:(Recipe*)recipe complete:(void(^)(Recipe* recipe))done{
 //    AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
     
     NSURL* url = [NSURL URLWithString:[NSString stringWithFormat:@"http://api.yummly.com/v1/api/recipe/%@?_app_id=d579354b&_app_key=cb9c178cd81196a30301abbb8d758481", recipe.recipeID]];
@@ -70,8 +71,8 @@
             abort();
         }
         [recipe setRecipeDetails:recipeDetails];
-        NSLog(@"%@", recipe);
-        
+//        NSLog(@"%@", recipe);
+        done(recipe);
     }];
     [task resume];
 }

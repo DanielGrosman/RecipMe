@@ -13,4 +13,6 @@
 
 @property (nonatomic, strong) Recipe *selectedRecipe;
 
+-(void)setupRecipe;
+
 @end
