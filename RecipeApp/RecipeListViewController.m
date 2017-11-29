@@ -12,10 +12,11 @@
 #import "YummlyAPI.h"
 #import "SearchViewController.h"
 #import "Recipe+CoreDataProperties.h"
+#import "SearchResultRecipe.h"
 
 @interface RecipeListViewController () <UITableViewDataSource, UITableViewDelegate>
 
-@property (nonatomic,strong) NSArray<Recipe*>* recipes;
+@property (nonatomic,strong) NSArray<SearchResultRecipe*>* recipes;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
@@ -29,7 +30,6 @@
 
 -(void)fetchData:(NSString *)searchString {
     [YummlyAPI searchFor:searchString complete:^(NSArray *results) {
-//        self.recipes = results;
         [[NSOperationQueue mainQueue] addOperationWithBlock:^{
             self.recipes = results;
             [self.tableView reloadData];
@@ -49,7 +49,7 @@
     
     RecipeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"searchResultCell" forIndexPath:indexPath];
     
-    Recipe *currentRecipe = self.recipes[indexPath.row];
+    SearchResultRecipe *currentRecipe = self.recipes[indexPath.row];
     
     cell.searchRecipeName.text = currentRecipe.recipeName;
 
