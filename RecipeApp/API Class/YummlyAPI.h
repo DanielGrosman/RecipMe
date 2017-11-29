@@ -14,7 +14,7 @@
 
 + (void)searchFor:(NSString*)searchString complete:(void (^)(NSArray *results))done;
 
-+(void)getRecipeDetailsFor:(Recipe*)recipe;
++(void)getRecipeDetailsFor:(Recipe*)recipe complete:(void(^)(Recipe* recipe))done;
 
 
 @end
