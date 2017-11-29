@@ -24,7 +24,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="savedRecipeCell" rowHeight="65" id="cI4-ci-VZv" customClass="RecipeTableViewCell">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="savedRecipeCell" rowHeight="65" id="cI4-ci-VZv" customClass="SavedRecipesTableViewCell">
                                         <rect key="frame" x="0.0" y="28" width="375" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cI4-ci-VZv" id="Tfo-id-vkc">
@@ -71,10 +71,10 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="savedRecipeImageView" destination="f3L-XO-s4N" id="zZ6-sP-Uqk"/>
-                                            <outlet property="savedRecipeName" destination="d5S-gp-I2q" id="plN-gA-3z7"/>
-                                            <outlet property="savedRecipeRating" destination="hu9-Ol-aSd" id="X8e-KT-PVH"/>
-                                            <outlet property="savedRecipeTime" destination="EDf-cx-7bw" id="DTX-Ok-gk2"/>
+                                            <outlet property="savedRecipeImageView" destination="f3L-XO-s4N" id="72e-UA-Kwi"/>
+                                            <outlet property="savedRecipeName" destination="d5S-gp-I2q" id="Y65-jt-0Sd"/>
+                                            <outlet property="savedRecipeRating" destination="hu9-Ol-aSd" id="mnV-0k-OZf"/>
+                                            <outlet property="savedRecipeTime" destination="EDf-cx-7bw" id="0fs-QN-nfl"/>
                                             <segue destination="GEv-Ff-NDq" kind="show" id="5fn-Ae-iOx"/>
                                         </connections>
                                     </tableViewCell>
@@ -685,6 +685,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kLp-Ux-smc" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Hdz-7V-3MN">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -702,6 +703,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="czc-99-ZNM" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="oVy-Jo-qOu">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
