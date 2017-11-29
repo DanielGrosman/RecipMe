@@ -20,12 +20,13 @@
 @dynamic fat;
 @dynamic recipeID;
 @dynamic ingredients;
-@dynamic largePictureURL;
+@dynamic largeImagePath;
 @dynamic protein;
 @dynamic rating;
 @dynamic recipeName;
 @dynamic recipeURL;
 @dynamic smallPictureURL;
+@dynamic smallImagePath;
 @dynamic sugar;
 @dynamic totalTime;
 

@@ -66,7 +66,6 @@
     
     
     self.recipeURL = info[@"source"][@"sourceRecipeUrl"];
-    self.largePictureURL = info[@"images"][0][@"hostedLargeUrl"];
     NSLog(@"%@",info[@"images"][0][@"hostedLargeUrl"]);
 }
 

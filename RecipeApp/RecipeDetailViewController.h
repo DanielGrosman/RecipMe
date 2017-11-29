@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Recipe+CoreDataProperties.h"
 
 @interface RecipeDetailViewController : UIViewController
+@property (nonatomic, strong)Recipe *recipe;
 
 @end
