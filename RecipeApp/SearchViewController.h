@@ -10,5 +10,6 @@
 
 @interface SearchViewController : UIViewController <UISearchResultsUpdating, UISearchBarDelegate>
 
+@property (nonatomic, strong) NSMutableString *filterString;
 
 @end

@@ -9,43 +9,50 @@
 #import "SearchViewController.h"
 #import "RecipeListViewController.h"
 #import "RecipeTableViewCell.h"
+#import "SettingsViewController.h"
 
 @interface SearchViewController ()
-//@property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (weak, nonatomic) IBOutlet UIImageView *searchImage;
-
+@property (nonatomic, strong) SettingsViewController *settingsViewController;
 @end
 
 @implementation SearchViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     self.searchBar.delegate = self;
     self.searchImage.image = [UIImage imageNamed:@"search"];
-    
 }
 
 - (void)updateSearchResultsForSearchController:(UISearchController *)searchController {
     searchController.searchResultsController.view.hidden = NO;
-    //    NSString *searchText = searchController.searchBar.text;
-    //    NSPredicate *predicate = [NSPredicate predicateWithFormat:@“SELF contains[cd] %@“, searchText];
-    //    self.filteredData = [self.data filteredArrayUsingPredicate:predicate];
-//    [self.tableView reloadData];
 }
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
     [self performSegueWithIdentifier:@"showRecipesList" sender:self];
-    
-//    [self.storyboard instantiateViewControllerWithIdentifier:@"recipeResultsViewController"];
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if([[segue identifier] isEqualToString:@"showRecipesList"]){
+        self.filterString = [[NSMutableString alloc] init];
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        if ([defaults boolForKey:@"vegetarianButtonStatus"]) {
+            [self.filterString appendString:@"&allowedDiet[]=387%5eLacto-ovo%20vegetarian"];
+        }
+        if ([defaults boolForKey:@"lactoButtonStatus"]) {
+            [self.filterString appendString:@"&allowedDiet[]=388%5eLacto%20vegetarian"];
+        }
+        if ([defaults boolForKey:@"veganButtonStatus"]) {
+            [self.filterString appendString:@"&allowedDiet[]=386%5eVegan"];
+        }
+        if ([defaults boolForKey:@"pescatarianButtonStatus"]) {
+            [self.filterString appendString:@"&allowedDiet[]=390%5ePescetarian"];
+        }
         RecipeListViewController *controller = (RecipeListViewController *)[segue destinationViewController];
         NSArray *stringsEnteredArray = [self.searchBar.text componentsSeparatedByString:@" "];
         NSString *recipesEntered = [stringsEnteredArray componentsJoinedByString:@"+"];
+        [controller setFilterString:self.filterString];
         [controller setRecipeForIngredient: recipesEntered];
     }
 }

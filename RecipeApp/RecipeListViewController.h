@@ -11,5 +11,6 @@
 @interface RecipeListViewController : UIViewController
 
 @property (nonatomic, strong) NSString *recipeForIngredient;
+@property (nonatomic, strong) NSString *filterString;
 
 @end
