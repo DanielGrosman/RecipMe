@@ -58,8 +58,8 @@
 		C0F78BE51FCEFBA5009BA146 /* SettingsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		C0F78BE71FCEFF8F009BA146 /* SearchResultRecipe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchResultRecipe.h; sourceTree = "<group>"; };
 		C0F78BE81FCEFF8F009BA146 /* SearchResultRecipe.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchResultRecipe.m; sourceTree = "<group>"; };
-		C0FDB8241FCDC5ED0025F442 /* YummlyAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YummlyAPI.h; sourceTree = "<group>"; };
-		C0FDB8251FCDC5ED0025F442 /* YummlyAPI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YummlyAPI.m; sourceTree = "<group>"; };
+		C0FDB8241FCDC5ED0025F442 /* YummlyAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = YummlyAPI.h; path = ../YummlyAPI.h; sourceTree = "<group>"; };
+		C0FDB8251FCDC5ED0025F442 /* YummlyAPI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = YummlyAPI.m; path = ../YummlyAPI.m; sourceTree = "<group>"; };
 		C0FDB82A1FCE32300025F442 /* Recipe+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Recipe+CoreDataProperties.h"; sourceTree = "<group>"; };
 		C0FDB82B1FCE32300025F442 /* Recipe+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Recipe+CoreDataClass.h"; sourceTree = "<group>"; };
 		C0FDB82C1FCE32300025F442 /* Recipe+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Recipe+CoreDataClass.m"; sourceTree = "<group>"; };
@@ -143,15 +143,11 @@
 				2DF8F5CF1FCDEF270023FBAF /* RecipeDetailViewController.m */,
 				C0F78BE41FCEFBA5009BA146 /* SettingsViewController.h */,
 				C0F78BE51FCEFBA5009BA146 /* SettingsViewController.m */,
-				C0FDB8241FCDC5ED0025F442 /* YummlyAPI.h */,
-				C0FDB8251FCDC5ED0025F442 /* YummlyAPI.m */,
 				C0F78BE71FCEFF8F009BA146 /* SearchResultRecipe.h */,
 				C0F78BE81FCEFF8F009BA146 /* SearchResultRecipe.m */,
-				
 				2DF8F5E31FCE84C60023FBAF /* Recipes Class */,
 				2DF8F5E21FCE84AB0023FBAF /* API Class */,
 				2DF8F5E11FCE848C0023FBAF /* Custom Cells */,
-
 				C0708A221FCC825E003DD748 /* Main.storyboard */,
 				C0708A281FCC825E003DD748 /* Assets.xcassets */,
 				C0708A2A1FCC825E003DD748 /* LaunchScreen.storyboard */,
