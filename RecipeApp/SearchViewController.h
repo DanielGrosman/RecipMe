@@ -8,13 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@protocol FetchDataDelegate <NSObject>
-
--(void)fetchData:(NSString*)searchString;
-
-@end
 @interface SearchViewController : UIViewController <UISearchResultsUpdating, UISearchBarDelegate>
 
-@property (nonatomic, weak) id<FetchDataDelegate>delegate;
 
 @end

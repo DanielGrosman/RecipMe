@@ -13,7 +13,7 @@
 #import "SearchViewController.h"
 #import "Recipe+CoreDataProperties.h"
 
-@interface RecipeListViewController () <UITableViewDataSource, UITableViewDelegate, FetchDataDelegate>
+@interface RecipeListViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic,strong) NSArray<Recipe*>* recipes;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -24,19 +24,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-}
-
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if([[segue identifier] isEqualToString:@"showRecipesList"]){
-        SearchViewController *controller = (SearchViewController *)[segue destinationViewController];
-        controller.delegate = self;
-    }
+    [self fetchData:self.recipeForIngredient];
 }
 
 -(void)fetchData:(NSString *)searchString {
     [YummlyAPI searchFor:searchString complete:^(NSArray *results) {
-        self.recipes = results;
+//        self.recipes = results;
         [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+            self.recipes = results;
             [self.tableView reloadData];
         }];
     }];
@@ -56,7 +51,8 @@
     
     Recipe *currentRecipe = self.recipes[indexPath.row];
     
-    cell.savedRecipeName.text = currentRecipe.recipeName;
+    cell.searchRecipeName.text = currentRecipe.recipeName;
+    NSLog(@"%@", currentRecipe.recipeName);
     NSLog(@"%@",cell.savedRecipeName.text);
     NSURL *smallImageURL = [NSURL URLWithString:currentRecipe.smallPictureURL];
     NSData *smallImageData = [NSData dataWithContentsOfURL:smallImageURL];

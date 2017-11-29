@@ -36,11 +36,17 @@
 }
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
-    [self.delegate fetchData:self.searchBar.text];
     [self performSegueWithIdentifier:@"showRecipesList" sender:self];
+    
 //    [self.storyboard instantiateViewControllerWithIdentifier:@"recipeResultsViewController"];
 }
 
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if([[segue identifier] isEqualToString:@"showRecipesList"]){
+        RecipeListViewController *controller = (RecipeListViewController *)[segue destinationViewController];
+        [controller setRecipeForIngredient:self.searchBar.text];
+    }
+}
 
 
 
