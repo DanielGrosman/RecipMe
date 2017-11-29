@@ -101,11 +101,18 @@
 			path = "Recipes Class";
 			sourceTree = "<group>";
 		};
-		C0708A101FCC825E003DD748 = {
+		2DF8F5E71FCF1AE80023FBAF /* YummlyAPI */ = {
 			isa = PBXGroup;
 			children = (
 				2DF8F5E41FCF18F50023FBAF /* YummlyAPI.h */,
 				2DF8F5E51FCF18F50023FBAF /* YummlyAPI.m */,
+			);
+			path = YummlyAPI;
+			sourceTree = "<group>";
+		};
+		C0708A101FCC825E003DD748 = {
+			isa = PBXGroup;
+			children = (
 				C0708A1B1FCC825E003DD748 /* RecipeApp */,
 				C0708A1A1FCC825E003DD748 /* Products */,
 			);
@@ -138,6 +145,7 @@
 				C0F78BE51FCEFBA5009BA146 /* SettingsViewController.m */,
 				C0F78BE71FCEFF8F009BA146 /* SearchResultRecipe.h */,
 				C0F78BE81FCEFF8F009BA146 /* SearchResultRecipe.m */,
+				2DF8F5E71FCF1AE80023FBAF /* YummlyAPI */,
 				2DF8F5E31FCE84C60023FBAF /* Recipes Class */,
 				2DF8F5E11FCE848C0023FBAF /* Custom Cells */,
 				C0708A221FCC825E003DD748 /* Main.storyboard */,
