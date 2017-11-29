@@ -48,7 +48,7 @@
     [task resume];
 }
 
-+(void)getRecipeDetailsFor:(Recipe*)recipe{
++(void)getRecipeDetailsFor:(Recipe*)recipe complete:(void (^)(Recipe *))done{
 //    AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
     
     NSURL* url = [NSURL URLWithString:[NSString stringWithFormat:@"http://api.yummly.com/v1/api/recipe/%@?_app_id=d579354b&_app_key=cb9c178cd81196a30301abbb8d758481", recipe.recipeID]];
@@ -71,9 +71,10 @@
         }
         [recipe setRecipeDetails:recipeDetails];
 //        NSLog(@"%@", recipe);
-        
+        done(recipe);
     }];
     [task resume];
+//    Test
 }
 
 
