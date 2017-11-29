@@ -9,13 +9,14 @@
 #import "YummlyAPI.h"
 #import "Recipe+customInitializer.h"
 #import "AppDelegate.h"
+#import "SearchResultRecipe.h"
 
 
 @implementation YummlyAPI
 
 + (void)searchFor:(NSString*)searchString complete:(void (^)(NSArray *results))done {
-    AppDelegate *appDelegate =((AppDelegate*)[[UIApplication sharedApplication] delegate]);
-    NSManagedObjectContext *context = appDelegate.persistentContainer.viewContext;
+//    AppDelegate *appDelegate =((AppDelegate*)[[UIApplication sharedApplication] delegate]);
+//    NSManagedObjectContext *context = appDelegate.persistentContainer.viewContext;
     NSURL* url = [NSURL URLWithString:[NSString stringWithFormat:@"http://api.yummly.com/v1/api/recipes?_app_id=d579354b&_app_key=cb9c178cd81196a30301abbb8d758481&maxResult=50&start=50&q=%@", searchString]];
     NSURLSessionTask *task = [[NSURLSession sharedSession] dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         if (error != nil) {
@@ -38,7 +39,7 @@
         }
         NSMutableArray *recipes = [[NSMutableArray alloc] init];
         for (NSDictionary *recipeInfo in result[@"matches"]) {
-            Recipe *recipe = [[Recipe alloc] initWithContext:context info:recipeInfo];
+            SearchResultRecipe *recipe = [[SearchResultRecipe alloc] initWithInfo:recipeInfo];
             [recipes addObject:recipe];
         }
         done([NSArray arrayWithArray:recipes]);
