@@ -52,15 +52,14 @@
     Recipe *currentRecipe = self.recipes[indexPath.row];
     
     cell.searchRecipeName.text = currentRecipe.recipeName;
-    NSLog(@"%@", currentRecipe.recipeName);
-    NSLog(@"%@",cell.savedRecipeName.text);
     NSURL *smallImageURL = [NSURL URLWithString:currentRecipe.smallPictureURL];
     NSData *smallImageData = [NSData dataWithContentsOfURL:smallImageURL];
     UIImage *smallImage = [UIImage imageWithData:smallImageData];
-    cell.backgroundColor = [UIColor blueColor];
-    cell.savedRecipeImageView.image = smallImage;
-    cell.savedRecipeRating.text = [NSString stringWithFormat:@"%f",currentRecipe.rating];
-    cell.savedRecipeTime.text =  [NSString stringWithFormat:@"%d",currentRecipe.totalTime];
+    cell.searchRecipeImageView.image = smallImage;
+    cell.searchRecipeRating.text = [NSString stringWithFormat:@"Rating: %2.0f",currentRecipe.rating];
+    int seconds = currentRecipe.totalTime;
+    int timeInMinutes = seconds/60;
+    cell.searchRecipeTime.text =  [NSString stringWithFormat:@"%d Minutes",timeInMinutes];
     
     return cell;
     
