@@ -9,6 +9,7 @@
 #import "SettingsViewController.h"
 
 @interface SettingsViewController ()
+@property (weak, nonatomic) IBOutlet UIImageView *settingsImage;
 @property (strong, nonatomic) NSMutableString *mutableURLString;
 @property (weak, nonatomic) IBOutlet UISwitch *vegetarianSwitch;
 @property (weak, nonatomic) IBOutlet UISwitch *lactoSwitch;
@@ -26,6 +27,8 @@
     self.veganSwitch.on = [defaults boolForKey:@"veganButtonStatus"];
     self.pescatarianSwitch.on = [defaults boolForKey:@"pescatarianButtonStatus"];
     self.mutableURLString = [[NSMutableString alloc] init];
+
+    self.settingsImage.image = [UIImage imageNamed:@"settings"];
 }
 
 - (IBAction)vegetarianButtonTapped:(UISwitch *)sender {

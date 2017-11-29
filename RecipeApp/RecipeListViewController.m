@@ -14,11 +14,13 @@
 #import "SearchViewController.h"
 #import "Recipe+CoreDataProperties.h"
 #import "SearchResultRecipe.h"
+#import "MBProgressHUD.h"
 
 @interface RecipeListViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic,strong) NSArray<SearchResultRecipe*>* recipes;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) MBProgressHUD *hud;
 
 @end
 
@@ -27,6 +29,23 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self fetchData:self.recipeForIngredient];
+    [self setupHUD];
+}
+
+-(void) setupHUD {
+    self.hud = [MBProgressHUD showHUDAddedTo:self.tableView animated:YES];
+    self.hud.mode = MBProgressHUDModeIndeterminate;
+    self.hud.contentColor= [UIColor blackColor];
+    self.hud.label.text = @"Loading";
+}
+
+-(void) hideHUD {
+    dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
+        // Do something...
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [MBProgressHUD hideHUDForView:self.tableView animated:YES];
+        });
+    });
 }
 
 -(void)fetchData:(NSString *)searchString {
@@ -34,6 +53,7 @@
     
     [YummlyAPI searchFor:newSearchString complete:^(NSArray *results) {
         [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+            [self hideHUD];
             self.recipes = results;
             [self.tableView reloadData];
         }];
@@ -55,14 +75,14 @@
     SearchResultRecipe *currentRecipe = self.recipes[indexPath.row];
     
     cell.searchRecipeName.text = currentRecipe.recipeName;
-
+    
     NSURL *smallImageURL = [NSURL URLWithString:currentRecipe.smallPictureURL];
     NSData *smallImageData = [NSData dataWithContentsOfURL:smallImageURL];
     UIImage *smallImage = [UIImage imageWithData:smallImageData];
     cell.searchRecipeImageView.image = smallImage;
-
+    
     cell.searchRecipeRating.text = [NSString stringWithFormat:@"Rating: %2.0f",currentRecipe.rating];
-
+    
     if ([currentRecipe.totalTime isEqualToString:@"<null>"]) {
         cell.searchRecipeTime.text = @"";
     }
@@ -83,14 +103,14 @@
         SearchResultRecipe *recipe = self.recipes[indexPath.row];
         UINavigationController *navController = [segue destinationViewController];
         RecipeViewController *detailVC = (RecipeViewController*)[navController viewControllers].firstObject;
-
+        
         [YummlyAPI getRecipeDetailsFor:recipe complete:^(SearchResultRecipe*recipe) {
             [[NSOperationQueue mainQueue]addOperationWithBlock:^{
                 [detailVC setSelectedRecipe:recipe];
                 [detailVC setupRecipe];
             }];
         }];
-
+        
         [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
     }
     

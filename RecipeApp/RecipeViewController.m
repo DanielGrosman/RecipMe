@@ -71,7 +71,6 @@
     recipe.totalTime = self.selectedRecipe.totalTime;
     
     recipe.smallPictureURL = self.selectedRecipe.smallPictureURL;
-    recipe.largePictureURL = self.selectedRecipe.largePictureURL;
     
     recipe.ingredients = self.selectedRecipe.ingredients;
     recipe.recipeURL = self.selectedRecipe.recipeURL;
@@ -81,9 +80,35 @@
     recipe.sugar = self.selectedRecipe.sugar;
     recipe.fat = self.selectedRecipe.fat;
     recipe.carbohydrate = self.selectedRecipe.carbs;
+    [self saveImage:recipe];
     
+    NSLog(@"%@",recipe.largeImagePath);
     [appDelegate.persistentContainer.viewContext insertObject:recipe];
     [appDelegate saveContext];
+}
+
+-(void)saveImage:(Recipe *)recipe{
+//    Large Image Save
+    NSArray *docDirectory = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *docFilePath = [docDirectory firstObject];
+    
+    recipe.largeImagePath = [[NSUUID UUID].UUIDString stringByAppendingPathExtension:@"jpg"];
+    NSString *largeDocFilePath = [docFilePath stringByAppendingString:recipe.largeImagePath];
+    
+    NSData *largeImageData = UIImageJPEGRepresentation(self.recipeDetailImageView.image , 1.0);
+    
+    [largeImageData writeToFile:largeDocFilePath atomically:YES];
+    
+//    Small Image Save
+   
+    recipe.smallImagePath =[[NSUUID UUID].UUIDString stringByAppendingString:@"jpg"];
+    NSString *smallDocFilePath = [docFilePath stringByAppendingString:recipe.smallImagePath];
+    
+    NSData *smallImageData = [NSData dataWithContentsOfURL: [NSURL URLWithString:recipe.smallPictureURL]];
+    
+    [smallImageData writeToFile:smallDocFilePath atomically:YES];
+    
+    
 }
 
 
