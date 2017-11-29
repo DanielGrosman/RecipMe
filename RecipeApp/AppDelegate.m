@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 
 @interface AppDelegate ()
+@property (nonatomic, strong) NSManagedObjectContext *context;
+
 
 @end
 
@@ -17,6 +19,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    self.context = self.persistentContainer.viewContext;
     return YES;
 }
 
@@ -85,9 +88,9 @@
 #pragma mark - Core Data Saving support
 
 - (void)saveContext {
-    NSManagedObjectContext *context = self.persistentContainer.viewContext;
+    
     NSError *error = nil;
-    if ([context hasChanges] && ![context save:&error]) {
+    if ([self.context hasChanges] && ![self.context save:&error]) {
         // Replace this implementation with code to handle the error appropriately.
         // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
         NSLog(@"Unresolved error %@, %@", error, error.userInfo);

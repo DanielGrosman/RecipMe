@@ -35,11 +35,18 @@
 //    [self.tableView reloadData];
 }
 
-- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
     [self performSegueWithIdentifier:@"showRecipesList" sender:self];
-    [self.storyboard instantiateViewControllerWithIdentifier:@"recipeResultsViewController"];
+    
+//    [self.storyboard instantiateViewControllerWithIdentifier:@"recipeResultsViewController"];
 }
 
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if([[segue identifier] isEqualToString:@"showRecipesList"]){
+        RecipeListViewController *controller = (RecipeListViewController *)[segue destinationViewController];
+        [controller setRecipeForIngredient:self.searchBar.text];
+    }
+}
 
 
 

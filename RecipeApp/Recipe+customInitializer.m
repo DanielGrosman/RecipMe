@@ -18,11 +18,11 @@
         
         self.rating = [dict[@"rating"] floatValue];
         self.recipeName = dict[@"recipeName"];
-        self.smallPictureURL = dict[@"smallImageUrls"];
-        
-        self.ingredients = dict[@"ingredients"];
+        self.smallPictureURL = dict[@"smallImageUrls"][0];
+        NSArray *ingredients = (NSArray*)dict[@"ingredients"];
+        self.ingredients = [ingredients componentsJoinedByString:@", "];
         self.id = dict[@"id"];
-        self.totalTime = dict[@"totalTimeInSeconds"];
+        self.totalTime = (int) dict[@"totalTimeInSeconds"];
         
     }
     return self;

@@ -8,8 +8,15 @@
 
 #import "RecipeListViewController.h"
 #import "RecipeTableViewCell.h"
+#import "Recipe+customInitializer.h"
+#import "YummlyAPI.h"
+#import "SearchViewController.h"
+#import "Recipe+CoreDataProperties.h"
 
 @interface RecipeListViewController () <UITableViewDataSource, UITableViewDelegate>
+
+@property (nonatomic,strong) NSArray<Recipe*>* recipes;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
@@ -17,7 +24,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [self fetchData:self.recipeForIngredient];
+}
+
+-(void)fetchData:(NSString *)searchString {
+    [YummlyAPI searchFor:searchString complete:^(NSArray *results) {
+//        self.recipes = results;
+        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+            self.recipes = results;
+            [self.tableView reloadData];
+        }];
+    }];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -25,14 +42,25 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10;
+    return self.recipes.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     RecipeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"searchResultCell" forIndexPath:indexPath];
     
-    cell.searchRecipeName.text = @"HELLO WORLD";
+    Recipe *currentRecipe = self.recipes[indexPath.row];
+    
+    cell.searchRecipeName.text = currentRecipe.recipeName;
+    NSLog(@"%@", currentRecipe.recipeName);
+    NSLog(@"%@",cell.savedRecipeName.text);
+    NSURL *smallImageURL = [NSURL URLWithString:currentRecipe.smallPictureURL];
+    NSData *smallImageData = [NSData dataWithContentsOfURL:smallImageURL];
+    UIImage *smallImage = [UIImage imageWithData:smallImageData];
+    cell.backgroundColor = [UIColor blueColor];
+    cell.savedRecipeImageView.image = smallImage;
+    cell.savedRecipeRating.text = [NSString stringWithFormat:@"%f",currentRecipe.rating];
+    cell.savedRecipeTime.text =  [NSString stringWithFormat:@"%d",currentRecipe.totalTime];
     
     return cell;
     

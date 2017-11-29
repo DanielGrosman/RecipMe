@@ -21,6 +21,8 @@
 		C0708A2C1FCC825E003DD748 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0708A2A1FCC825E003DD748 /* LaunchScreen.storyboard */; };
 		C0708A2F1FCC825E003DD748 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C0708A2E1FCC825E003DD748 /* main.m */; };
 		C0FDB8261FCDC5ED0025F442 /* YummlyAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = C0FDB8251FCDC5ED0025F442 /* YummlyAPI.m */; };
+		C0FDB82E1FCE32300025F442 /* Recipe+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = C0FDB82C1FCE32300025F442 /* Recipe+CoreDataClass.m */; };
+		C0FDB82F1FCE32300025F442 /* Recipe+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = C0FDB82D1FCE32300025F442 /* Recipe+CoreDataProperties.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +51,10 @@
 		C0708A2E1FCC825E003DD748 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C0FDB8241FCDC5ED0025F442 /* YummlyAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YummlyAPI.h; sourceTree = "<group>"; };
 		C0FDB8251FCDC5ED0025F442 /* YummlyAPI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YummlyAPI.m; sourceTree = "<group>"; };
+		C0FDB82A1FCE32300025F442 /* Recipe+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Recipe+CoreDataProperties.h"; sourceTree = "<group>"; };
+		C0FDB82B1FCE32300025F442 /* Recipe+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Recipe+CoreDataClass.h"; sourceTree = "<group>"; };
+		C0FDB82C1FCE32300025F442 /* Recipe+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Recipe+CoreDataClass.m"; sourceTree = "<group>"; };
+		C0FDB82D1FCE32300025F442 /* Recipe+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Recipe+CoreDataProperties.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +87,10 @@
 		C0708A1B1FCC825E003DD748 /* RecipeApp */ = {
 			isa = PBXGroup;
 			children = (
+				C0FDB82A1FCE32300025F442 /* Recipe+CoreDataProperties.h */,
+				C0FDB82B1FCE32300025F442 /* Recipe+CoreDataClass.h */,
+				C0FDB82C1FCE32300025F442 /* Recipe+CoreDataClass.m */,
+				C0FDB82D1FCE32300025F442 /* Recipe+CoreDataProperties.m */,
 				2DF8F5D81FCDFD090023FBAF /* Recipe+customInitializer.h */,
 				2DF8F5D91FCDFD090023FBAF /* Recipe+customInitializer.m */,
 				C0708A1C1FCC825E003DD748 /* AppDelegate.h */,
@@ -180,6 +190,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0FDB82F1FCE32300025F442 /* Recipe+CoreDataProperties.m in Sources */,
 				C0708A271FCC825E003DD748 /* RecipeApp.xcdatamodeld in Sources */,
 				C0708A211FCC825E003DD748 /* ViewController.m in Sources */,
 				2DF8F5CD1FCDEE810023FBAF /* RecipeViewController.m in Sources */,
@@ -189,6 +200,7 @@
 				2DF8F59C1FCCE7D20023FBAF /* RecipeTableViewCell.m in Sources */,
 				C0708A1E1FCC825E003DD748 /* AppDelegate.m in Sources */,
 				C0FDB8261FCDC5ED0025F442 /* YummlyAPI.m in Sources */,
+				C0FDB82E1FCE32300025F442 /* Recipe+CoreDataClass.m in Sources */,
 				2DF8F5D01FCDEF270023FBAF /* RecipeDetailViewController.m in Sources */,
 				2DF8F5DA1FCDFD090023FBAF /* Recipe+customInitializer.m in Sources */,
 			);
