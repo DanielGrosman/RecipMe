@@ -35,7 +35,9 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if([[segue identifier] isEqualToString:@"showRecipesList"]){
+        
         self.filterString = [[NSMutableString alloc] init];
+        
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         if ([defaults boolForKey:@"vegetarianButtonStatus"]) {
             [self.filterString appendString:@"&allowedDiet[]=387%5eLacto-ovo%20vegetarian"];
@@ -49,6 +51,7 @@
         if ([defaults boolForKey:@"pescatarianButtonStatus"]) {
             [self.filterString appendString:@"&allowedDiet[]=390%5ePescetarian"];
         }
+        
         RecipeListViewController *controller = (RecipeListViewController *)[segue destinationViewController];
         NSArray *stringsEnteredArray = [self.searchBar.text componentsSeparatedByString:@" "];
         NSString *recipesEntered = [stringsEnteredArray componentsJoinedByString:@"+"];
@@ -56,9 +59,5 @@
         [controller setRecipeForIngredient: recipesEntered];
     }
 }
-
-
-
-
 
 @end
