@@ -391,7 +391,7 @@
             </objects>
             <point key="canvasLocation" x="3212" y="133.5832083958021"/>
         </scene>
-        <!--Recipe List View Controller-->
+        <!--Recipes-->
         <scene sceneID="0qu-Cv-bZz">
             <objects>
                 <viewController id="8vN-vR-VQg" customClass="RecipeListViewController" sceneMemberID="viewController">
@@ -456,7 +456,7 @@
                                             <outlet property="searchRecipeName" destination="JiB-QD-gqT" id="Shv-e5-ZCJ"/>
                                             <outlet property="searchRecipeRating" destination="Zma-lQ-hlK" id="WMt-AK-Y33"/>
                                             <outlet property="searchRecipeTime" destination="aN2-e3-hyk" id="CBh-ih-827"/>
-                                            <segue destination="czc-99-ZNM" kind="presentation" id="T3Z-88-USd"/>
+                                            <segue destination="czc-99-ZNM" kind="presentation" identifier="presentRecipe" id="T3Z-88-USd"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -464,6 +464,13 @@
                                     <outlet property="dataSource" destination="8vN-vR-VQg" id="aj8-9Y-1SJ"/>
                                 </connections>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Recipes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kNK-YN-yfm">
+                                <rect key="frame" x="135" y="35" width="105" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -474,6 +481,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="EQl-xN-3Wt"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Recipes" id="f4x-uI-RAU"/>
                     <connections>
                         <outlet property="tableView" destination="esF-Q2-eFU" id="SHZ-T3-T47"/>
                     </connections>
@@ -511,7 +519,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7l9-j7-DhV">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7l9-j7-DhV">
                                 <rect key="frame" x="164" y="311" width="192" height="128"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>

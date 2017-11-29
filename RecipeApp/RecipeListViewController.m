@@ -7,6 +7,7 @@
 //
 
 #import "RecipeListViewController.h"
+#import "RecipeViewController.h"
 #import "RecipeTableViewCell.h"
 #import "Recipe+customInitializer.h"
 #import "YummlyAPI.h"
@@ -71,6 +72,19 @@
     }
     
     return cell;
+    
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if ([segue.identifier isEqualToString:@"presentRecipe"]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        Recipe *recipe = self.recipes[indexPath.row];
+        UINavigationController *navController = [segue destinationViewController];
+        RecipeViewController *detailVC = (RecipeViewController*)[navController viewControllers].firstObject;
+        [YummlyAPI getRecipeDetailsFor:recipe];
+        [detailVC setSelectedRecipe:recipe];
+        [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+    }
     
 }
 

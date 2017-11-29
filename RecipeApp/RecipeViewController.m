@@ -27,6 +27,26 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.recipeDetailName.text = self.selectedRecipe.recipeName;
+    self.recipeDetailIngredients.text = self.selectedRecipe.ingredients;
+    [self setupRecipe];
+    NSLog(@"%@", self.selectedRecipe);
+}
+
+-(void)setupRecipe{
+//    NSURL *largeImageURL = [NSURL URLWithString:self.selectedRecipe.largePictureURL];
+//    NSData *largeImageData = [NSData dataWithContentsOfURL:largeImageURL];
+//    UIImage *largeImage = [UIImage imageWithData:largeImageData];
+//    self.recipeDetailImageView.image = largeImage;
+    
+//    NSURLSessionTask *imageTask = [[NSURLSession sharedSession] dataTaskWithURL:largeImageURL completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+//        UIImage *largeImage = [UIImage imageWithData:data];
+//
+//        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+//            self.recipeDetailImageView.image = largeImage;
+//        }];
+//    }];
+//    [imageTask resume];
 }
 
 @end

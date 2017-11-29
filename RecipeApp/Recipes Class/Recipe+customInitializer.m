@@ -20,7 +20,7 @@
         self.smallPictureURL = dict[@"smallImageUrls"][0];
         NSArray *ingredients = (NSArray*)dict[@"ingredients"];
         self.ingredients = [ingredients componentsJoinedByString:@", "];
-        self.id = dict[@"id"];
+        self.recipeID = dict[@"id"];
         NSString *timeString = [NSString stringWithFormat:@"%@",dict[@"totalTimeInSeconds"]];
         self.totalTime = timeString;
     }

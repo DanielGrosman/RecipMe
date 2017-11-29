@@ -71,6 +71,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2DF8F5E11FCE848C0023FBAF /* Custom Cells */ = {
+			isa = PBXGroup;
+			children = (
+				2DF8F5DE1FCE45DF0023FBAF /* SavedRecipesTableViewCell.h */,
+				2DF8F5DF1FCE45DF0023FBAF /* SavedRecipesTableViewCell.m */,
+				2DF8F59A1FCCE7D20023FBAF /* RecipeTableViewCell.h */,
+				2DF8F59B1FCCE7D20023FBAF /* RecipeTableViewCell.m */,
+			);
+			path = "Custom Cells";
+			sourceTree = "<group>";
+		};
+		2DF8F5E21FCE84AB0023FBAF /* API Class */ = {
+			isa = PBXGroup;
+			children = (
+				C0FDB8241FCDC5ED0025F442 /* YummlyAPI.h */,
+				C0FDB8251FCDC5ED0025F442 /* YummlyAPI.m */,
+			);
+			path = "API Class";
+			sourceTree = "<group>";
+		};
+		2DF8F5E31FCE84C60023FBAF /* Recipes Class */ = {
+			isa = PBXGroup;
+			children = (
+				C0FDB82A1FCE32300025F442 /* Recipe+CoreDataProperties.h */,
+				C0FDB82B1FCE32300025F442 /* Recipe+CoreDataClass.h */,
+				C0FDB82C1FCE32300025F442 /* Recipe+CoreDataClass.m */,
+				C0FDB82D1FCE32300025F442 /* Recipe+CoreDataProperties.m */,
+				2DF8F5D81FCDFD090023FBAF /* Recipe+customInitializer.h */,
+				2DF8F5D91FCDFD090023FBAF /* Recipe+customInitializer.m */,
+			);
+			path = "Recipes Class";
+			sourceTree = "<group>";
+		};
 		C0708A101FCC825E003DD748 = {
 			isa = PBXGroup;
 			children = (
@@ -90,30 +123,21 @@
 		C0708A1B1FCC825E003DD748 /* RecipeApp */ = {
 			isa = PBXGroup;
 			children = (
-				C0FDB82A1FCE32300025F442 /* Recipe+CoreDataProperties.h */,
-				C0FDB82B1FCE32300025F442 /* Recipe+CoreDataClass.h */,
-				C0FDB82C1FCE32300025F442 /* Recipe+CoreDataClass.m */,
-				C0FDB82D1FCE32300025F442 /* Recipe+CoreDataProperties.m */,
-				2DF8F5D81FCDFD090023FBAF /* Recipe+customInitializer.h */,
-				2DF8F5D91FCDFD090023FBAF /* Recipe+customInitializer.m */,
 				C0708A1C1FCC825E003DD748 /* AppDelegate.h */,
 				C0708A1D1FCC825E003DD748 /* AppDelegate.m */,
 				C0708A1F1FCC825E003DD748 /* ViewController.h */,
 				C0708A201FCC825E003DD748 /* ViewController.m */,
 				2DF8F5911FCCB04B0023FBAF /* SearchViewController.h */,
 				2DF8F5921FCCB04B0023FBAF /* SearchViewController.m */,
-				2DF8F5DE1FCE45DF0023FBAF /* SavedRecipesTableViewCell.h */,
-				2DF8F5DF1FCE45DF0023FBAF /* SavedRecipesTableViewCell.m */,
-				2DF8F59A1FCCE7D20023FBAF /* RecipeTableViewCell.h */,
-				2DF8F59B1FCCE7D20023FBAF /* RecipeTableViewCell.m */,
 				2DF8F5C81FCDE90B0023FBAF /* RecipeListViewController.h */,
 				2DF8F5C91FCDE90B0023FBAF /* RecipeListViewController.m */,
 				2DF8F5CB1FCDEE810023FBAF /* RecipeViewController.h */,
 				2DF8F5CC1FCDEE810023FBAF /* RecipeViewController.m */,
 				2DF8F5CE1FCDEF270023FBAF /* RecipeDetailViewController.h */,
 				2DF8F5CF1FCDEF270023FBAF /* RecipeDetailViewController.m */,
-				C0FDB8241FCDC5ED0025F442 /* YummlyAPI.h */,
-				C0FDB8251FCDC5ED0025F442 /* YummlyAPI.m */,
+				2DF8F5E31FCE84C60023FBAF /* Recipes Class */,
+				2DF8F5E21FCE84AB0023FBAF /* API Class */,
+				2DF8F5E11FCE848C0023FBAF /* Custom Cells */,
 				C0708A221FCC825E003DD748 /* Main.storyboard */,
 				C0708A281FCC825E003DD748 /* Assets.xcassets */,
 				C0708A2A1FCC825E003DD748 /* LaunchScreen.storyboard */,
