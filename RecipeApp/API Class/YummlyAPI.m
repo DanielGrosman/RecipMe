@@ -70,7 +70,7 @@
             abort();
         }
         [recipe setRecipeDetails:recipeDetails];
-        NSLog(@"%@", recipe);
+//        NSLog(@"%@", recipe);
         
     }];
     [task resume];
