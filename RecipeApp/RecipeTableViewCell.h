@@ -10,10 +10,6 @@
 
 @interface RecipeTableViewCell : UITableViewCell
 
-@property (weak, nonatomic) IBOutlet UIImageView *savedRecipeImageView;
-@property (weak, nonatomic) IBOutlet UILabel *savedRecipeName;
-@property (weak, nonatomic) IBOutlet UILabel *savedRecipeRating;
-@property (weak, nonatomic) IBOutlet UILabel *savedRecipeTime;
 @property (weak, nonatomic) IBOutlet UIImageView *searchRecipeImageView;
 @property (weak, nonatomic) IBOutlet UILabel *searchRecipeName;
 @property (weak, nonatomic) IBOutlet UILabel *searchRecipeRating;

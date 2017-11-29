@@ -52,10 +52,12 @@
     Recipe *currentRecipe = self.recipes[indexPath.row];
     
     cell.searchRecipeName.text = currentRecipe.recipeName;
+
     NSURL *smallImageURL = [NSURL URLWithString:currentRecipe.smallPictureURL];
     NSData *smallImageData = [NSData dataWithContentsOfURL:smallImageURL];
     UIImage *smallImage = [UIImage imageWithData:smallImageData];
     cell.searchRecipeImageView.image = smallImage;
+
     cell.searchRecipeRating.text = [NSString stringWithFormat:@"Rating: %2.0f",currentRecipe.rating];
     int seconds = currentRecipe.totalTime;
     int timeInMinutes = seconds/60;
