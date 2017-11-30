@@ -13,8 +13,8 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     self.backView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.5f];
+    self.searchRecipeImageView.contentMode = UIViewContentModeScaleAspectFill;
 }
-
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 
