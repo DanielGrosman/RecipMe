@@ -12,9 +12,10 @@
 @property (weak, nonatomic) IBOutlet UIImageView *settingsImage;
 @property (strong, nonatomic) NSMutableString *mutableURLString;
 @property (weak, nonatomic) IBOutlet UISwitch *vegetarianSwitch;
-@property (weak, nonatomic) IBOutlet UISwitch *lactoSwitch;
+@property (weak, nonatomic) IBOutlet UISwitch *dairySwitch;
 @property (weak, nonatomic) IBOutlet UISwitch *veganSwitch;
-@property (weak, nonatomic) IBOutlet UISwitch *pescatarianSwitch;
+@property (weak, nonatomic) IBOutlet UISwitch *glutenSwitch;
+
 @end
 
 @implementation SettingsViewController
@@ -23,9 +24,9 @@
     [super viewDidLoad];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     self.vegetarianSwitch.on = [defaults boolForKey:@"vegetarianButtonStatus"];
-    self.lactoSwitch.on = [defaults boolForKey:@"lactoButtonStatus"];
+    self.dairySwitch.on = [defaults boolForKey:@"dairyButtonStatus"];
     self.veganSwitch.on = [defaults boolForKey:@"veganButtonStatus"];
-    self.pescatarianSwitch.on = [defaults boolForKey:@"pescatarianButtonStatus"];
+    self.glutenSwitch.on = [defaults boolForKey:@"glutenButtonStatus"];
     self.mutableURLString = [[NSMutableString alloc] init];
 
     self.settingsImage.image = [UIImage imageNamed:@"settings"];
@@ -44,17 +45,16 @@
     }
 }
 
-
-- (IBAction)lactoButtonTapped:(UISwitch *)sender {
+- (IBAction)dairyButtonTapped:(UISwitch *)sender {
     if (sender.on == NO) {
         sender.on = YES;
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-        [defaults setBool:sender.on forKey:@"lactoButtonStatus"];
+        [defaults setBool:sender.on forKey:@"dairyButtonStatus"];
     }
     else {
         sender.on = NO;
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-        [defaults setBool:sender.on forKey:@"lactoButtonStatus"];
+        [defaults setBool:sender.on forKey:@"dairyButtonStatus"];
     }
 }
 
@@ -71,17 +71,18 @@
     }
 }
 
-- (IBAction)pescetarianButtonTapped:(UISwitch *)sender {
+- (IBAction)glutenButtonTapped:(UISwitch *)sender {
     if (sender.on == NO) {
         sender.on = YES;
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-        [defaults setBool:sender.on forKey:@"pescatarianButtonStatus"];
+        [defaults setBool:sender.on forKey:@"glutenButtonStatus"];
     }
     else {
         sender.on = NO;
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-        [defaults setBool:sender.on forKey:@"pescatarianButtonStatus"];
+        [defaults setBool:sender.on forKey:@"glutenButtonStatus"];
     }
+    
 }
 
 

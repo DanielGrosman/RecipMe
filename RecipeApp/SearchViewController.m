@@ -48,14 +48,14 @@
         if ([defaults boolForKey:@"vegetarianButtonStatus"]) {
             [self.filterString appendString:@"&allowedDiet[]=387%5eLacto-ovo%20vegetarian"];
         }
-        if ([defaults boolForKey:@"lactoButtonStatus"]) {
-            [self.filterString appendString:@"&allowedDiet[]=388%5eLacto%20vegetarian"];
+        if ([defaults boolForKey:@"dairyButtonStatus"]) {
+            [self.filterString appendString:@"&allowedAllergy[]=396%5eDairy-Free"];
         }
         if ([defaults boolForKey:@"veganButtonStatus"]) {
             [self.filterString appendString:@"&allowedDiet[]=386%5eVegan"];
         }
-        if ([defaults boolForKey:@"pescatarianButtonStatus"]) {
-            [self.filterString appendString:@"&allowedDiet[]=390%5ePescetarian"];
+        if ([defaults boolForKey:@"glutenButtonStatus"]) {
+            [self.filterString appendString:@"&allowedAllergy[]=393%5eGluten-Free"];
         }
         
         RecipeListViewController *controller = (RecipeListViewController *)[segue destinationViewController];

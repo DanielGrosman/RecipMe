@@ -19,6 +19,7 @@
 //@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic)NSArray <Recipe*> *savedRecipies;
+@property (weak, nonatomic) IBOutlet UIButton *editButton;
 
 @end
 
@@ -26,6 +27,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+        self.editButton.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.75f];
+    
     self.tableView.contentInset = UIEdgeInsetsMake(44, 0, 0, 0);
 //    [self.tableView setContentOffset:CGPointMake(0, 44)];
     
