@@ -9,5 +9,6 @@ target 'RecipeApp' do
 
   pod 'MBProgressHUD'
   pod 'SDWebImage'
+  pod 'XLPagerTabStrip', :git => 'https://github.com/xmartlabs/XLPagerTabStrip', :branch => 'obj-c'
 
 end
