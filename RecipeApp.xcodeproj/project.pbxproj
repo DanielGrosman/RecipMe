@@ -16,6 +16,7 @@
 		2DF8F5E01FCE45DF0023FBAF /* SavedRecipesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DF8F5DF1FCE45DF0023FBAF /* SavedRecipesTableViewCell.m */; };
 		2DF8F5E61FCF18F50023FBAF /* YummlyAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DF8F5E51FCF18F50023FBAF /* YummlyAPI.m */; };
 		2DF8F5EA1FCF8A100023FBAF /* ButtonBarTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DF8F5E91FCF8A100023FBAF /* ButtonBarTabViewController.m */; };
+		2DF8F5F51FCF97DD0023FBAF /* ButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DF8F5F41FCF97DD0023FBAF /* ButtonCell.xib */; };
 		8F255061C876BD5245206905 /* libPods-RecipeApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F4E2FF3CA94BFB81918F09AE /* libPods-RecipeApp.a */; };
 		C0708A1E1FCC825E003DD748 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C0708A1D1FCC825E003DD748 /* AppDelegate.m */; };
 		C0708A211FCC825E003DD748 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0708A201FCC825E003DD748 /* ViewController.m */; };
@@ -51,6 +52,7 @@
 		2DF8F5E51FCF18F50023FBAF /* YummlyAPI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YummlyAPI.m; sourceTree = "<group>"; };
 		2DF8F5E81FCF8A100023FBAF /* ButtonBarTabViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ButtonBarTabViewController.h; sourceTree = "<group>"; };
 		2DF8F5E91FCF8A100023FBAF /* ButtonBarTabViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ButtonBarTabViewController.m; sourceTree = "<group>"; };
+		2DF8F5F41FCF97DD0023FBAF /* ButtonCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ButtonCell.xib; sourceTree = "<group>"; };
 		C0708A191FCC825E003DD748 /* RecipeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecipeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0708A1C1FCC825E003DD748 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C0708A1D1FCC825E003DD748 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 			children = (
 				2DF8F5E81FCF8A100023FBAF /* ButtonBarTabViewController.h */,
 				2DF8F5E91FCF8A100023FBAF /* ButtonBarTabViewController.m */,
+				2DF8F5F41FCF97DD0023FBAF /* ButtonCell.xib */,
 			);
 			path = "Pod TabVC";
 			sourceTree = "<group>";
@@ -259,6 +262,7 @@
 				C0708A2C1FCC825E003DD748 /* LaunchScreen.storyboard in Resources */,
 				C0708A291FCC825E003DD748 /* Assets.xcassets in Resources */,
 				C0708A241FCC825E003DD748 /* Main.storyboard in Resources */,
+				2DF8F5F51FCF97DD0023FBAF /* ButtonCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

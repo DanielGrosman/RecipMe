@@ -7,6 +7,8 @@
 //
 
 #import "ButtonBarTabViewController.h"
+#import "ViewController.h"
+#import "SearchViewController.h"
 
 @interface ButtonBarTabViewController ()
 
@@ -16,6 +18,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+    NSLog(@"%@",@(self.buttonBarView.frame));
+//    frame.origin.y = 20;
+//    frame.origin.y = self.navigationController.navigationBar.frame.size.height + 20; //safe area
+//    self.buttonBarView.frame = frame;
+//    self.navigationItem
+    
+//    self.navigationController.navigationBar.hidden = YES;
+    
     // Do any additional setup after loading the view.
 }
 
@@ -26,7 +37,19 @@
 
 
 -(NSArray *)childViewControllersForPagerTabStripViewController:(XLPagerTabStripViewController *)pagerTabStripViewController{
+
+    ViewController *savedRecipesVC = [self.storyboard instantiateViewControllerWithIdentifier:@"savedRecipesList"];
+//    CGRect frame = savedRecipesVC.view.frame;
+//    frame.origin.y = 20;
+//    CGPoint offset = CGPointMake(0, 20);
+//    savedRecipesVC.view.frame = CGRectMake(offset.x, offset.y, savedRecipesVC.view.frame.size.width, savedRecipesVC.view.frame.size.height);
+
+    SearchViewController *searchVC = [self.storyboard instantiateViewControllerWithIdentifier:@"ingredientSearchVC"];
     
+    [self.buttonBarView registerNib:[UINib nibWithNibName:@"ButtonCell" bundle:[NSBundle bundleForClass:[self class]]]  forCellWithReuseIdentifier:@"Cell"];
+    
+    
+    return @[savedRecipesVC, searchVC];
 }
 
 /*
