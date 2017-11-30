@@ -10,6 +10,7 @@
 #import "RecipeListViewController.h"
 #import "RecipeTableViewCell.h"
 #import "SettingsViewController.h"
+#import <XLPagerTabStrip/XLPagerTabStripViewController.h>
 
 @interface SearchViewController ()
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
@@ -23,6 +24,11 @@
     [super viewDidLoad];
     self.searchBar.delegate = self;
     self.searchImage.image = [UIImage imageNamed:@"search"];
+//    self.view.frame.origin.y = 20;
+    
+    
+    CGRect newBounds = CGRectMake(self.view.bounds.origin.x, -44, self.view.bounds.size.width, self.view.bounds.size.height);
+    self.view.bounds= newBounds;
 }
 
 - (void)updateSearchResultsForSearchController:(UISearchController *)searchController {
@@ -58,6 +64,10 @@
         [controller setFilterString:self.filterString];
         [controller setRecipeForIngredient: recipesEntered];
     }
+}
+
+- (NSString *)titleForPagerTabStripViewController:(XLPagerTabStripViewController *)pagerTabStripViewController{
+    return @"Ingredients Search";
 }
 
 @end

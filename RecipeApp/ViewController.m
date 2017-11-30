@@ -13,8 +13,9 @@
 #import "AppDelegate.h"
 #import "SavedRecipesTableViewCell.h"
 #import "RecipeDetailViewController.h"
+#import <XLPagerTabStrip/XLPagerTabStripViewController.h>
 
-@interface ViewController () <UITableViewDelegate, UITableViewDataSource>
+@interface ViewController () <UITableViewDelegate, UITableViewDataSource,XLPagerTabStripChildItem>
 //@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic)NSArray <Recipe*> *savedRecipies;
@@ -25,9 +26,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.tableView.contentInset = UIEdgeInsetsMake(44, 0, 0, 0);
+//    [self.tableView setContentOffset:CGPointMake(0, 44)];
+    
     [self fetchRecipesData];
+    NSLog(@"%@", @(self.tableView.contentInset.top));
+    
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(fetchRecipesData) name:NSManagedObjectContextDidSaveNotification object:nil];
+}
+
+- (void)viewDidLayoutSubviews {
+    NSLog(@"%@", NSStringFromCGPoint(self.tableView.contentOffset));
+
 }
 
 -(void)fetchRecipesData{
@@ -90,7 +101,12 @@
         
         RecipeDetailViewController *controller = [segue destinationViewController];
         [controller setRecipe:recipe];
+        [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
     }
+}
+
+- (NSString *)titleForPagerTabStripViewController:(XLPagerTabStripViewController *)pagerTabStripViewController{
+    return @"Saved Recipes";
 }
 
 
