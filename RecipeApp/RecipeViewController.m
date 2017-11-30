@@ -47,6 +47,7 @@
 
         [[NSOperationQueue mainQueue] addOperationWithBlock:^{
             self.recipeDetailImageView.image = largeImage;
+            self.recipeDetailImageView.contentMode = UIViewContentModeScaleAspectFill;
         }];
     }];
     [imageTask resume];
