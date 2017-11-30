@@ -21,6 +21,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *recipeDetailProtein;
 @property (weak, nonatomic) IBOutlet UILabel *recipeDetailSugar;
 @property (weak, nonatomic) IBOutlet UILabel *recipeDetailCarbs;
+@property (weak, nonatomic) IBOutlet UIView *nameBackground;
 
 @end
 
@@ -28,7 +29,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+        self.nameBackground.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.5f];
+
 
 }
 
