@@ -76,6 +76,14 @@
     return cell;
 }
 
+-(IBAction)openRecipeLink:(UIButton*)sender{
+    NSURL *recipeURL = [NSURL URLWithString:self.recipe.recipeURL];
+    if ([[UIApplication sharedApplication] canOpenURL:recipeURL]) {
+        [[UIApplication sharedApplication]openURL:recipeURL options:@{} completionHandler:nil];
+    }
+}
+
+
 
 
 

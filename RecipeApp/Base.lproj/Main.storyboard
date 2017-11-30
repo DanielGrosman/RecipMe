@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sxB-Yh-Wqr">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WM8-e4-bzA">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -14,7 +14,7 @@
         <!--Saved Recipes-->
         <scene sceneID="dW9-ek-EVl">
             <objects>
-                <viewController id="hR2-IX-mNS" customClass="ViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="savedRecipesList" id="hR2-IX-mNS" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="I67-w6-3YT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -316,6 +316,9 @@
                                 <state key="normal" title="See the Full Recipe">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="openRecipeLink:" destination="GEv-Ff-NDq" eventType="touchUpInside" id="dRr-GQ-ZvD"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calories" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ABM-AQ-1Vp">
                                 <rect key="frame" x="10" y="473" width="60" height="20"/>
@@ -507,7 +510,7 @@
         <!--Ingredients Search-->
         <scene sceneID="yS3-Yx-OSY">
             <objects>
-                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="nnj-wL-t33" customClass="SearchViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ingredientSearchVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="nnj-wL-t33" customClass="SearchViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uRJ-my-Dj6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -872,6 +875,9 @@
                                 <state key="normal" title="See the Full Recipe">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="openRecipeLink:" destination="myi-Vs-eww" eventType="touchUpInside" id="XSu-HQ-gDb"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Carbs" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qvE-AB-kzR">
                                 <rect key="frame" x="305" y="512" width="60" height="20"/>
@@ -1024,6 +1030,39 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pPj-D7-5cu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3766" y="-558"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Nww-w8-GOr">
+            <objects>
+                <navigationController id="WM8-e4-bzA" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="3su-Hk-Axs">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="mA2-oX-8t4" kind="relationship" relationship="rootViewController" id="nlR-Mo-bXG"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="w8C-Nf-Vkt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1139" y="-401"/>
+        </scene>
+        <!--RecipMe-->
+        <scene sceneID="bY4-oP-xgx">
+            <objects>
+                <viewController id="mA2-oX-8t4" customClass="ButtonBarTabViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MEO-9t-jxB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="Tts-LV-aMf"/>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <navigationItem key="navigationItem" title="RecipMe" id="2o2-fU-gDS"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NNe-GX-MJM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-87" y="-388"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="xeb-UA-D90">

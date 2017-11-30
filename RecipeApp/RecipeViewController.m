@@ -119,15 +119,19 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
     UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     cell.textLabel.text = self.ingredientsArray[indexPath.row];
     
     return cell;
+
 }
 
-
-
+-(IBAction)openRecipeLink:(UIButton*)sender{
+    NSURL *recipeURL = [NSURL URLWithString:self.selectedRecipe.recipeURL];
+    if ([[UIApplication sharedApplication] canOpenURL:recipeURL]) {
+        [[UIApplication sharedApplication]openURL:recipeURL options:@{} completionHandler:nil];
+    }
+}
 
 
 

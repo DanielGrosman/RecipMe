@@ -15,6 +15,8 @@
 		2DF8F5DA1FCDFD090023FBAF /* Recipe+customInitializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DF8F5D91FCDFD090023FBAF /* Recipe+customInitializer.m */; };
 		2DF8F5E01FCE45DF0023FBAF /* SavedRecipesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DF8F5DF1FCE45DF0023FBAF /* SavedRecipesTableViewCell.m */; };
 		2DF8F5E61FCF18F50023FBAF /* YummlyAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DF8F5E51FCF18F50023FBAF /* YummlyAPI.m */; };
+		2DF8F5EA1FCF8A100023FBAF /* ButtonBarTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DF8F5E91FCF8A100023FBAF /* ButtonBarTabViewController.m */; };
+		2DF8F5F51FCF97DD0023FBAF /* ButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DF8F5F41FCF97DD0023FBAF /* ButtonCell.xib */; };
 		8F255061C876BD5245206905 /* libPods-RecipeApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F4E2FF3CA94BFB81918F09AE /* libPods-RecipeApp.a */; };
 		C0708A1E1FCC825E003DD748 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C0708A1D1FCC825E003DD748 /* AppDelegate.m */; };
 		C0708A211FCC825E003DD748 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0708A201FCC825E003DD748 /* ViewController.m */; };
@@ -48,6 +50,9 @@
 		2DF8F5DF1FCE45DF0023FBAF /* SavedRecipesTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SavedRecipesTableViewCell.m; sourceTree = "<group>"; };
 		2DF8F5E41FCF18F50023FBAF /* YummlyAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YummlyAPI.h; sourceTree = "<group>"; };
 		2DF8F5E51FCF18F50023FBAF /* YummlyAPI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YummlyAPI.m; sourceTree = "<group>"; };
+		2DF8F5E81FCF8A100023FBAF /* ButtonBarTabViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ButtonBarTabViewController.h; sourceTree = "<group>"; };
+		2DF8F5E91FCF8A100023FBAF /* ButtonBarTabViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ButtonBarTabViewController.m; sourceTree = "<group>"; };
+		2DF8F5F41FCF97DD0023FBAF /* ButtonCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ButtonCell.xib; sourceTree = "<group>"; };
 		C0708A191FCC825E003DD748 /* RecipeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecipeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0708A1C1FCC825E003DD748 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C0708A1D1FCC825E003DD748 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -115,6 +120,16 @@
 			path = YummlyAPI;
 			sourceTree = "<group>";
 		};
+		2DF8F5EB1FCF8A180023FBAF /* Pod TabVC */ = {
+			isa = PBXGroup;
+			children = (
+				2DF8F5E81FCF8A100023FBAF /* ButtonBarTabViewController.h */,
+				2DF8F5E91FCF8A100023FBAF /* ButtonBarTabViewController.m */,
+				2DF8F5F41FCF97DD0023FBAF /* ButtonCell.xib */,
+			);
+			path = "Pod TabVC";
+			sourceTree = "<group>";
+		};
 		407026A1A743EFD17BA1BFA7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -160,6 +175,7 @@
 				C0F78BE51FCEFBA5009BA146 /* SettingsViewController.m */,
 				C0F78BE71FCEFF8F009BA146 /* SearchResultRecipe.h */,
 				C0F78BE81FCEFF8F009BA146 /* SearchResultRecipe.m */,
+				2DF8F5EB1FCF8A180023FBAF /* Pod TabVC */,
 				2DF8F5E71FCF1AE80023FBAF /* YummlyAPI */,
 				2DF8F5E31FCE84C60023FBAF /* Recipes Class */,
 				2DF8F5E11FCE848C0023FBAF /* Custom Cells */,
@@ -246,6 +262,7 @@
 				C0708A2C1FCC825E003DD748 /* LaunchScreen.storyboard in Resources */,
 				C0708A291FCC825E003DD748 /* Assets.xcassets in Resources */,
 				C0708A241FCC825E003DD748 /* Main.storyboard in Resources */,
+				2DF8F5F51FCF97DD0023FBAF /* ButtonCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,9 +290,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-RecipeApp/Pods-RecipeApp-resources.sh",
+				$PODS_CONFIGURATION_BUILD_DIR/XLPagerTabStrip/XLPagerTabStrip.bundle,
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -319,6 +339,7 @@
 				C0708A1E1FCC825E003DD748 /* AppDelegate.m in Sources */,
 				C0FDB82E1FCE32300025F442 /* Recipe+CoreDataClass.m in Sources */,
 				C0F78BE91FCEFF8F009BA146 /* SearchResultRecipe.m in Sources */,
+				2DF8F5EA1FCF8A100023FBAF /* ButtonBarTabViewController.m in Sources */,
 				C0F78BE61FCEFBA5009BA146 /* SettingsViewController.m in Sources */,
 				2DF8F5E61FCF18F50023FBAF /* YummlyAPI.m in Sources */,
 				2DF8F5D01FCDEF270023FBAF /* RecipeDetailViewController.m in Sources */,
@@ -459,6 +480,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 55BW5T8VB9;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/MBProgressHUD\"",
+					"\"${PODS_ROOT}/Headers/Public/SDWebImage\"",
+					"\"${PODS_ROOT}/Headers/Public/XLPagerTabStrip\"/**",
+				);
 				INFOPLIST_FILE = RecipeApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Daniel.Grosman.RecipeApp;
@@ -474,6 +502,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 55BW5T8VB9;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/MBProgressHUD\"",
+					"\"${PODS_ROOT}/Headers/Public/SDWebImage\"",
+					"\"${PODS_ROOT}/Headers/Public/XLPagerTabStrip\"/**",
+				);
 				INFOPLIST_FILE = RecipeApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Daniel.Grosman.RecipeApp;
