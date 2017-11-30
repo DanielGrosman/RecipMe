@@ -76,10 +76,10 @@
     SearchResultRecipe *currentRecipe = self.recipes[indexPath.row];
     
     cell.searchRecipeName.text = currentRecipe.recipeName;
-    
-    [cell.searchRecipeImageView sd_setImageWithURL:[NSURL URLWithString:currentRecipe.smallPictureURL]
+    NSString *deleteCharacters = [currentRecipe.smallPictureURL substringToIndex:[currentRecipe.smallPictureURL length] - 2];
+    NSString* largeImageURL = [deleteCharacters stringByAppendingString:@"360"];
+    [cell.searchRecipeImageView sd_setImageWithURL:[NSURL URLWithString:largeImageURL]
                  placeholderImage:nil];
-    
     cell.searchRecipeRating.text = [NSString stringWithFormat:@"Rating: %2.0f",currentRecipe.rating];
     
     if ([currentRecipe.totalTime isEqualToString:@"<null>"]) {
@@ -91,9 +91,7 @@
         NSString *timeString = [NSString stringWithFormat:@"%d",timeInMinutes];
         cell.searchRecipeTime.text =  [NSString stringWithFormat:@"%@ Minutes",timeString];
     }
-    
     return cell;
-    
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
