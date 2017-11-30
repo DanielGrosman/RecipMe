@@ -15,6 +15,7 @@
 #import "Recipe+CoreDataProperties.h"
 #import "SearchResultRecipe.h"
 #import "MBProgressHUD.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @interface RecipeListViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -76,10 +77,10 @@
     
     cell.searchRecipeName.text = currentRecipe.recipeName;
     
-    NSURL *smallImageURL = [NSURL URLWithString:currentRecipe.smallPictureURL];
-    NSData *smallImageData = [NSData dataWithContentsOfURL:smallImageURL];
-    UIImage *smallImage = [UIImage imageWithData:smallImageData];
-    cell.searchRecipeImageView.image = smallImage;
+    [cell.searchRecipeImageView sd_setImageWithURL:[NSURL URLWithString:currentRecipe.smallPictureURL]
+                 placeholderImage:nil];
+    
+    
     
     cell.searchRecipeRating.text = [NSString stringWithFormat:@"Rating: %2.0f",currentRecipe.rating];
     

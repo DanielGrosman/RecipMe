@@ -8,5 +8,6 @@ target 'RecipeApp' do
   # Pods for RecipeApp
 
   pod 'MBProgressHUD'
+  pod 'SDWebImage'
 
 end
