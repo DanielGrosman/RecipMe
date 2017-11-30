@@ -10,5 +10,6 @@ target 'RecipeApp' do
   pod 'MBProgressHUD'
   pod 'SDWebImage'
   pod 'XLPagerTabStrip', '~> 2.0'
+pod 'DZNEmptyDataSet'
 
 end

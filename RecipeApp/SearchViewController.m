@@ -26,9 +26,14 @@
     self.searchImage.image = [UIImage imageNamed:@"search"];
 //    self.view.frame.origin.y = 20;
     
+    self.searchImage.contentMode = UIViewContentModeScaleAspectFit;
+    
     
     CGRect newBounds = CGRectMake(self.view.bounds.origin.x, -44, self.view.bounds.size.width, self.view.bounds.size.height);
     self.view.bounds= newBounds;
+}
+- (IBAction)screenTapped:(UITapGestureRecognizer *)sender {
+    [self.searchBar resignFirstResponder];
 }
 
 - (void)updateSearchResultsForSearchController:(UISearchController *)searchController {

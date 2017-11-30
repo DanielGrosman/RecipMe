@@ -14,8 +14,10 @@
 #import "SavedRecipesTableViewCell.h"
 #import "RecipeDetailViewController.h"
 #import <XLPagerTabStrip/XLPagerTabStripViewController.h>
+#import "UIScrollView+EmptyDataSet.h"
+#import <DZNEmptyDataSet/UIScrollView+EmptyDataSet.h>
 
-@interface ViewController () <UITableViewDelegate, UITableViewDataSource,XLPagerTabStripChildItem>
+@interface ViewController () <UITableViewDelegate, UITableViewDataSource,XLPagerTabStripChildItem,DZNEmptyDataSetSource, DZNEmptyDataSetDelegate>
 //@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic)NSArray <Recipe*> *savedRecipies;
@@ -27,27 +29,31 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-        self.editButton.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.75f];
+    self.tableView.emptyDataSetSource = self;
+    self.tableView.emptyDataSetDelegate = self;
+    self.tableView.tableFooterView = [UIView new];
+    
+    self.editButton.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.75f];
     
     self.tableView.contentInset = UIEdgeInsetsMake(44, 0, 0, 0);
-//    [self.tableView setContentOffset:CGPointMake(0, 44)];
+    //    [self.tableView setContentOffset:CGPointMake(0, 44)];
     
     [self fetchRecipesData];
-    NSLog(@"%@", @(self.tableView.contentInset.top));
+    
     
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(fetchRecipesData) name:NSManagedObjectContextDidSaveNotification object:nil];
 }
 
 - (void)viewDidLayoutSubviews {
-    NSLog(@"%@", NSStringFromCGPoint(self.tableView.contentOffset));
-
+    
+    
 }
 
 -(void)fetchRecipesData{
     AppDelegate *appDelegate = ((AppDelegate*)[[UIApplication sharedApplication] delegate]);
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Recipe"];
-//    NSSortDescriptor *sort = [NSSortDescriptor sortDescriptorWithKey:@"tagName" ascending:YES];
+    //    NSSortDescriptor *sort = [NSSortDescriptor sortDescriptorWithKey:@"tagName" ascending:YES];
     self.savedRecipies = [appDelegate.persistentContainer.viewContext executeFetchRequest:request error:nil];
 }
 
@@ -67,10 +73,10 @@
     
     cell.savedRecipeName.text = currentRecipe.recipeName;
     
-//    NSURL *smallImageURL = [NSURL URLWithString:currentRecipe.smallPictureURL];
-//    NSData *smallImageData = [NSData dataWithContentsOfURL:smallImageURL];
-//    UIImage *smallImage = [UIImage imageWithData:smallImageData];
-//    cell.savedRecipeImageView.image = smallImage;
+    //    NSURL *smallImageURL = [NSURL URLWithString:currentRecipe.smallPictureURL];
+    //    NSData *smallImageData = [NSData dataWithContentsOfURL:smallImageURL];
+    //    UIImage *smallImage = [UIImage imageWithData:smallImageData];
+    //    cell.savedRecipeImageView.image = smallImage;
     NSArray *docDirectory = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *imageFilePath = [docDirectory firstObject];
     imageFilePath = [imageFilePath stringByAppendingString:currentRecipe.largeImagePath];
@@ -81,7 +87,7 @@
         cell.savedRecipeImageView.image = smallImage;
         cell.savedRecipeImageView.contentMode = UIViewContentModeScaleAspectFill;
     }
-
+    
     cell.savedRecipeRating.text = [NSString stringWithFormat:@"Rating: %2.0f",currentRecipe.rating];
     
     if ([currentRecipe.totalTime isEqualToString:@"<null>"]) {
@@ -111,6 +117,54 @@
 - (NSString *)titleForPagerTabStripViewController:(XLPagerTabStripViewController *)pagerTabStripViewController{
     return @"Saved Recipes";
 }
+
+#pragma mark - EmptyTableView
+
+- (UIImage *)imageForEmptyDataSet:(UIScrollView *)scrollView
+{
+    return [UIImage imageNamed:@"empty_placeholder"];
+}
+
+- (NSAttributedString *)titleForEmptyDataSet:(UIScrollView *)scrollView
+{
+    NSString *text = @"Your Saved Recipes Will Be Displayed Here";
+    
+    NSDictionary *attributes = @{NSFontAttributeName: [UIFont boldSystemFontOfSize:18.0f],
+                                 NSForegroundColorAttributeName: [UIColor darkGrayColor]};
+    
+    return [[NSAttributedString alloc] initWithString:text attributes:attributes];
+}
+
+- (NSAttributedString *)descriptionForEmptyDataSet:(UIScrollView *)scrollView
+{
+    NSString *text = @"Swipe Left to Search for Recipes.The Menu in the Top Right Corner Will Allow You to Choose From a List of Dietary Preferences for Your Search.";
+    
+    NSMutableParagraphStyle *paragraph = [NSMutableParagraphStyle new];
+    paragraph.lineBreakMode = NSLineBreakByWordWrapping;
+    paragraph.alignment = NSTextAlignmentCenter;
+    
+    NSDictionary *attributes = @{NSFontAttributeName: [UIFont systemFontOfSize:14.0f],
+                                 NSForegroundColorAttributeName: [UIColor lightGrayColor],
+                                 NSParagraphStyleAttributeName: paragraph};
+    
+    return [[NSAttributedString alloc] initWithString:text attributes:attributes];
+}
+
+//- (CAAnimation *)imageAnimationForEmptyDataSet:(UIScrollView *)scrollView
+//{
+//    CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath: @"transform"];
+//
+//    animation.fromValue = [NSValue valueWithCATransform3D:CATransform3DIdentity];
+//    animation.toValue = [NSValue valueWithCATransform3D:CATransform3DMakeRotation(M_PI_2, 0.0, 0.0, 1.0)];
+//
+//    animation.duration = 0.25;
+//    animation.cumulative = YES;
+//    animation.repeatCount = MAXFLOAT;
+//
+//    return animation;
+//}
+
+
 
 
 @end
