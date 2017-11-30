@@ -44,6 +44,7 @@
         NSData *imageData = [NSData dataWithContentsOfFile:imageFilePath];
         UIImage *largeImage = [UIImage imageWithData:imageData];
         self.savedDetailImageView.image = largeImage;
+        self.savedDetailImageView.contentMode = UIViewContentModeScaleAspectFill;
     }
     
 }

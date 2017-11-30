@@ -79,6 +79,7 @@
     
     [cell.searchRecipeImageView sd_setImageWithURL:[NSURL URLWithString:currentRecipe.smallPictureURL]
                  placeholderImage:nil];
+    cell.searchRecipeImageView.contentMode = UIViewContentModeScaleAspectFill;
     
     
     

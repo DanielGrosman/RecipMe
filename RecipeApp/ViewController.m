@@ -65,6 +65,7 @@
         NSData *imageData = [NSData dataWithContentsOfFile:imageFilePath];
         UIImage *smallImage = [UIImage imageWithData:imageData];
         cell.savedRecipeImageView.image = smallImage;
+        cell.savedRecipeImageView.contentMode = UIViewContentModeScaleAspectFill;
     }
 
     cell.savedRecipeRating.text = [NSString stringWithFormat:@"Rating: %2.0f",currentRecipe.rating];
