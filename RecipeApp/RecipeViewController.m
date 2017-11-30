@@ -12,7 +12,7 @@
 
 
 
-@interface RecipeViewController ()
+@interface RecipeViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *recipeDetailImageView;
 @property (weak, nonatomic) IBOutlet UILabel *recipeDetailName;
 @property (weak, nonatomic) IBOutlet UILabel *recipeDetailIngredients;
@@ -21,6 +21,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *recipeDetailProtein;
 @property (weak, nonatomic) IBOutlet UILabel *recipeDetailSugar;
 @property (weak, nonatomic) IBOutlet UILabel *recipeDetailCarbs;
+@property (weak, nonatomic) IBOutlet UIView *nameBackground;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+
 
 @end
 
@@ -28,14 +31,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-
+        self.nameBackground.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.5f];
 }
 
 -(void)setupRecipe{
-    
     self.recipeDetailName.text = self.selectedRecipe.recipeName;
-    self.recipeDetailIngredients.text = self.selectedRecipe.ingredients;
+//    self.recipeDetailIngredients.text = self.selectedRecipe.ingredients;
+    self.ingredientsArray = [self.selectedRecipe.ingredients componentsSeparatedByString:@", "];
     self.recipeDetailCalories.text = [NSString stringWithFormat:@"%2.0f",self.selectedRecipe.calories];
     self.recipeDetailProtein.text = [NSString stringWithFormat:@"%2.0f",self.selectedRecipe.protein];
     self.recipeDetailSugar.text = [NSString stringWithFormat:@"%2.0f",self.selectedRecipe.sugar];
@@ -47,9 +49,12 @@
 
         [[NSOperationQueue mainQueue] addOperationWithBlock:^{
             self.recipeDetailImageView.image = largeImage;
+            self.recipeDetailImageView.contentMode = UIViewContentModeScaleAspectFill;
+            [self.tableView reloadData];
         }];
     }];
     [imageTask resume];
+    
 }
 
 
@@ -82,7 +87,6 @@
     recipe.carbohydrate = self.selectedRecipe.carbs;
     [self saveImage:recipe];
     
-    NSLog(@"%@",recipe.largeImagePath);
     [appDelegate.persistentContainer.viewContext insertObject:recipe];
     [appDelegate saveContext];
 }
@@ -91,23 +95,35 @@
 //    Large Image Save
     NSArray *docDirectory = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *docFilePath = [docDirectory firstObject];
-    
     recipe.largeImagePath = [[NSUUID UUID].UUIDString stringByAppendingPathExtension:@"jpg"];
     NSString *largeDocFilePath = [docFilePath stringByAppendingString:recipe.largeImagePath];
-    
     NSData *largeImageData = UIImageJPEGRepresentation(self.recipeDetailImageView.image , 1.0);
-    
     [largeImageData writeToFile:largeDocFilePath atomically:YES];
     
 //    Small Image Save
-   
     recipe.smallImagePath =[[NSUUID UUID].UUIDString stringByAppendingString:@"jpg"];
     NSString *smallDocFilePath = [docFilePath stringByAppendingString:recipe.smallImagePath];
-    
     NSData *smallImageData = [NSData dataWithContentsOfURL: [NSURL URLWithString:recipe.smallPictureURL]];
-    
     [smallImageData writeToFile:smallDocFilePath atomically:YES];
+}
+
+#pragma mark UITableViewDataSource
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.ingredientsArray.count;
     
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    cell.textLabel.text = self.ingredientsArray[indexPath.row];
+    
+    return cell;
+
 }
 
 -(IBAction)openRecipeLink:(UIButton*)sender{
@@ -116,9 +132,6 @@
         [[UIApplication sharedApplication]openURL:recipeURL options:@{} completionHandler:nil];
     }
 }
-
-
-
 
 
 

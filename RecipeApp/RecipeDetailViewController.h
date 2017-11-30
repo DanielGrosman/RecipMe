@@ -11,5 +11,6 @@
 
 @interface RecipeDetailViewController : UIViewController
 @property (nonatomic, strong)Recipe *recipe;
+@property (strong, nonatomic) NSArray *ingredientsArray;
 
 @end

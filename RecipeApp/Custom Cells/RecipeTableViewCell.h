@@ -14,6 +14,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *searchRecipeName;
 @property (weak, nonatomic) IBOutlet UILabel *searchRecipeRating;
 @property (weak, nonatomic) IBOutlet UILabel *searchRecipeTime;
+@property (weak, nonatomic) IBOutlet UIView *backView;
+
 
 
 @end
