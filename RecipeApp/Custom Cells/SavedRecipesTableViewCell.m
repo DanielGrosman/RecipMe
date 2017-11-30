@@ -12,7 +12,8 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
+    self.labelBackView.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.5f];
+    self.savedRecipeImageView.contentMode = UIViewContentModeScaleAspectFill;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

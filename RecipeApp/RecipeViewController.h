@@ -13,6 +13,7 @@
 @interface RecipeViewController : UIViewController
 
 @property (nonatomic, strong) SearchResultRecipe *selectedRecipe;
+@property (strong, nonatomic) NSArray *ingredientsArray;
 
 -(void)setupRecipe;
 
