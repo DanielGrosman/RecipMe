@@ -316,6 +316,9 @@
                                 <state key="normal" title="See the Full Recipe">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="openRecipeLink:" destination="GEv-Ff-NDq" eventType="touchUpInside" id="dRr-GQ-ZvD"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calories" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ABM-AQ-1Vp">
                                 <rect key="frame" x="10" y="473" width="60" height="20"/>
@@ -872,6 +875,9 @@
                                 <state key="normal" title="See the Full Recipe">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="openRecipeLink:" destination="myi-Vs-eww" eventType="touchUpInside" id="XSu-HQ-gDb"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Carbs" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qvE-AB-kzR">
                                 <rect key="frame" x="305" y="512" width="60" height="20"/>
