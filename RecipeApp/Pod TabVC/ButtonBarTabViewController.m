@@ -18,8 +18,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    self.buttonBarView.backgroundColor = [UIColor orangeColor];
+    self.buttonBarView.selectedBar.backgroundColor = [UIColor whiteColor];
+//    [self.buttonBarView.selectedBar centerXAnchor];
+    self.buttonBarView.backgroundColor = [UIColor blackColor];
+    
+    self.changeCurrentIndexBlock = (^void(XLButtonBarViewCell* oldCell, XLButtonBarViewCell *newCell, BOOL animated){
+        
+        oldCell.label.textColor =[UIColor whiteColor];
+        oldCell.label.font = [UIFont fontWithName:@"Helvetica" size:15];
+        
+        newCell.label.textColor =[UIColor whiteColor];
+        newCell.label.font = [UIFont fontWithName:@"Helvetica" size:15];
+    });
+
 }
 
 
