@@ -108,7 +108,13 @@
     
     [smallImageData writeToFile:smallDocFilePath atomically:YES];
     
-    
+}
+
+-(IBAction)openRecipeLink:(UIButton*)sender{
+    NSURL *recipeURL = [NSURL URLWithString:self.selectedRecipe.recipeURL];
+    if ([[UIApplication sharedApplication] canOpenURL:recipeURL]) {
+        [[UIApplication sharedApplication]openURL:recipeURL options:@{} completionHandler:nil];
+    }
 }
 
 

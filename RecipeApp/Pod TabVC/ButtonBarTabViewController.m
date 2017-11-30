@@ -18,16 +18,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    NSLog(@"%@",@(self.buttonBarView.frame));
-//    frame.origin.y = 20;
-//    frame.origin.y = self.navigationController.navigationBar.frame.size.height + 20; //safe area
-//    self.buttonBarView.frame = frame;
-//    self.navigationItem
-    
-//    self.navigationController.navigationBar.hidden = YES;
-    
     // Do any additional setup after loading the view.
+    self.buttonBarView.backgroundColor = [UIColor whiteColor];
+    
+    //    self.navigationController.navigationBar.hidden = YES;
 }
 
 - (void)didReceiveMemoryWarning {
