@@ -434,6 +434,7 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="JMr-dV-ewn" firstAttribute="leading" secondItem="W4S-DP-pBP" secondAttribute="leading" constant="16" id="23d-rt-slQ"/>
                             <constraint firstItem="rt2-fs-IaW" firstAttribute="leading" secondItem="uRJ-my-Dj6" secondAttribute="leading" id="DhT-Y3-tYz"/>
@@ -448,6 +449,9 @@
                             <constraint firstItem="W4S-DP-pBP" firstAttribute="bottom" secondItem="Q7m-CS-Fcb" secondAttribute="bottom" constant="215" id="lRX-Ab-hkQ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="W4S-DP-pBP"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="mv4-8O-3bj" appends="YES" id="lEP-fz-efF"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Ingredients Search" id="WAr-QZ-amg">
                         <barButtonItem key="backBarButtonItem" title="Ingredients" id="yYt-6e-Az1"/>
@@ -481,6 +485,11 @@
                         <outlet property="searchResultsDelegate" destination="nnj-wL-t33" id="088-5O-fsO"/>
                     </connections>
                 </searchDisplayController>
+                <tapGestureRecognizer id="mv4-8O-3bj">
+                    <connections>
+                        <action selector="screenTapped:" destination="nnj-wL-t33" id="74i-ua-mzD"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2985" y="204"/>
         </scene>

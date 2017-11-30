@@ -24,6 +24,9 @@
     self.searchBar.delegate = self;
     self.searchImage.image = [UIImage imageNamed:@"search"];
 }
+- (IBAction)screenTapped:(UITapGestureRecognizer *)sender {
+    [self.searchBar resignFirstResponder];
+}
 
 - (void)updateSearchResultsForSearchController:(UISearchController *)searchController {
     searchController.searchResultsController.view.hidden = NO;
