@@ -72,6 +72,7 @@
     UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     cell.textLabel.text = self.ingredientsArray[indexPath.row];
     
+    
     return cell;
 }
 
