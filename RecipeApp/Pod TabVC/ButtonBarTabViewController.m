@@ -9,6 +9,7 @@
 #import "ButtonBarTabViewController.h"
 #import "ViewController.h"
 #import "SearchViewController.h"
+#import <ChameleonFramework/Chameleon.h>
 
 @interface ButtonBarTabViewController ()
 
@@ -18,16 +19,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.buttonBarView.selectedBar.backgroundColor = [UIColor whiteColor];
+    self.buttonBarView.selectedBar.backgroundColor = [UIColor flatSkyBlueColorDark];
 //    [self.buttonBarView.selectedBar centerXAnchor];
-    self.buttonBarView.backgroundColor = [UIColor blackColor];
+    self.buttonBarView.backgroundColor = [UIColor  flatWhiteColor];
     
     self.changeCurrentIndexBlock = (^void(XLButtonBarViewCell* oldCell, XLButtonBarViewCell *newCell, BOOL animated){
         
-        oldCell.label.textColor =[UIColor whiteColor];
+        oldCell.label.textColor =[UIColor flatBlackColor];
         oldCell.label.font = [UIFont fontWithName:@"Helvetica" size:15];
         
-        newCell.label.textColor =[UIColor whiteColor];
+        newCell.label.textColor =[UIColor flatSkyBlueColorDark];
         newCell.label.font = [UIFont fontWithName:@"Helvetica" size:15];
     });
 

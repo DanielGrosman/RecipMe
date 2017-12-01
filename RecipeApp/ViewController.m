@@ -16,6 +16,8 @@
 #import <XLPagerTabStrip/XLPagerTabStripViewController.h>
 #import "UIScrollView+EmptyDataSet.h"
 #import <DZNEmptyDataSet/UIScrollView+EmptyDataSet.h>
+#import <ChameleonFramework/Chameleon.h>
+
 
 @interface ViewController () <UITableViewDelegate, UITableViewDataSource,XLPagerTabStripChildItem,DZNEmptyDataSetSource, DZNEmptyDataSetDelegate>
 //@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
@@ -33,8 +35,6 @@
     self.tableView.emptyDataSetDelegate = self;
     self.tableView.tableFooterView = [UIView new];
     
-    self.editButton.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.75f];
-    
     self.tableView.contentInset = UIEdgeInsetsMake(44, 0, 0, 0);
     //    [self.tableView setContentOffset:CGPointMake(0, 44)];
     
@@ -44,6 +44,7 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(fetchRecipesData) name:NSManagedObjectContextDidSaveNotification object:nil];
 }
+
 
 - (void)viewDidLayoutSubviews {
     

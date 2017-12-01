@@ -11,5 +11,6 @@ target 'RecipeApp' do
   pod 'SDWebImage'
   pod 'XLPagerTabStrip', '~> 2.0'
 pod 'DZNEmptyDataSet'
+pod 'ChameleonFramework'
 
 end
