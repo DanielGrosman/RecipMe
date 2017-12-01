@@ -18,6 +18,7 @@
 		2DF8F5EA1FCF8A100023FBAF /* ButtonBarTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DF8F5E91FCF8A100023FBAF /* ButtonBarTabViewController.m */; };
 		2DF8F5F51FCF97DD0023FBAF /* ButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DF8F5F41FCF97DD0023FBAF /* ButtonCell.xib */; };
 		8F255061C876BD5245206905 /* libPods-RecipeApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F4E2FF3CA94BFB81918F09AE /* libPods-RecipeApp.a */; };
+		C052814D1FD1181E00CBD55F /* TestFontsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C052814C1FD1181E00CBD55F /* TestFontsViewController.m */; };
 		C0708A1E1FCC825E003DD748 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C0708A1D1FCC825E003DD748 /* AppDelegate.m */; };
 		C0708A211FCC825E003DD748 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0708A201FCC825E003DD748 /* ViewController.m */; };
 		C0708A241FCC825E003DD748 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0708A221FCC825E003DD748 /* Main.storyboard */; };
@@ -53,6 +54,8 @@
 		2DF8F5E81FCF8A100023FBAF /* ButtonBarTabViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ButtonBarTabViewController.h; sourceTree = "<group>"; };
 		2DF8F5E91FCF8A100023FBAF /* ButtonBarTabViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ButtonBarTabViewController.m; sourceTree = "<group>"; };
 		2DF8F5F41FCF97DD0023FBAF /* ButtonCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ButtonCell.xib; sourceTree = "<group>"; };
+		C052814B1FD1181E00CBD55F /* TestFontsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestFontsViewController.h; sourceTree = "<group>"; };
+		C052814C1FD1181E00CBD55F /* TestFontsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestFontsViewController.m; sourceTree = "<group>"; };
 		C0708A191FCC825E003DD748 /* RecipeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecipeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0708A1C1FCC825E003DD748 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C0708A1D1FCC825E003DD748 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -161,6 +164,8 @@
 			children = (
 				C0708A1C1FCC825E003DD748 /* AppDelegate.h */,
 				C0708A1D1FCC825E003DD748 /* AppDelegate.m */,
+				C052814B1FD1181E00CBD55F /* TestFontsViewController.h */,
+				C052814C1FD1181E00CBD55F /* TestFontsViewController.m */,
 				C0708A1F1FCC825E003DD748 /* ViewController.h */,
 				C0708A201FCC825E003DD748 /* ViewController.m */,
 				2DF8F5911FCCB04B0023FBAF /* SearchViewController.h */,
@@ -291,7 +296,10 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-RecipeApp/Pods-RecipeApp-resources.sh",
-				$PODS_CONFIGURATION_BUILD_DIR/XLPagerTabStrip/XLPagerTabStrip.bundle,
+				$PODS_CONFIGURATION_BUILD_DIR/Inconsolata/Inconsolata.bundle,
+				"${PODS_ROOT}/MDFRobotoFontLoader/src/MaterialRobotoFontLoader.bundle",
+				$PODS_CONFIGURATION_BUILD_DIR/Montserrat/Montserrat.bundle,
+				$PODS_CONFIGURATION_BUILD_DIR/OpenSans/OpenSans.bundle,
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
@@ -344,6 +352,7 @@
 				2DF8F5E61FCF18F50023FBAF /* YummlyAPI.m in Sources */,
 				2DF8F5D01FCDEF270023FBAF /* RecipeDetailViewController.m in Sources */,
 				2DF8F5DA1FCDFD090023FBAF /* Recipe+customInitializer.m in Sources */,
+				C052814D1FD1181E00CBD55F /* TestFontsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
