@@ -9,7 +9,8 @@
 #import "SettingsViewController.h"
 
 @interface SettingsViewController ()
-@property (weak, nonatomic) IBOutlet UIImageView *settingsImage;
+@property (weak, nonatomic) IBOutlet UIImageView *topImage;
+
 @property (strong, nonatomic) NSMutableString *mutableURLString;
 @property (weak, nonatomic) IBOutlet UISwitch *vegetarianSwitch;
 @property (weak, nonatomic) IBOutlet UISwitch *dairySwitch;
@@ -29,7 +30,7 @@
     self.glutenSwitch.on = [defaults boolForKey:@"glutenButtonStatus"];
     self.mutableURLString = [[NSMutableString alloc] init];
 
-    self.settingsImage.image = [UIImage imageNamed:@"settings"];
+    self.topImage.contentMode = UIViewContentModeScaleAspectFill;
 }
 
 - (IBAction)vegetarianButtonTapped:(UISwitch *)sender {

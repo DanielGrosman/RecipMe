@@ -15,8 +15,12 @@
 #import "RecipeDetailViewController.h"
 #import <XLPagerTabStrip/XLPagerTabStripViewController.h>
 #import <CoreData/CoreData.h>
+#import "UIScrollView+EmptyDataSet.h"
+#import <DZNEmptyDataSet/UIScrollView+EmptyDataSet.h>
+#import <ChameleonFramework/Chameleon.h>
 
-@interface ViewController () <UITableViewDelegate, UITableViewDataSource,XLPagerTabStripChildItem,NSFetchedResultsControllerDelegate>
+@interface ViewController () <UITableViewDelegate, UITableViewDataSource,XLPagerTabStripChildItem,NSFetchedResultsControllerDelegate,DZNEmptyDataSetSource, DZNEmptyDataSetDelegate >
+
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic)NSArray <Recipe*> *savedRecipies;
 @property (strong, nonatomic)NSFetchedResultsController *fetchedResultsController;
@@ -29,22 +33,24 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    self.tableView.contentInset = UIEdgeInsetsMake(44, 0, 0, 0);
-    self.editButton.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.75f];
 //    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(fetchRecipesData) name:NSManagedObjectContextDidSaveNotification object:nil];
     
     AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
     self.managedObjectContext = appDelegate.persistentContainer.viewContext;
+    self.tableView.emptyDataSetSource = self;
+    self.tableView.emptyDataSetDelegate = self;
+    self.tableView.tableFooterView = [UIView new];
+    
+    self.tableView.contentInset = UIEdgeInsetsMake(44, 0, 0, 0);
     
 }
 
-
-#pragma mark - TableView DataSource
-//
-//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-//    return self.savedRecipies.count;
-//}
+// -(void)fetchRecipesData{
+//     AppDelegate *appDelegate = ((AppDelegate*)[[UIApplication sharedApplication] delegate]);
+//     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Recipe"];
+//     //    NSSortDescriptor *sort = [NSSortDescriptor sortDescriptorWithKey:@"tagName" ascending:YES];
+//     self.savedRecipies = [appDelegate.persistentContainer.viewContext executeFetchRequest:request error:nil];
+// }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return [[self.fetchedResultsController sections] count];
@@ -71,7 +77,7 @@
         cell.savedRecipeImageView.image = smallImage;
         cell.savedRecipeImageView.contentMode = UIViewContentModeScaleAspectFill;
     }
-
+    
     cell.savedRecipeRating.text = [NSString stringWithFormat:@"Rating: %2.0f",currentRecipe.rating];
 
     if ([currentRecipe.totalTime isEqualToString:@"<null>"]) {
@@ -168,40 +174,6 @@
     return @"Saved Recipes";
 }
 
-//- (void)configureCell:(SavedRecipesTableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
-////    NSManagedObject *object = [self.fetchedResultsController objectAtIndexPath:indexPath];
-//
-//        Recipe *currentRecipe =[self.fetchedResultsController objectAtIndexPath:indexPath];
-//
-//        cell.savedRecipeName.text = currentRecipe.recipeName;
-//
-//        NSArray *docDirectory = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-//        NSString *imageFilePath = [docDirectory firstObject];
-//        imageFilePath = [imageFilePath stringByAppendingString:currentRecipe.largeImagePath];
-//
-//        if ([[NSFileManager defaultManager] fileExistsAtPath:imageFilePath]) {
-//            NSData *imageData = [NSData dataWithContentsOfFile:imageFilePath];
-//            UIImage *smallImage = [UIImage imageWithData:imageData];
-//            cell.savedRecipeImageView.image = smallImage;
-//            cell.savedRecipeImageView.contentMode = UIViewContentModeScaleAspectFill;
-//        }
-//
-//        cell.savedRecipeRating.text = [NSString stringWithFormat:@"Rating: %2.0f",currentRecipe.rating];
-//
-//        if ([currentRecipe.totalTime isEqualToString:@"<null>"]) {
-//            cell.savedRecipeTime.text = @"";
-//        }
-//        else{
-//            int timeinSeconds = [currentRecipe.totalTime intValue];
-//            int timeInMinutes = timeinSeconds/60;
-//            NSString *timeString = [NSString stringWithFormat:@"%d",timeInMinutes];
-//            cell.savedRecipeTime.text =  [NSString stringWithFormat:@"%@ Minutes",timeString];
-//        }
-//}
-
-
-
-
 - (void)controllerWillChangeContent:(NSFetchedResultsController *)controller
 {
     [self.tableView beginUpdates];
@@ -254,6 +226,40 @@
 {
     [self.tableView endUpdates];
 }
+
+
+#pragma mark - EmptyTableView
+
+- (UIImage *)imageForEmptyDataSet:(UIScrollView *)scrollView
+{
+    return [UIImage imageNamed:@"empty_placeholder"];
+}
+
+- (NSAttributedString *)titleForEmptyDataSet:(UIScrollView *)scrollView
+{
+    NSString *text = @"Your Saved Recipes Will Be Displayed Here";
+    
+    NSDictionary *attributes = @{NSFontAttributeName: [UIFont boldSystemFontOfSize:18.0f],
+                                 NSForegroundColorAttributeName: [UIColor darkGrayColor]};
+    
+    return [[NSAttributedString alloc] initWithString:text attributes:attributes];
+}
+
+- (NSAttributedString *)descriptionForEmptyDataSet:(UIScrollView *)scrollView
+{
+    NSString *text = @"Swipe Left to Search for Recipes.The Menu in the Top Right Corner Will Allow You to Choose From a List of Dietary Preferences for Your Search.";
+    
+    NSMutableParagraphStyle *paragraph = [NSMutableParagraphStyle new];
+    paragraph.lineBreakMode = NSLineBreakByWordWrapping;
+    paragraph.alignment = NSTextAlignmentCenter;
+    
+    NSDictionary *attributes = @{NSFontAttributeName: [UIFont systemFontOfSize:14.0f],
+                                 NSForegroundColorAttributeName: [UIColor lightGrayColor],
+                                 NSParagraphStyleAttributeName: paragraph};
+    
+    return [[NSAttributedString alloc] initWithString:text attributes:attributes];
+}
+
 
 
 

@@ -70,7 +70,9 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-    cell.textLabel.text = self.ingredientsArray[indexPath.row];
+    NSString *capitalizedString = self.ingredientsArray[indexPath.row];
+    capitalizedString = [NSString stringWithFormat:@"%@%@",[[capitalizedString substringToIndex:1] uppercaseString],[capitalizedString substringFromIndex:1]];
+    cell.textLabel.text = capitalizedString;
     
     
     return cell;
