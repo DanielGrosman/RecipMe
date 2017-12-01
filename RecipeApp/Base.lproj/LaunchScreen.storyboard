@@ -30,27 +30,27 @@
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By Daniel Grosman and Javier Singh.  2017" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TQ8-sA-CHM">
-                                <rect key="frame" x="16" y="639" width="343" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  Copyright © 2017 Danny Grosman &amp; Javier Xing" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TQ8-sA-CHM">
+                                <rect key="frame" x="16" y="635" width="343" height="24"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="Jli-3m-Ww8"/>
+                                    <constraint firstAttribute="height" constant="24" id="V4e-AN-avu"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="TQ8-sA-CHM" firstAttribute="centerX" secondItem="HVf-tW-o7o" secondAttribute="centerX" id="391-m8-lsG"/>
                             <constraint firstItem="HVf-tW-o7o" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Hie-6W-cYh"/>
                             <constraint firstItem="HVf-tW-o7o" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="JXE-2i-RcJ"/>
                             <constraint firstItem="32A-af-eqn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="163" id="MAN-bk-3lY"/>
-                            <constraint firstItem="TQ8-sA-CHM" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" id="X82-7d-vzC"/>
+                            <constraint firstItem="TQ8-sA-CHM" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" id="MhF-cx-XfA"/>
+                            <constraint firstItem="TQ8-sA-CHM" firstAttribute="centerX" secondItem="HVf-tW-o7o" secondAttribute="centerX" id="TeO-ig-tXO"/>
                             <constraint firstItem="32A-af-eqn" firstAttribute="trailing" secondItem="HVf-tW-o7o" secondAttribute="trailing" id="azI-nX-Tbw"/>
                             <constraint firstItem="HVf-tW-o7o" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="euC-UM-Get"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="TQ8-sA-CHM" secondAttribute="bottom" constant="7" id="hXg-WL-fWJ"/>
                             <constraint firstItem="32A-af-eqn" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="145" id="uhA-ha-nMR"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="TQ8-sA-CHM" secondAttribute="bottom" constant="8" id="xSF-Km-zOQ"/>
                             <constraint firstItem="HVf-tW-o7o" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="yTc-UT-Iuh"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
