@@ -12,5 +12,8 @@ target 'RecipeApp' do
   pod 'XLPagerTabStrip', '~> 2.0'
 pod 'DZNEmptyDataSet'
 pod 'ChameleonFramework'
-
+pod 'Montserrat'
+pod 'Inconsolata'
+pod 'OpenSans'
+pod 'MDFRobotoFontLoader'
 end

@@ -291,7 +291,10 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-RecipeApp/Pods-RecipeApp-resources.sh",
-				$PODS_CONFIGURATION_BUILD_DIR/XLPagerTabStrip/XLPagerTabStrip.bundle,
+				$PODS_CONFIGURATION_BUILD_DIR/Inconsolata/Inconsolata.bundle,
+				"${PODS_ROOT}/MDFRobotoFontLoader/src/MaterialRobotoFontLoader.bundle",
+				$PODS_CONFIGURATION_BUILD_DIR/Montserrat/Montserrat.bundle,
+				$PODS_CONFIGURATION_BUILD_DIR/OpenSans/OpenSans.bundle,
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (

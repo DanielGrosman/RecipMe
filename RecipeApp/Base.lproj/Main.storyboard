@@ -1204,7 +1204,7 @@
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" title="RecipMe" id="2o2-fU-gDS">
-                        <barButtonItem key="rightBarButtonItem" image="filters" width="6" id="wLd-2l-ZGb">
+                        <barButtonItem key="rightBarButtonItem" image="filtersharp" width="6" id="wLd-2l-ZGb">
                             <connections>
                                 <segue destination="FCA-A8-em1" kind="presentation" id="V2M-H2-nl0"/>
                             </connections>
@@ -1236,7 +1236,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="filters" width="28" height="28"/>
+        <image name="filtersharp" width="36" height="36"/>
         <image name="folder" width="30" height="30"/>
         <image name="smallsearch" width="30" height="30"/>
     </resources>

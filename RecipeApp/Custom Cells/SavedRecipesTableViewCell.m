@@ -7,6 +7,10 @@
 //
 
 #import "SavedRecipesTableViewCell.h"
+#import "UIFont+Montserrat.h"
+#import "UIFont+Inconsolata.h"
+#import "UIFont+OpenSans.h"
+#import "MaterialRobotoFontLoader.h"
 
 @implementation SavedRecipesTableViewCell
 
@@ -14,6 +18,18 @@
     [super awakeFromNib];
     self.labelBackView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.5f];
     self.savedRecipeImageView.contentMode = UIViewContentModeScaleAspectFill;
+    
+//    self.savedRecipeName.font = [UIFont montserratFontOfSize:18.0f];
+//    self.savedRecipeRating.font = [UIFont montserratFontOfSize:18.0f];
+//    self.savedRecipeTime.font = [UIFont montserratFontOfSize:18.0f];
+    
+    
+    
+//    self.savedRecipeName.font = [UIFont inconsolataFontOfSize:18.0f];
+//    self.savedRecipeName.font = [UIFont openSansFontOfSize:18.0f];
+//    UIFont *font = [[MDFRobotoFontLoader sharedInstance] regularFontOfSize:16];
+//    self.savedRecipeName.font = font;
+
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
