@@ -42,6 +42,7 @@
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
     [self performSegueWithIdentifier:@"showRecipesList" sender:self];
+    self.searchBar.text = @"";
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
