@@ -31,44 +31,40 @@
     [super viewDidLoad];
     
     self.tableView.contentInset = UIEdgeInsetsMake(44, 0, 0, 0);
-    [self fetchRecipesData];
     self.editButton.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.75f];
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(fetchRecipesData) name:NSManagedObjectContextDidSaveNotification object:nil];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(fetchRecipesData) name:NSManagedObjectContextDidSaveNotification object:nil];
-}
-
-#pragma mark - Setup View
-
--(void)fetchRecipesData{
-    AppDelegate *appDelegate = ((AppDelegate*)[[UIApplication sharedApplication] delegate]);
-    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Recipe"];
-//    NSSortDescriptor *sort = [NSSortDescriptor sortDescriptorWithKey:@"tagName" ascending:YES];
+    AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
     self.managedObjectContext = appDelegate.persistentContainer.viewContext;
-    self.savedRecipies = [appDelegate.persistentContainer.viewContext executeFetchRequest:request error:nil];
+    
 }
 
--(void)setSavedRecipies:(NSArray<Recipe *> *)savedRecipies{
-    _savedRecipies = savedRecipies;
-    [self.tableView reloadData];
-}
 
 #pragma mark - TableView DataSource
+//
+//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+//    return self.savedRecipies.count;
+//}
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return self.savedRecipies.count;
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return [[self.fetchedResultsController sections] count];
+}
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    id <NSFetchedResultsSectionInfo>sectionInfo = [self.fetchedResultsController sections][section];
+    return [sectionInfo numberOfObjects];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     SavedRecipesTableViewCell *cell = (SavedRecipesTableViewCell*)[tableView dequeueReusableCellWithIdentifier:@"savedRecipeCell" forIndexPath:indexPath];
     
-    Recipe *currentRecipe = self.savedRecipies[indexPath.row];
-    
+//    Recipe *currentRecipe = self.savedRecipies[indexPath.row];
+    Recipe *currentRecipe = [self.fetchedResultsController objectAtIndexPath:indexPath];
     cell.savedRecipeName.text = currentRecipe.recipeName;
 
     NSArray *docDirectory = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *imageFilePath = [docDirectory firstObject];
     imageFilePath = [imageFilePath stringByAppendingString:currentRecipe.largeImagePath];
-    
+
     if ([[NSFileManager defaultManager] fileExistsAtPath:imageFilePath]) {
         NSData *imageData = [NSData dataWithContentsOfFile:imageFilePath];
         UIImage *smallImage = [UIImage imageWithData:imageData];
@@ -77,7 +73,7 @@
     }
 
     cell.savedRecipeRating.text = [NSString stringWithFormat:@"Rating: %2.0f",currentRecipe.rating];
-    
+
     if ([currentRecipe.totalTime isEqualToString:@"<null>"]) {
         cell.savedRecipeTime.text = @"";
     }
@@ -122,7 +118,12 @@
             NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
             abort();
         }
-
+        
+//        [self fetchRecipesData];
+        
+        [tableView reloadData];
+        
+//        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }
 }
 
@@ -153,7 +154,7 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if ([segue.identifier isEqualToString:@"savedRecipeDetails"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        Recipe *recipe = self.savedRecipies[indexPath.row];
+        Recipe *recipe = [self.fetchedResultsController objectAtIndexPath:indexPath];
         
         RecipeDetailViewController *controller = [segue destinationViewController];
         [controller setRecipe:recipe];
@@ -166,6 +167,94 @@
 - (NSString *)titleForPagerTabStripViewController:(XLPagerTabStripViewController *)pagerTabStripViewController{
     return @"Saved Recipes";
 }
+
+//- (void)configureCell:(SavedRecipesTableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
+////    NSManagedObject *object = [self.fetchedResultsController objectAtIndexPath:indexPath];
+//
+//        Recipe *currentRecipe =[self.fetchedResultsController objectAtIndexPath:indexPath];
+//
+//        cell.savedRecipeName.text = currentRecipe.recipeName;
+//
+//        NSArray *docDirectory = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+//        NSString *imageFilePath = [docDirectory firstObject];
+//        imageFilePath = [imageFilePath stringByAppendingString:currentRecipe.largeImagePath];
+//
+//        if ([[NSFileManager defaultManager] fileExistsAtPath:imageFilePath]) {
+//            NSData *imageData = [NSData dataWithContentsOfFile:imageFilePath];
+//            UIImage *smallImage = [UIImage imageWithData:imageData];
+//            cell.savedRecipeImageView.image = smallImage;
+//            cell.savedRecipeImageView.contentMode = UIViewContentModeScaleAspectFill;
+//        }
+//
+//        cell.savedRecipeRating.text = [NSString stringWithFormat:@"Rating: %2.0f",currentRecipe.rating];
+//
+//        if ([currentRecipe.totalTime isEqualToString:@"<null>"]) {
+//            cell.savedRecipeTime.text = @"";
+//        }
+//        else{
+//            int timeinSeconds = [currentRecipe.totalTime intValue];
+//            int timeInMinutes = timeinSeconds/60;
+//            NSString *timeString = [NSString stringWithFormat:@"%d",timeInMinutes];
+//            cell.savedRecipeTime.text =  [NSString stringWithFormat:@"%@ Minutes",timeString];
+//        }
+//}
+
+
+
+
+- (void)controllerWillChangeContent:(NSFetchedResultsController *)controller
+{
+    [self.tableView beginUpdates];
+}
+
+- (void)controller:(NSFetchedResultsController *)controller didChangeSection:(id <NSFetchedResultsSectionInfo>)sectionInfo
+           atIndex:(NSUInteger)sectionIndex forChangeType:(NSFetchedResultsChangeType)type
+{
+    switch(type) {
+        case NSFetchedResultsChangeInsert:
+            [self.tableView insertSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationFade];
+            break;
+            
+        case NSFetchedResultsChangeDelete:
+            [self.tableView deleteSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationFade];
+            break;
+            
+        default:
+            return;
+    }
+}
+
+- (void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject
+       atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type
+      newIndexPath:(NSIndexPath *)newIndexPath
+{
+    UITableView *tableView = self.tableView;
+    
+    switch(type) {
+        case NSFetchedResultsChangeInsert:
+            [tableView insertRowsAtIndexPaths:@[newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
+            break;
+            
+        case NSFetchedResultsChangeDelete:
+            [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+            break;
+            
+        case NSFetchedResultsChangeUpdate:
+//            [self configureCell:[tableView cellForRowAtIndexPath:indexPath] atIndexPath:indexPath];
+            break;
+            
+        case NSFetchedResultsChangeMove:
+            [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+            [tableView insertRowsAtIndexPaths:@[newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
+            break;
+    }
+}
+
+- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller
+{
+    [self.tableView endUpdates];
+}
+
 
 
 @end
