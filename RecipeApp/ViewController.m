@@ -247,7 +247,7 @@
 
 - (NSAttributedString *)descriptionForEmptyDataSet:(UIScrollView *)scrollView
 {
-    NSString *text = @"Swipe Left to Search for Recipes.The Menu in the Top Right Corner Will Allow You to Choose From a List of Dietary Preferences for Your Search.";
+    NSString *text = @"Swipe Left to Search for Recipes. The Menu in the Top Right Allows You to Choose from a List of Dietary Preferences for Your Search.";
     
     NSMutableParagraphStyle *paragraph = [NSMutableParagraphStyle new];
     paragraph.lineBreakMode = NSLineBreakByWordWrapping;
