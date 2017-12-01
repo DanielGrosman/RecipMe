@@ -96,16 +96,20 @@
 #pragma mark - Editing TableView
 
 - (IBAction)edit:(id)sender {
+    UIButton *button = sender;
     if (self.tableView.isEditing ) {
         [self.tableView setEditing:NO animated:YES];
+        [button setTitle:@"Edit" forState:UIControlStateNormal];
     }
     else{
     [self.tableView setEditing:YES animated:YES];
+        [button setTitle:@"Done" forState:UIControlStateNormal];
     }
 }
 
 -(BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath{
-    return  YES;
+//    set as yes to allow reorder symbol to appear, and to be able to move them (moves not saved)
+    return  NO;
 }
 
 -(void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath{
