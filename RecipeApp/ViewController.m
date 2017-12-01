@@ -108,7 +108,8 @@
 }
 
 -(BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath{
-    return  YES;
+//    set as yes to allow reorder symbol to appear, and to be able to move them (moves not saved)
+    return  NO;
 }
 
 -(void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath{
