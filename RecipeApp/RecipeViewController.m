@@ -96,7 +96,7 @@
     NSArray *docDirectory = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *docFilePath = [docDirectory firstObject];
     recipe.largeImagePath = [[NSUUID UUID].UUIDString stringByAppendingPathExtension:@"jpg"];
-    NSString *largeDocFilePath = [docFilePath stringByAppendingString:recipe.largeImagePath];
+    NSString *largeDocFilePath = [docFilePath stringByAppendingPathComponent:recipe.largeImagePath];
     NSData *largeImageData = UIImageJPEGRepresentation(self.recipeDetailImageView.image , 1.0);
 //    [largeImageData writeToFile:largeDocFilePath atomically:YES];
     NSError *err =nil;

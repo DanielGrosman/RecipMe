@@ -69,7 +69,7 @@
 
     NSArray *docDirectory = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *imageFilePath = [docDirectory firstObject];
-    imageFilePath = [imageFilePath stringByAppendingString:currentRecipe.largeImagePath];
+    imageFilePath = [imageFilePath stringByAppendingPathComponent:currentRecipe.largeImagePath];
 
     if ([[NSFileManager defaultManager] fileExistsAtPath:imageFilePath]) {
         NSData *imageData = [NSData dataWithContentsOfFile:imageFilePath];
