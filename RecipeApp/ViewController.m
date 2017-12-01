@@ -19,7 +19,7 @@
 #import <DZNEmptyDataSet/UIScrollView+EmptyDataSet.h>
 #import <ChameleonFramework/Chameleon.h>
 
-@interface ViewController () <UITableViewDelegate, UITableViewDataSource,XLPagerTabStripChildItem,NSFetchedResultsControllerDelegate,DZNEmptyDataSetSource, DZNEmptyDataSetDelegate >
+@interface ViewController () <UITableViewDelegate, UITableViewDataSource,XLPagerTabStripChildItem,NSFetchedResultsControllerDelegate,DZNEmptyDataSetSource, DZNEmptyDataSetDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic)NSArray <Recipe*> *savedRecipies;
@@ -69,7 +69,7 @@
 
     NSArray *docDirectory = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *imageFilePath = [docDirectory firstObject];
-    imageFilePath = [imageFilePath stringByAppendingString:currentRecipe.largeImagePath];
+    imageFilePath = [imageFilePath stringByAppendingPathComponent:currentRecipe.largeImagePath];
 
     if ([[NSFileManager defaultManager] fileExistsAtPath:imageFilePath]) {
         NSData *imageData = [NSData dataWithContentsOfFile:imageFilePath];
@@ -247,7 +247,7 @@
 
 - (NSAttributedString *)descriptionForEmptyDataSet:(UIScrollView *)scrollView
 {
-    NSString *text = @"Swipe Left to Search for Recipes.The Menu in the Top Right Corner Will Allow You to Choose From a List of Dietary Preferences for Your Search.";
+    NSString *text = @"Swipe Left to Search for Recipes. The Menu in the Top Right Allows You to Choose from a List of Dietary Preferences for Your Search.";
     
     NSMutableParagraphStyle *paragraph = [NSMutableParagraphStyle new];
     paragraph.lineBreakMode = NSLineBreakByWordWrapping;

@@ -42,7 +42,7 @@
 //    NSLog(@"%@",self.recipe.largeImagePath);
     NSArray *docDirectory = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *imageFilePath = [docDirectory firstObject];
-    imageFilePath = [imageFilePath stringByAppendingString:self.recipe.largeImagePath];
+    imageFilePath = [imageFilePath stringByAppendingPathComponent:self.recipe.largeImagePath];
     
     if ([[NSFileManager defaultManager] fileExistsAtPath:imageFilePath]) {
         NSData *imageData = [NSData dataWithContentsOfFile:imageFilePath];
