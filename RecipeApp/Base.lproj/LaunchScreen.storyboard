@@ -4,8 +4,8 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,17 +18,40 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RecipMe" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f3v-rK-Le4">
-                                <rect key="frame" x="121.5" y="312" width="132.5" height="42"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
-                                <nil key="textColor"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="homeBack2" translatesAutoresizingMaskIntoConstraints="NO" id="HVf-tW-o7o">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RecipMe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="32A-af-eqn">
+                                <rect key="frame" x="163" y="165" width="212" height="69"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="69" id="O9i-YK-mkt"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="51"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By Daniel Grosman and Javier Singh.  2017" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TQ8-sA-CHM">
+                                <rect key="frame" x="16" y="639" width="343" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="Jli-3m-Ww8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="f3v-rK-Le4" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="hXg-Yi-z6e"/>
-                            <constraint firstItem="f3v-rK-Le4" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="jK1-8T-8af"/>
+                            <constraint firstItem="TQ8-sA-CHM" firstAttribute="centerX" secondItem="HVf-tW-o7o" secondAttribute="centerX" id="391-m8-lsG"/>
+                            <constraint firstItem="HVf-tW-o7o" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Hie-6W-cYh"/>
+                            <constraint firstItem="HVf-tW-o7o" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="JXE-2i-RcJ"/>
+                            <constraint firstItem="32A-af-eqn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="163" id="MAN-bk-3lY"/>
+                            <constraint firstItem="TQ8-sA-CHM" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" id="X82-7d-vzC"/>
+                            <constraint firstItem="32A-af-eqn" firstAttribute="trailing" secondItem="HVf-tW-o7o" secondAttribute="trailing" id="azI-nX-Tbw"/>
+                            <constraint firstItem="HVf-tW-o7o" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="euC-UM-Get"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="TQ8-sA-CHM" secondAttribute="bottom" constant="7" id="hXg-WL-fWJ"/>
+                            <constraint firstItem="32A-af-eqn" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="145" id="uhA-ha-nMR"/>
+                            <constraint firstItem="HVf-tW-o7o" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="yTc-UT-Iuh"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -38,4 +61,7 @@
             <point key="canvasLocation" x="52" y="374.66266866566718"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="homeBack2" width="2459" height="3673"/>
+    </resources>
 </document>

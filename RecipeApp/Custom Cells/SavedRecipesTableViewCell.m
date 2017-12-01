@@ -20,6 +20,11 @@
     self.savedRecipeImageView.contentMode = UIViewContentModeScaleAspectFill;
     
 //    self.savedRecipeName.font = [UIFont montserratFontOfSize:18.0f];
+//    self.savedRecipeRating.font = [UIFont montserratFontOfSize:18.0f];
+//    self.savedRecipeTime.font = [UIFont montserratFontOfSize:18.0f];
+    
+    
+    
 //    self.savedRecipeName.font = [UIFont inconsolataFontOfSize:18.0f];
 //    self.savedRecipeName.font = [UIFont openSansFontOfSize:18.0f];
 //    UIFont *font = [[MDFRobotoFontLoader sharedInstance] regularFontOfSize:16];
