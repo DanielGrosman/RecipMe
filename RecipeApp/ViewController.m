@@ -96,11 +96,14 @@
 #pragma mark - Editing TableView
 
 - (IBAction)edit:(id)sender {
+    UIButton *button = sender;
     if (self.tableView.isEditing ) {
         [self.tableView setEditing:NO animated:YES];
+        [button setTitle:@"Edit" forState:UIControlStateNormal];
     }
     else{
     [self.tableView setEditing:YES animated:YES];
+        [button setTitle:@"Done" forState:UIControlStateNormal];
     }
 }
 
