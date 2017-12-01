@@ -26,9 +26,14 @@
     self.searchImage.image = [UIImage imageNamed:@"search"];
 //    self.view.frame.origin.y = 20;
     
+    self.searchImage.contentMode = UIViewContentModeScaleAspectFit;
+    
     
     CGRect newBounds = CGRectMake(self.view.bounds.origin.x, -44, self.view.bounds.size.width, self.view.bounds.size.height);
     self.view.bounds= newBounds;
+}
+- (IBAction)screenTapped:(UITapGestureRecognizer *)sender {
+    [self.searchBar resignFirstResponder];
 }
 
 - (void)updateSearchResultsForSearchController:(UISearchController *)searchController {
@@ -48,14 +53,14 @@
         if ([defaults boolForKey:@"vegetarianButtonStatus"]) {
             [self.filterString appendString:@"&allowedDiet[]=387%5eLacto-ovo%20vegetarian"];
         }
-        if ([defaults boolForKey:@"lactoButtonStatus"]) {
-            [self.filterString appendString:@"&allowedDiet[]=388%5eLacto%20vegetarian"];
+        if ([defaults boolForKey:@"dairyButtonStatus"]) {
+            [self.filterString appendString:@"&allowedAllergy[]=396%5eDairy-Free"];
         }
         if ([defaults boolForKey:@"veganButtonStatus"]) {
             [self.filterString appendString:@"&allowedDiet[]=386%5eVegan"];
         }
-        if ([defaults boolForKey:@"pescatarianButtonStatus"]) {
-            [self.filterString appendString:@"&allowedDiet[]=390%5ePescetarian"];
+        if ([defaults boolForKey:@"glutenButtonStatus"]) {
+            [self.filterString appendString:@"&allowedAllergy[]=393%5eGluten-Free"];
         }
         
         RecipeListViewController *controller = (RecipeListViewController *)[segue destinationViewController];

@@ -12,7 +12,7 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    self.labelBackView.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.5f];
+    self.labelBackView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.5f];
     self.savedRecipeImageView.contentMode = UIViewContentModeScaleAspectFill;
 }
 
