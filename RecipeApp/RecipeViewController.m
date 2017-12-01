@@ -98,13 +98,18 @@
     recipe.largeImagePath = [[NSUUID UUID].UUIDString stringByAppendingPathExtension:@"jpg"];
     NSString *largeDocFilePath = [docFilePath stringByAppendingString:recipe.largeImagePath];
     NSData *largeImageData = UIImageJPEGRepresentation(self.recipeDetailImageView.image , 1.0);
-    [largeImageData writeToFile:largeDocFilePath atomically:YES];
-    
+//    [largeImageData writeToFile:largeDocFilePath atomically:YES];
+    NSError *err =nil;
+    [largeImageData writeToFile:largeDocFilePath options:NSDataWritingAtomic error:&err];
+    if (err != nil) {
+        NSLog(@"%@", err);
+    }
 //    Small Image Save
     recipe.smallImagePath =[[NSUUID UUID].UUIDString stringByAppendingString:@"jpg"];
     NSString *smallDocFilePath = [docFilePath stringByAppendingString:recipe.smallImagePath];
     NSData *smallImageData = [NSData dataWithContentsOfURL: [NSURL URLWithString:recipe.smallPictureURL]];
     [smallImageData writeToFile:smallDocFilePath atomically:YES];
+    
 }
 
 #pragma mark UITableViewDataSource
@@ -115,7 +120,6 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.ingredientsArray.count;
-    
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -123,9 +127,7 @@
     NSString *capitalizedString = self.ingredientsArray[indexPath.row];
     capitalizedString = [NSString stringWithFormat:@"%@%@",[[capitalizedString substringToIndex:1] uppercaseString],[capitalizedString substringFromIndex:1]];
     cell.textLabel.text = capitalizedString;
-    
     return cell;
-
 }
 
 -(IBAction)openRecipeLink:(UIButton*)sender{

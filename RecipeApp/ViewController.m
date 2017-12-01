@@ -19,7 +19,7 @@
 #import <DZNEmptyDataSet/UIScrollView+EmptyDataSet.h>
 #import <ChameleonFramework/Chameleon.h>
 
-@interface ViewController () <UITableViewDelegate, UITableViewDataSource,XLPagerTabStripChildItem,NSFetchedResultsControllerDelegate,DZNEmptyDataSetSource, DZNEmptyDataSetDelegate >
+@interface ViewController () <UITableViewDelegate, UITableViewDataSource,XLPagerTabStripChildItem,NSFetchedResultsControllerDelegate,DZNEmptyDataSetSource, DZNEmptyDataSetDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic)NSArray <Recipe*> *savedRecipies;
