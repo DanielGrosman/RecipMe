@@ -38,11 +38,38 @@
     self.recipeDetailName.text = self.selectedRecipe.recipeName;
 //    self.recipeDetailIngredients.text = self.selectedRecipe.ingredients;
     self.ingredientsArray = [self.selectedRecipe.ingredients componentsSeparatedByString:@", "];
-    self.recipeDetailCalories.text = [NSString stringWithFormat:@"%2.0f",self.selectedRecipe.calories];
-    self.recipeDetailProtein.text = [NSString stringWithFormat:@"%2.0f",self.selectedRecipe.protein];
-    self.recipeDetailSugar.text = [NSString stringWithFormat:@"%2.0f",self.selectedRecipe.sugar];
-    self.recipeDetailFat.text = [NSString stringWithFormat:@"%2.0f",self.selectedRecipe.fat];
-    self.recipeDetailCarbs.text = [NSString stringWithFormat:@"%2.0f",self.selectedRecipe.carbs];
+    
+    NSString *caloriesString = [NSString stringWithFormat:@"%2.0f", self.selectedRecipe.calories];
+    if (![caloriesString  isEqual: @"nan"]) {
+    self.recipeDetailCalories.text = caloriesString;
+    } else {
+        self.recipeDetailCalories.text = @"N/A";
+    }
+    NSString *proteinString = [NSString stringWithFormat:@"%2.0f", self.selectedRecipe.protein];
+    if (![proteinString  isEqual: @"nan"]) {
+        self.recipeDetailProtein.text = proteinString;
+    } else {
+        self.recipeDetailProtein.text = @"N/A";
+    }
+    NSString *sugarString = [NSString stringWithFormat:@"%2.0f", self.selectedRecipe.sugar];
+    if (![sugarString  isEqual: @"nan"]) {
+        self.recipeDetailSugar.text = sugarString;
+    } else {
+        self.recipeDetailSugar.text = @"N/A";
+    }
+    NSString *fatString = [NSString stringWithFormat:@"%2.0f", self.selectedRecipe.fat];
+    if (![fatString  isEqual: @"nan"]) {
+        self.recipeDetailFat.text = fatString;
+    } else {
+        self.recipeDetailFat.text = @"N/A";
+    }
+    NSString *carbsString = [NSString stringWithFormat:@"%2.0f", self.selectedRecipe.carbs];
+    if (![carbsString  isEqual: @"nan"]) {
+        self.recipeDetailCarbs.text = carbsString;
+    } else {
+        self.recipeDetailCarbs.text = @"N/A";
+    }
+
     NSURL *largeImageURL = [NSURL URLWithString:self.selectedRecipe.largePictureURL];
     NSURLSessionTask *imageTask = [[NSURLSession sharedSession] dataTaskWithURL:largeImageURL completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         UIImage *largeImage = [UIImage imageWithData:data];
@@ -79,6 +106,8 @@
     
     recipe.ingredients = self.selectedRecipe.ingredients;
     recipe.recipeURL = self.selectedRecipe.recipeURL;
+    
+    
     recipe.rating = self.selectedRecipe.rating;
     recipe.protein = self.selectedRecipe.protein;
     recipe.calories = self.selectedRecipe.calories;

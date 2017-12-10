@@ -33,7 +33,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(fetchRecipesData) name:NSManagedObjectContextDidSaveNotification object:nil];
     
     AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
     self.managedObjectContext = appDelegate.persistentContainer.viewContext;
@@ -44,13 +43,6 @@
     self.tableView.contentInset = UIEdgeInsetsMake(44, 0, 0, 0);
     
 }
-
-// -(void)fetchRecipesData{
-//     AppDelegate *appDelegate = ((AppDelegate*)[[UIApplication sharedApplication] delegate]);
-//     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Recipe"];
-//     //    NSSortDescriptor *sort = [NSSortDescriptor sortDescriptorWithKey:@"tagName" ascending:YES];
-//     self.savedRecipies = [appDelegate.persistentContainer.viewContext executeFetchRequest:request error:nil];
-// }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return [[self.fetchedResultsController sections] count];
@@ -63,7 +55,6 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     SavedRecipesTableViewCell *cell = (SavedRecipesTableViewCell*)[tableView dequeueReusableCellWithIdentifier:@"savedRecipeCell" forIndexPath:indexPath];
     
-//    Recipe *currentRecipe = self.savedRecipies[indexPath.row];
     Recipe *currentRecipe = [self.fetchedResultsController objectAtIndexPath:indexPath];
     cell.savedRecipeName.text = currentRecipe.recipeName;
 
@@ -108,7 +99,6 @@
 }
 
 -(BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath{
-//    set as yes to allow reorder symbol to appear, and to be able to move them (moves not saved)
     return  NO;
 }
 
@@ -123,17 +113,10 @@
         
         NSError *error = nil;
         if (![context save:&error]) {
-            // Replace this implementation with code to handle the error appropriately.
-            // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
             NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
             abort();
         }
-        
-//        [self fetchRecipesData];
-        
         [tableView reloadData];
-        
-//        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }
 }
 
@@ -216,7 +199,6 @@
             break;
             
         case NSFetchedResultsChangeUpdate:
-//            [self configureCell:[tableView cellForRowAtIndexPath:indexPath] atIndexPath:indexPath];
             break;
             
         case NSFetchedResultsChangeMove:

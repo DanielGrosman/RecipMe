@@ -22,9 +22,9 @@
 		C0708A211FCC825E003DD748 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0708A201FCC825E003DD748 /* ViewController.m */; };
 		C0708A241FCC825E003DD748 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0708A221FCC825E003DD748 /* Main.storyboard */; };
 		C0708A271FCC825E003DD748 /* RecipeApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C0708A251FCC825E003DD748 /* RecipeApp.xcdatamodeld */; };
-		C0708A291FCC825E003DD748 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0708A281FCC825E003DD748 /* Assets.xcassets */; };
 		C0708A2C1FCC825E003DD748 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0708A2A1FCC825E003DD748 /* LaunchScreen.storyboard */; };
 		C0708A2F1FCC825E003DD748 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C0708A2E1FCC825E003DD748 /* main.m */; };
+		C099EAE21FDCC02B0053C8AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0708A281FCC825E003DD748 /* Assets.xcassets */; };
 		C0F78BE61FCEFBA5009BA146 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0F78BE51FCEFBA5009BA146 /* SettingsViewController.m */; };
 		C0F78BE91FCEFF8F009BA146 /* SearchResultRecipe.m in Sources */ = {isa = PBXBuildFile; fileRef = C0F78BE81FCEFF8F009BA146 /* SearchResultRecipe.m */; };
 		C0FDB82E1FCE32300025F442 /* Recipe+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = C0FDB82C1FCE32300025F442 /* Recipe+CoreDataClass.m */; };
@@ -53,7 +53,7 @@
 		2DF8F5E81FCF8A100023FBAF /* ButtonBarTabViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ButtonBarTabViewController.h; sourceTree = "<group>"; };
 		2DF8F5E91FCF8A100023FBAF /* ButtonBarTabViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ButtonBarTabViewController.m; sourceTree = "<group>"; };
 		2DF8F5F41FCF97DD0023FBAF /* ButtonCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ButtonCell.xib; sourceTree = "<group>"; };
-		C0708A191FCC825E003DD748 /* RecipeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecipeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C0708A191FCC825E003DD748 /* RecipMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecipMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0708A1C1FCC825E003DD748 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C0708A1D1FCC825E003DD748 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		C0708A1F1FCC825E003DD748 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
@@ -151,7 +151,7 @@
 		C0708A1A1FCC825E003DD748 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C0708A191FCC825E003DD748 /* RecipeApp.app */,
+				C0708A191FCC825E003DD748 /* RecipMe.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -218,7 +218,7 @@
 			);
 			name = RecipeApp;
 			productName = RecipeApp;
-			productReference = C0708A191FCC825E003DD748 /* RecipeApp.app */;
+			productReference = C0708A191FCC825E003DD748 /* RecipMe.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -260,8 +260,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0708A2C1FCC825E003DD748 /* LaunchScreen.storyboard in Resources */,
-				C0708A291FCC825E003DD748 /* Assets.xcassets in Resources */,
 				C0708A241FCC825E003DD748 /* Main.storyboard in Resources */,
+				C099EAE21FDCC02B0053C8AC /* Assets.xcassets in Resources */,
 				2DF8F5F51FCF97DD0023FBAF /* ButtonCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -482,7 +482,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 55BW5T8VB9;
+				DEVELOPMENT_TEAM = DT9P77872P;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_ROOT}/Headers/Public\"",
@@ -493,8 +493,8 @@
 				INFOPLIST_FILE = RecipeApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Daniel.Grosman.RecipeApp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = DanielGrosman.RecipeMe;
+				PRODUCT_NAME = RecipMe;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -505,7 +505,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 55BW5T8VB9;
+				DEVELOPMENT_TEAM = DT9P77872P;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_ROOT}/Headers/Public\"",
@@ -516,8 +516,8 @@
 				INFOPLIST_FILE = RecipeApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Daniel.Grosman.RecipeApp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = DanielGrosman.RecipeMe;
+				PRODUCT_NAME = RecipMe;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
