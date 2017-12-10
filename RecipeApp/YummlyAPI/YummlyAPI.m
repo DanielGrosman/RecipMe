@@ -22,13 +22,18 @@
     NSURLSessionTask *task = [[NSURLSession sharedSession] dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         if (error != nil) {
             NSLog(@"Error while making request: %@", error.localizedDescription);
-            abort();
+//            abort();
         }
         NSHTTPURLResponse *resp = (NSHTTPURLResponse*)response;
         if (resp.statusCode > 299) {
             NSLog(@"Bad status code: %ld", resp.statusCode);
-            abort();
+//            abort();
         }
+        if (data == nil) {
+            NSArray *emptyArray = @[];
+            done(emptyArray);
+        }
+        else{
         NSError *err = nil;
         NSDictionary *result = [NSJSONSerialization
                                 JSONObjectWithData:data
@@ -36,7 +41,7 @@
                                 error:&err];
         if (err != nil) {
             NSLog(@"Something has gone wrong parsing JSON: %@", err.localizedDescription);
-            abort();
+//            abort();
         }
         NSMutableArray *recipes = [[NSMutableArray alloc] init];
         for (NSDictionary *recipeInfo in result[@"matches"]) {
@@ -44,6 +49,7 @@
             [recipes addObject:recipe];
         }
         done([NSArray arrayWithArray:recipes]);
+        }
     }];
     
     [task resume];

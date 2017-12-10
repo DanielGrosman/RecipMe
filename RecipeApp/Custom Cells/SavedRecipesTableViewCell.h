@@ -14,5 +14,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *savedRecipeName;
 @property (weak, nonatomic) IBOutlet UILabel *savedRecipeRating;
 @property (weak, nonatomic) IBOutlet UILabel *savedRecipeTime;
+@property (weak, nonatomic) IBOutlet UIView *labelBackView;
 
 @end

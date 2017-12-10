@@ -51,7 +51,7 @@
 
 -(void)fetchData:(NSString *)searchString {
     NSString *newSearchString = [searchString stringByAppendingString:self.filterString];
-    
+
     [YummlyAPI searchFor:newSearchString complete:^(NSArray *results) {
         [[NSOperationQueue mainQueue] addOperationWithBlock:^{
             [self hideHUD];
@@ -70,21 +70,19 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+
     RecipeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"searchResultCell" forIndexPath:indexPath];
-    
+
     SearchResultRecipe *currentRecipe = self.recipes[indexPath.row];
-    
+
     cell.searchRecipeName.text = currentRecipe.recipeName;
-    
-    [cell.searchRecipeImageView sd_setImageWithURL:[NSURL URLWithString:currentRecipe.smallPictureURL]
+    NSString *deleteCharacters = [currentRecipe.smallPictureURL substringToIndex:[currentRecipe.smallPictureURL length] - 2];
+    NSString* largeImageURL = [deleteCharacters stringByAppendingString:@"360"];
+    [cell.searchRecipeImageView sd_setImageWithURL:[NSURL URLWithString:largeImageURL]
                  placeholderImage:nil];
-    cell.searchRecipeImageView.contentMode = UIViewContentModeScaleAspectFill;
-    
-    
-    
+
     cell.searchRecipeRating.text = [NSString stringWithFormat:@"Rating: %2.0f",currentRecipe.rating];
-    
+
     if ([currentRecipe.totalTime isEqualToString:@"<null>"]) {
         cell.searchRecipeTime.text = @"";
     }
@@ -94,9 +92,7 @@
         NSString *timeString = [NSString stringWithFormat:@"%d",timeInMinutes];
         cell.searchRecipeTime.text =  [NSString stringWithFormat:@"%@ Minutes",timeString];
     }
-    
     return cell;
-    
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
@@ -105,17 +101,17 @@
         SearchResultRecipe *recipe = self.recipes[indexPath.row];
         UINavigationController *navController = [segue destinationViewController];
         RecipeViewController *detailVC = (RecipeViewController*)[navController viewControllers].firstObject;
-        
+
         [YummlyAPI getRecipeDetailsFor:recipe complete:^(SearchResultRecipe*recipe) {
             [[NSOperationQueue mainQueue]addOperationWithBlock:^{
                 [detailVC setSelectedRecipe:recipe];
                 [detailVC setupRecipe];
             }];
         }];
-        
+
         [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
     }
-    
+
 }
 
 
