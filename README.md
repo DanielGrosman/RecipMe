@@ -2,14 +2,9 @@ RecipMe is an iOS app that uses the Yummly API and returns recipes to users base
 
 <p align="left">
   <img src="https://raw.github.com/DanielGrosman/RecipeApp/master/Screenshots/Launch-Screen.jpg" width="150"/>
-  <img src="https://raw.github.com/DanielGrosman/RecipeApp/master/Screenshots/Launch-Screen.jpg" width="150"/>
-  <img src="https://raw.github.com/DanielGrosman/RecipeApp/master/Screenshots/Launch-Screen.jpg" width="150"/>
-  <img src="https://raw.github.com/DanielGrosman/RecipeApp/master/Screenshots/Launch-Screen.jpg" width="150"/>
-  <img src="https://raw.github.com/DanielGrosman/RecipeApp/master/Screenshots/Launch-Screen.jpg" width="150"/>
-  <img src="https://raw.github.com/DanielGrosman/RecipeApp/master/Screenshots/Launch-Screen.jpg" width="150"/>
+  <img src="https://raw.github.com/DanielGrosman/RecipeApp/master/Screenshots/Saved-Recipes-Empty.jpg" width="150"/>
+  <img src="https://raw.github.com/DanielGrosman/RecipeApp/master/Screenshots/Search-Screen.jpg" width="150"/>
+  <img src="https://raw.github.com/DanielGrosman/RecipeApp/master/Screenshots/Filter.jpg" width="150"/>
+  <img src="https://raw.github.com/DanielGrosman/RecipeApp/master/Screenshots/Search-Recipes-Screen.jpg" width="150"/>
+  <img src="https://raw.github.com/DanielGrosman/RecipeApp/master/Screenshots/Saved-Recipes-Full.jpg" width="150"/>
 </p>
-![Instructions Screen](https://raw.github.com/DanielGrosman/RecipeApp/master/Screenshots/Saved-Recipes-Empty.jpg)
-![Search Screen](https://raw.github.com/DanielGrosman/RecipeApp/master/Screenshots/Search-Screen.jpg)
-![Filter Screen](https://raw.github.com/DanielGrosman/RecipeApp/master/Screenshots/Filter.jpg)
-![Recipe Results Screen](https://raw.github.com/DanielGrosman/RecipeApp/master/Screenshots/Search-Recipes-Screen.jpg)
-![Saved Recipes Screen](https://raw.github.com/DanielGrosman/RecipeApp/master/Screenshots/Saved-Recipes-Full.jpg)
