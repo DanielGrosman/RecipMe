@@ -35,9 +35,6 @@
 - (IBAction)screenTapped:(UITapGestureRecognizer *)sender {
     [self.searchBar resignFirstResponder];
 }
-- (IBAction)screenTapped:(UITapGestureRecognizer *)sender {
-    [self.searchBar resignFirstResponder];
-}
 
 - (void)updateSearchResultsForSearchController:(UISearchController *)searchController {
     searchController.searchResultsController.view.hidden = NO;
