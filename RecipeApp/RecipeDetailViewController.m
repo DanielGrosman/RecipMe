@@ -34,12 +34,37 @@
     self.savedDetailName.text = self.recipe.recipeName;
 //    self.savedDetailIngredients.text = self.recipe.ingredients;
     self.ingredientsArray = [self.recipe.ingredients componentsSeparatedByString:@", "];
-    self.savedDetailCalories.text = [NSString stringWithFormat:@"%2.0f", self.recipe.calories];
-    self.savedDetailProtein.text = [NSString stringWithFormat:@"%2.0f", self.recipe.protein];
-    self.savedDetailSugar.text = [NSString stringWithFormat:@"%2.0f", self.recipe.sugar];
-    self.savedDetailFat.text = [NSString stringWithFormat:@"%2.0f", self.recipe.fat];
-    self.savedDetailCarbs.text = [NSString stringWithFormat:@"%2.0f", self.recipe.carbohydrate];
-//    NSLog(@"%@",self.recipe.largeImagePath);
+    
+    NSString *caloriesString = [NSString stringWithFormat:@"%2.0f", self.recipe.calories];
+    if (![caloriesString  isEqual: @"nan"]) {
+        self.savedDetailCalories.text = caloriesString;
+    } else {
+        self.savedDetailCalories.text = @"N/A";
+    }
+    NSString *proteinString = [NSString stringWithFormat:@"%2.0f", self.recipe.protein];
+    if (![proteinString  isEqual: @"nan"]) {
+        self.savedDetailProtein.text = proteinString;
+    } else {
+        self.savedDetailProtein.text = @"N/A";
+    }
+    NSString *sugarString = [NSString stringWithFormat:@"%2.0f", self.recipe.sugar];
+    if (![sugarString  isEqual: @"nan"]) {
+        self.savedDetailSugar.text = sugarString;
+    } else {
+        self.savedDetailSugar.text = @"N/A";
+    }
+    NSString *fatString = [NSString stringWithFormat:@"%2.0f", self.recipe.fat];
+    if (![fatString  isEqual: @"nan"]) {
+        self.savedDetailFat.text = fatString;
+    } else {
+        self.savedDetailFat.text = @"N/A";
+    }
+    NSString *carbsString = [NSString stringWithFormat:@"%2.0f", self.recipe.carbohydrate];
+    if (![carbsString  isEqual: @"nan"]) {
+        self.savedDetailCarbs.text = carbsString;
+    } else {
+        self.savedDetailCarbs.text = @"N/A";
+    }
     NSArray *docDirectory = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *imageFilePath = [docDirectory firstObject];
     imageFilePath = [imageFilePath stringByAppendingPathComponent:self.recipe.largeImagePath];
