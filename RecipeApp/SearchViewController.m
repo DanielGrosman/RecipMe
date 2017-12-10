@@ -16,7 +16,7 @@
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (weak, nonatomic) IBOutlet UIImageView *searchImage;
 @property (nonatomic, strong) SettingsViewController *settingsViewController;
-@end 
+@end  
 
 @implementation SearchViewController
 
