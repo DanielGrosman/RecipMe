@@ -337,8 +337,8 @@
                                     <constraint firstItem="eat-gu-Htq" firstAttribute="height" secondItem="nzX-go-q0i" secondAttribute="height" id="yL3-Oj-KAV"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lbL-y1-g5Z">
-                                <rect key="frame" x="0.0" y="637" width="375" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lbL-y1-g5Z">
+                                <rect key="frame" x="0.0" y="627" width="375" height="40"/>
                                 <color key="backgroundColor" red="0.15410047769999999" green="0.41306763889999998" blue="0.69063264130000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="See the Full Recipe">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -956,8 +956,8 @@
                                     <constraint firstItem="GcK-co-ck1" firstAttribute="width" secondItem="Yp3-Kt-jjl" secondAttribute="width" id="rb6-c4-SM4"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DAe-3R-RVv">
-                                <rect key="frame" x="0.0" y="637" width="375" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DAe-3R-RVv">
+                                <rect key="frame" x="0.0" y="627" width="375" height="40"/>
                                 <color key="backgroundColor" red="0.15410047769999999" green="0.41306763889999998" blue="0.69063264130000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="See the Full Recipe">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1025,7 +1025,7 @@
                             <constraint firstItem="gQh-gg-tQx" firstAttribute="firstBaseline" secondItem="qvE-AB-kzR" secondAttribute="firstBaseline" id="YhP-rQ-la0"/>
                             <constraint firstItem="DAe-3R-RVv" firstAttribute="bottom" secondItem="v7f-Gh-XXl" secondAttribute="bottom" id="dy1-Ho-BVH"/>
                             <constraint firstItem="DeL-z0-XMT" firstAttribute="firstBaseline" secondItem="gQh-gg-tQx" secondAttribute="firstBaseline" id="e0v-rD-dam"/>
-                            <constraint firstItem="DAe-3R-RVv" firstAttribute="top" secondItem="43b-Tm-1nI" secondAttribute="bottom" constant="35" id="hkE-MS-sOo"/>
+                            <constraint firstItem="DAe-3R-RVv" firstAttribute="top" secondItem="43b-Tm-1nI" secondAttribute="bottom" constant="25" id="hkE-MS-sOo"/>
                             <constraint firstItem="bQz-ck-IVZ" firstAttribute="top" secondItem="Bxo-1Q-Gdq" secondAttribute="bottom" constant="20" id="iXC-nq-OPc"/>
                             <constraint firstItem="bQz-ck-IVZ" firstAttribute="leading" secondItem="43b-Tm-1nI" secondAttribute="leading" id="jGI-eD-3jE"/>
                             <constraint firstItem="DAe-3R-RVv" firstAttribute="trailing" secondItem="v7f-Gh-XXl" secondAttribute="trailing" id="jhF-d9-7EN"/>
