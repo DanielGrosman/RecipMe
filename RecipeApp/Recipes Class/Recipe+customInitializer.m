@@ -64,7 +64,6 @@
         self.carbohydrate = NAN;
     }
     
-    
     self.recipeURL = info[@"source"][@"sourceRecipeUrl"];
     NSLog(@"%@",info[@"images"][0][@"hostedLargeUrl"]);
 }

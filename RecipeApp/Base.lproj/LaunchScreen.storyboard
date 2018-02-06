@@ -29,15 +29,6 @@
                                         <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Copyright © 2017 Danny Grosman &amp; Javier Xing" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TQ8-sA-CHM">
-                                        <rect key="frame" x="15" y="626" width="338" height="24"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="24" id="P7P-Ge-T7j"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="groceries (1)" translatesAutoresizingMaskIntoConstraints="NO" id="nbd-ES-9XF">
                                         <rect key="frame" x="100" y="155" width="175" height="175"/>
                                         <constraints>
@@ -48,13 +39,11 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.15294117647058825" green="0.41176470588235292" blue="0.69019607843137254" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="TQ8-sA-CHM" firstAttribute="leading" secondItem="jl2-W0-bcs" secondAttribute="leading" constant="15" id="77q-o3-V0k"/>
-                                    <constraint firstAttribute="bottom" secondItem="TQ8-sA-CHM" secondAttribute="bottom" constant="17" id="BYv-uK-tmk"/>
                                     <constraint firstItem="32A-af-eqn" firstAttribute="leading" secondItem="jl2-W0-bcs" secondAttribute="leading" constant="97" id="M7L-q9-coQ"/>
                                     <constraint firstItem="nbd-ES-9XF" firstAttribute="top" secondItem="jl2-W0-bcs" secondAttribute="top" constant="155" id="OzC-1Y-Mp1"/>
                                     <constraint firstItem="32A-af-eqn" firstAttribute="top" secondItem="nbd-ES-9XF" secondAttribute="bottom" constant="38" id="fgC-89-BXr"/>
-                                    <constraint firstItem="32A-af-eqn" firstAttribute="centerX" secondItem="TQ8-sA-CHM" secondAttribute="centerX" constant="3.5" id="nbM-Sv-W0X"/>
                                     <constraint firstItem="nbd-ES-9XF" firstAttribute="centerX" secondItem="32A-af-eqn" secondAttribute="centerX" id="yzT-x9-7ct"/>
+                                    <constraint firstItem="32A-af-eqn" firstAttribute="centerX" secondItem="jl2-W0-bcs" secondAttribute="centerX" id="zS0-3E-zfm"/>
                                 </constraints>
                             </view>
                         </subviews>
