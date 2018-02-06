@@ -15,7 +15,6 @@
 @interface RecipeViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *recipeDetailImageView;
 @property (weak, nonatomic) IBOutlet UILabel *recipeDetailName;
-@property (weak, nonatomic) IBOutlet UILabel *recipeDetailIngredients;
 @property (weak, nonatomic) IBOutlet UILabel *recipeDetailCalories;
 @property (weak, nonatomic) IBOutlet UILabel *recipeDetailFat;
 @property (weak, nonatomic) IBOutlet UILabel *recipeDetailProtein;
@@ -23,7 +22,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *recipeDetailCarbs;
 @property (weak, nonatomic) IBOutlet UIView *nameBackground;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-
 
 @end
 
@@ -36,7 +34,6 @@
 
 -(void)setupRecipe{
     self.recipeDetailName.text = self.selectedRecipe.recipeName;
-//    self.recipeDetailIngredients.text = self.selectedRecipe.ingredients;
     self.ingredientsArray = [self.selectedRecipe.ingredients componentsSeparatedByString:@", "];
 
     NSString *caloriesString = [NSString stringWithFormat:@"%2.0f", self.selectedRecipe.calories];
@@ -128,7 +125,6 @@
     recipe.largeImagePath = [[NSUUID UUID].UUIDString stringByAppendingPathExtension:@"jpg"];
     NSString *largeDocFilePath = [docFilePath stringByAppendingPathComponent:recipe.largeImagePath];
     NSData *largeImageData = UIImageJPEGRepresentation(self.recipeDetailImageView.image , 1.0);
-//    [largeImageData writeToFile:largeDocFilePath atomically:YES];
     NSError *err =nil;
     [largeImageData writeToFile:largeDocFilePath options:NSDataWritingAtomic error:&err];
     if (err != nil) {

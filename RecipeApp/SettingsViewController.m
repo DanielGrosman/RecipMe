@@ -83,7 +83,6 @@
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         [defaults setBool:sender.on forKey:@"glutenButtonStatus"];
     }
-    
 }
 
 
