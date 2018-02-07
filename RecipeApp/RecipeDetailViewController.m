@@ -11,7 +11,6 @@
 @interface RecipeDetailViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *savedDetailImageView;
 @property (weak, nonatomic) IBOutlet UILabel *savedDetailName;
-@property (weak, nonatomic) IBOutlet UILabel *savedDetailIngredients;
 @property (weak, nonatomic) IBOutlet UILabel *savedDetailCalories;
 @property (weak, nonatomic) IBOutlet UILabel *savedDetailFat;
 @property (weak, nonatomic) IBOutlet UILabel *savedDetailProtein;
