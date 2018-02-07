@@ -8,6 +8,7 @@
 
 #import "RecipeViewController.h"
 #import "AppDelegate.h"
+#import "WebViewController.h"
 
 
 
@@ -156,12 +157,22 @@
     return cell;
 }
 
--(IBAction)openRecipeLink:(UIButton*)sender{
-    NSURL *recipeURL = [NSURL URLWithString:self.selectedRecipe.recipeURL];
-    if ([[UIApplication sharedApplication] canOpenURL:recipeURL]) {
-        [[UIApplication sharedApplication]openURL:recipeURL options:@{} completionHandler:nil];
+//-(IBAction)openRecipeLink:(UIButton*)sender{
+//    NSURL *recipeURL = [NSURL URLWithString:self.selectedRecipe.recipeURL];
+//    if ([[UIApplication sharedApplication] canOpenURL:recipeURL]) {
+//        [[UIApplication sharedApplication]openURL:recipeURL options:@{} completionHandler:nil];
+//    }
+//}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"showWebsiteDetail"])
+    {
+        WebViewController *vc = [segue destinationViewController];
+        vc.url = [NSURL URLWithString:self.selectedRecipe.recipeURL];
     }
 }
+
 
 
 

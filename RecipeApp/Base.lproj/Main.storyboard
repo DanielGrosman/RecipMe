@@ -212,8 +212,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="openRecipeLink:" destination="GEv-Ff-NDq" eventType="touchUpInside" id="0U2-ma-6o8"/>
-                                    <action selector="openRecipeLink:" destination="myi-Vs-eww" eventType="touchUpInside" id="K9e-vy-Ddo"/>
+                                    <segue destination="c7q-Bz-ddp" kind="show" identifier="showWebsite" id="Vlw-45-szC"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nutrition" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zvl-hY-QIL">
@@ -554,6 +553,37 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sSj-OY-Jgt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3224.8000000000002" y="1820.2398800599701"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="ojO-aR-gan">
+            <objects>
+                <viewController id="c7q-Bz-ddp" customClass="WebViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ojs-Gd-r2m">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zqT-V2-Cov">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="zqT-V2-Cov" firstAttribute="trailing" secondItem="vAz-lQ-EjM" secondAttribute="trailing" id="0zy-cq-Q2m"/>
+                            <constraint firstItem="zqT-V2-Cov" firstAttribute="leading" secondItem="vAz-lQ-EjM" secondAttribute="leading" id="2iP-nW-RH7"/>
+                            <constraint firstItem="zqT-V2-Cov" firstAttribute="bottom" secondItem="vAz-lQ-EjM" secondAttribute="bottom" id="RHh-lS-n3k"/>
+                            <constraint firstItem="zqT-V2-Cov" firstAttribute="top" secondItem="vAz-lQ-EjM" secondAttribute="top" id="rl1-yO-0SI"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="vAz-lQ-EjM"/>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="zqT-V2-Cov" id="Vjn-RV-n2l"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YQD-ua-Okk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3952.8000000000002" y="1819.3403298350827"/>
         </scene>
         <!--Dietary Preferences-->
         <scene sceneID="1zr-BA-u4v">
@@ -990,7 +1020,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="openRecipeLink:" destination="myi-Vs-eww" eventType="touchUpInside" id="XSu-HQ-gDb"/>
+                                    <segue destination="c7q-Bz-ddp" kind="show" identifier="showWebsiteDetail" id="Ik1-Yw-11d"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fat" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3LV-Fs-qfy">
@@ -1341,8 +1371,12 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="oVy-Jo-qOu">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" red="0.15410047769999999" green="0.41306763889999998" blue="0.69063264130000002" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
                     </navigationBar>
@@ -1450,4 +1484,7 @@
         <image name="folder" width="30" height="30"/>
         <image name="smallsearch" width="30" height="30"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Ik1-Yw-11d"/>
+    </inferredMetricsTieBreakers>
 </document>

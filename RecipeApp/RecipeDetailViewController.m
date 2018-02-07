@@ -7,6 +7,7 @@
 //
 
 #import "RecipeDetailViewController.h"
+#import "WebViewController.h"
 
 @interface RecipeDetailViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *savedDetailImageView;
@@ -102,10 +103,19 @@
     return cell;
 }
 
--(IBAction)openRecipeLink:(UIButton*)sender{
-    NSURL *recipeURL = [NSURL URLWithString:self.recipe.recipeURL];
-    if ([[UIApplication sharedApplication] canOpenURL:recipeURL]) {
-        [[UIApplication sharedApplication]openURL:recipeURL options:@{} completionHandler:nil];
+//-(IBAction)openRecipeLink:(UIButton*)sender{
+//    NSURL *recipeURL = [NSURL URLWithString:self.recipe.recipeURL];
+//    if ([[UIApplication sharedApplication] canOpenURL:recipeURL]) {
+//        [[UIApplication sharedApplication]openURL:recipeURL options:@{} completionHandler:nil];
+//    }
+//}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"showWebsite"])
+    {
+        WebViewController *vc = [segue destinationViewController];
+        vc.url = [NSURL URLWithString:self.recipe.recipeURL];
     }
 }
 
